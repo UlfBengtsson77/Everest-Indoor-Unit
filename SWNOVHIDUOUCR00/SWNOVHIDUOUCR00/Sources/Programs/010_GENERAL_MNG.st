@@ -142,10 +142,10 @@ PROGRAM Main
         // 4: Heating system 1 + Heating system 2 + DHW
     
         IF(SystemCfg > 0)THEN
-            SystemCfg_AllowDHW := SystemCfg >= 1 AND SystemCfg <= 3; 
+            SystemCfg_AllowDHW := SystemCfg >= 1; 
             SystemCfg_AllowHeat := SystemCfg >= 1;                   
             SystemCfg_AllowImm := SystemCfg >= 1;                    
-            SystemCfg_AllowCool := SystemCfg = 4;                    
+            SystemCfg_AllowCool := SystemCfg = 3;                    
             SystemCfg_NoCfgSel := FALSE;
         ELSE
             SystemCfg_AllowDHW := FALSE;

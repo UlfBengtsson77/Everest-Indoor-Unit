@@ -1,16 +1,21 @@
 ﻿USING System;
 USING System.Math;
 USING Libs.Math;
-USING Libs.PID_Incr;
+USING Libs.PID_ADV;
 USING Libs.Timer;
 USING Libs.ExpFilt;
 
 VAR_GLOBAL
     (**Actual PWM request heat medium pump*)
-     Circ1Act_Req : REAL;
+    Circ1Act_Req : REAL;
+    DHWPumpReg : REAL;
 END_VAR
 
 PROGRAM PumpMng
+    VAR
+
+    END_VAR
+    
 
         
     IF(PumpSpdGP1Man > 0)THEN    //Manual mode
@@ -21,7 +26,7 @@ PROGRAM PumpMng
         ELSIF(OpState = OpStage_Status#DEFROST)THEN
             CircPmp_Req := PumpSpdDefrost;
         ELSIF(OpState = OpStage_Status#DHW)THEN
-            CircPmp_Req := PumpSpdDhwFix;
+            CircPmp_Req := DHWChrgPumpSetPoint;
         ELSIF(OpState = OpStage_Status#HEATING) THEN
             CircPmp_Req := PumpspdHeatAuto;
         ELSIF(OpState = OpStage_Status#COOLING)THEN

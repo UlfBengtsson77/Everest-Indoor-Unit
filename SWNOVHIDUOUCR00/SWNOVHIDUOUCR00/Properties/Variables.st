@@ -60,6 +60,12 @@ VAR_GLOBAL
 	{LOCATION BootVersion}
 	(**Boot version*)
 	BootVersion : UINT;
+	{LOCATION Circ2Act_Req}
+	(**Actual PWM request DHW Pump*)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	Circ2Act_Req : REAL;
 	{LOCATION CircPmp_Req}
 	(**GP1 - Request*)
 	{ATTRIBUTE UOM PERCENT}
@@ -76,6 +82,10 @@ VAR_GLOBAL
 	{LOCATION CoolingBlock}
 	(**Block cooling mode*)
 	CoolingBlock : BOOL;
+	{LOCATION CoolReg_Temp}
+	(**Cool regulation setpoint*)
+	{ATTRIBUTE UOM CELSIUS}
+	CoolReg_Temp : REAL;
 	{LOCATION CoolReq}
 	(**Cooling mode needed*)
 	CoolReq : BOOL;
@@ -95,6 +105,12 @@ VAR_GLOBAL
 	{LOCATION DHWBoost}
 	(**Boost compressor speed during DHW charge*)
 	DHWBoost : BOOL;
+	{LOCATION DHWChrgPumpSetPoint}
+	(**Charge  control in percentage for DHW*)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	DHWChrgPumpSetPoint : REAL;
 	{LOCATION DhwCircPumpReq}
 	(**GP2 - Request*)
 	{ATTRIBUTE UOM PERCENT}
@@ -143,6 +159,11 @@ VAR_GLOBAL
 	Dout_Data : DoutData;
 	{LOCATION Dout_Info}
 	Dout_Info : DoutInfoUnion;
+	{LOCATION EBCH}
+	(**Energy balance for cooling*)
+	{METADATA MIN_VAL EBCHMin}
+	{METADATA MAX_VAL EBCHMax}
+	EBCH : REAL;
 	{LOCATION EBHP}
 	(**Current energy balance*)
 	EBHP : REAL;
@@ -246,6 +267,9 @@ VAR_GLOBAL
 	{LOCATION NrProfile}
 	(**Profile loaded in the target*)
 	NrProfile : USINT;
+	{LOCATION Offset_EBCH}
+	(**Offset is needed to be able to reach the desired EBCH*)
+	Offset_EBCH : REAL;
 	{LOCATION Offset_EBHP}
 	(**The offset for the heat curve*)
 	{METADATA MIN_VAL 0}
@@ -370,6 +394,10 @@ VAR_GLOBAL
 	{LOCATION OutDoorTempFilter_PreCalc}
 	(**Filtered outside temperature*)
 	OutDoorTempFilter_PreCalc : ARRAY[0..335] OF REAL;
+	{LOCATION PID_CoolReq}
+	(**Request from cooling mode*)
+	{ATTRIBUTE UOM PERCENT}
+	PID_CoolReq : REAL;
 	{LOCATION PID_DHWReq}
 	(**Request from DHW mode*)
 	{ATTRIBUTE UOM PERCENT}
@@ -472,6 +500,11 @@ VAR_GLOBAL
 	{LOCATION SupplyTempCalc}
 	(**Heat regulation setpoint*)
 	SupplyTempCalc : REAL;
+	{LOCATION SupplyTempCalcCH}
+	(**Supplytemp calculation for cooling*)
+	{METADATA MIN_VAL SupplyTempCoolMin}
+	{METADATA MAX_VAL 30}
+	SupplyTempCalcCH : REAL;
 	{LOCATION SWValveManA}
 	(**Switching valve shall be possible to regulate manually. 
 	 *When SWValveManA is active the valve shall be set to it’s active target. In this case the valve shall be towards position B(House) when not active and towards A(DHW) when active. 
@@ -493,6 +526,9 @@ VAR_GLOBAL
 	{LOCATION TimezoneIdx}
 	(**Timezone index*)
 	TimezoneIdx : UINT(1..136) := 50;
+	{LOCATION uID1}
+	(**configuration of uid*)
+	uID1 : System.IO.uChannel;
 	{LOCATION uID2}
 	(**Configuration of uID*)
 	uID2 : System.IO.uChannel;
@@ -524,6 +560,8 @@ VAR_GLOBAL
 	(**WaterFlow for DHW*)
 	{ATTRIBUTE UOM LITER_PER_MINUTE}
 	WaterFlow_DHW : REAL;
+	{LOCATION WaterFlow_DHW2}
+	WaterFlow_DHW2 : REAL;
 	{LOCATION Wrg_Circ1}
 	(**Warning - Circ.1 light alarm*)
 	Wrg_Circ1 : BOOL;
@@ -607,6 +645,21 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StrtNor : REAL := 45;
+	{LOCATION DHWChargeDeltaT}
+	(**Setting for delta T mode*)
+	{ATTRIBUTE UOM DELTACELSIUS}
+	{METADATA MIN_VAL 7}
+	{METADATA MAX_VAL 10}
+	DHWChargeDeltaT : REAL := 10;
+	{LOCATION DHWChargeMaxEnergy}
+	(**Setting for delta t in max energy mode*)
+	{ATTRIBUTE UOM DELTACELSIUS}
+	{METADATA MIN_VAL 2}
+	{METADATA MAX_VAL 7}
+	DHWChargeMaxEnergy : REAL := 5;
+	{LOCATION DHWChrgMode}
+	(**0 = automode, 1 = fixed speed mode*)
+	DHWChrgMode : BOOL := FALSE;
 	{LOCATION DhwCircPump1Spd}
 	(**Circulation pump GT1 speed*)
 	{ATTRIBUTE UOM PERCENT}
@@ -780,6 +833,29 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 3600}
 	DhwTimerStop : UINT := 300;
+	{LOCATION EBCHCompStop}
+	(**EB chiller compressor stop value*)
+	{METADATA MIN_VAL -1000}
+	{METADATA MAX_VAL 0}
+	EBCHCompStop : REAL := -100;
+	{LOCATION EBCHCompStrt}
+	(**EB chiller comp start value*)
+	{METADATA MIN_VAL 10}
+	{METADATA MAX_VAL 500}
+	EBCHCompStrt : REAL := 60;
+	{LOCATION EBCHMax}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 1000}
+	EBCHMax : REAL := 1000;
+	{LOCATION EBCHMin}
+	{METADATA MIN_VAL -1000}
+	{METADATA MAX_VAL 0}
+	EBCHMin : REAL := -1000;
+	{LOCATION EBHPCompStop}
+	(**Stop OU from energybalance calculation*)
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 1000}
+	EBHPCompStop : REAL := 100;
 	{LOCATION EBHPCompStrt}
 	(**Start OU from energybalance calculation*)
 	{METADATA MIN_VAL -500}
@@ -798,11 +874,6 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION EBHPStepOut}
 	(**Immersion heater step out value*)
 	EBHPStepOut : REAL := 50;
-	{LOCATION EBHPStopComp}
-	(**Stop OU from energybalance calculation*)
-	{METADATA MIN_VAL 0}
-	{METADATA MAX_VAL 1000}
-	EBHPStopComp : REAL := 100;
 	{LOCATION EBShunt}
 	(**Shunt valve energy balance level*)
 	EBShunt : REAL := -700;
@@ -981,10 +1052,15 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	PumpspdHeatAuto : REAL := 50;
-	{LOCATION Sel_HeatCurve_SetP}
-	(**Heatcurve*)
+	{LOCATION Sel_CoolCurve_SetP}
+	(**CoolCurve selection*)
 	{METADATA MIN_VAL 0}
-	{METADATA MAX_VAL 10}
+	{METADATA MAX_VAL 8}
+	Sel_CoolCurve_SetP : UINT := 5;
+	{LOCATION Sel_HeatCurve_SetP}
+	(**Heatcurve selection*)
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 14}
 	Sel_HeatCurve_SetP : UINT := 5;
 	{LOCATION SGActive}
 	(**Enable inputs for smart grid*)
@@ -1052,6 +1128,12 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION SPV_Port}
 	(**Supervisor serial port*)
 	SPV_Port : Serial_Channel_Server := 1;
+	{LOCATION SupplyTempCoolMin}
+	(**Set minimum temperature to the system. For instance, if there is a need for floor heating in basement or minimum temp to radiators*)
+	{ATTRIBUTE UOM CELSIUS}
+	{METADATA MIN_VAL 7}
+	{METADATA MAX_VAL 30}
+	SupplyTempCoolMin : REAL := 18;
 	{LOCATION SupplyTempHeat2Max}
 	(**Maximum supply temp to heating 2*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -1104,6 +1186,19 @@ VAR_GLOBAL PERSISTENT
 	WaterPressLow : REAL := 0.5;
 	{LOCATION DEFAULT}
 END_VAR
+VAR_GLOBAL CONSTANT
+	{LOCATION CoolCurve_K}
+	CoolCurve_K : ARRAY[0..8] OF REAL := [-0.1,-0.3,-0.5,-0.7,-0.9,-1.1,-1.3,-1.5,-1.7];
+	{LOCATION CoolCurve_M}
+	CoolCurve_M : ARRAY[0..8] OF REAL := [22,26,30,34,38,42,46,50,54];
+	{LOCATION HeatCurve_K}
+	(**Heatcurve K values*)
+	HeatCurve_K : ARRAY[0..14] OF REAL;
+	{LOCATION HeatCurve_M}
+	(**Heatcurve M values*)
+	HeatCurve_M : ARRAY[0..14] OF REAL := [23,25,27,29,31,33,35,37,39,41,43,45,47,49,51];
+	{LOCATION DEFAULT}
+END_VAR
 VAR_GLOBAL RETAIN
 	{LOCATION Dout_FourWVlv_NVRAM}
 	(**4-way valve command status before blackout*)
@@ -1111,14 +1206,5 @@ VAR_GLOBAL RETAIN
 	{LOCATION KeybOnOff}
 	(**Unit on/off from keyboard*)
 	KeybOnOff : BOOL := TRUE;
-	{LOCATION DEFAULT}
-END_VAR
-VAR_GLOBAL CONSTANT
-	{LOCATION HeatCurve_K}
-	(**Heatcurve K values*)
-	HeatCurve_K : ARRAY[0..14] OF REAL := [-0.1,-0.2,-0.3,-0.4,-0.5,-0.6,-0.7,-0.8,-0.9,-1,-1.1,-1.2,-1.3,-1.4,-1.5];
-	{LOCATION HeatCurve_M}
-	(**Heatcurve M values*)
-	HeatCurve_M : ARRAY[0..14] OF REAL := [23,25,27,29,31,33,35,37,39,41,43,45,47,49,51];
 	{LOCATION DEFAULT}
 END_VAR

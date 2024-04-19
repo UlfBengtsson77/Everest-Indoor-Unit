@@ -10,14 +10,14 @@ VAR_GLOBAL
     TON_MinTimer          : TON_s;
     (**Timer to increase flow*)    
     TON_ProtectTimer          : TON_s;
-    (**FirstCycle*)
-    FirstCycle              : BOOL := 1;
         (**SR latch for Outdoor Unit freeze protection*)
         SR_OU_FreezeProt : SR;
     
 END_VAR  
 PROGRAM Protection
     VAR
+        (**FirstCycle*)
+        FirstCycle              : BOOL := 1;
         (**Hyster MaxTankTemp*)
         HysterAdv_MaxTempTank : HysterAdv;
         (**SR latch for Climate System freeze protection*)
@@ -67,9 +67,9 @@ MaxTankTempOk := HysterAdv_MaxTempTank.Out;
             FirstCycle := 0;
         ELSIF OU_WaterFlow < OU_WaterFlowLimit AND TON_ProtectTimer.Q AND PumpspdFreezeProt < 100 THEN
             PumpspdFreezeProt := PumpspdFreezeProt + 5; 
-        ELSE
-            
         END_IF;
+    ELSIF NOT OU_FreezeProtAct THEN
+        FirstCycle := 1;
     END_IF;
     
 {ENDREGION}

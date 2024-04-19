@@ -9,6 +9,10 @@ VAR_GLOBAL
         DHWFrcSwitch            : BOOL;
           (**DHW transition timer*)
         TON_DHWTimer            : TON_s;
+        (**Allow/block OU from energybalance*)
+        SR_Energybalance_HP        : SR;
+        (**Allow/block OU from energybalance*)
+        SR_Energybalance_CH        : SR;
 END_VAR
 
 
@@ -258,8 +262,10 @@ PROGRAM RegulationMode
                 OpState := GoToState;       // EB calculation start and stop compressor
             ELSIF GoToState = OpStage_Status#COOLING THEN
                 OpState := GoToState;
-            ELSIF (GoToState <> OpState AND OU_CompTemp < ECT) THEN
-                OU_CompHeat := FALSE;
+            ELSIF GoToState = OpStage_Status#DHW THEN
+                OpState := GoToState;
+            ELSIF (OpState = OpStage_Status#DECISION_PHASE AND OU_CompTemp < ECT) THEN
+                //OU_CompHeat := TRUE;
                 // Send new ECT to OU -> Starts compressor heater
             ELSE 
                 OpState := GoToState;
@@ -382,13 +388,13 @@ PROGRAM RegulationMode
     {REGION ENERGY BALANCE CALCULATION}
 
     //Calculate energybalance every minute while unit is running
+    TON_Energybalance(
+        IN := NOT(TON_Energybalance.Q),
+        PT := 1
+    );
     IF(UnitOFF)THEN
         EBHP := 0;       
     ELSIF(OpModeAllowHeat)THEN
-        TON_Energybalance(
-            IN := NOT(TON_Energybalance.Q),
-            PT := 1
-        );
         IF TON_Energybalance.Q THEN                                         //AND NOT (OpState = OpStage_Status#DHW))THEN
             IF NOT (OpState = (OpStage_Status#DHW)) THEN
                 EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - Offset_EBHP - HeatReg_Temp) / 60)), EBHPMax);
@@ -406,10 +412,28 @@ PROGRAM RegulationMode
         END_IF;
         
         Offset_EBHP := LIMIT(0, -0.01 * EBHP, 4);
-        
+        EBCH := 0;                                                              //Energy balance for cooling = 0    
 
-    ELSIF(NOT(OpModeAllowHeat))THEN
+        {REGION HP ALLOW START/STOP OF OUTDOOR UNIT} // EBHP logic to allow heatpump start and stop
+        SR_Energybalance_HP(
+            S1 := EBHP <= EBHPCompStrt AND UnitOn,
+            R := (EBHP >= EBHPCompStop AND OU_Unit.CondInTemp >= SupplyTempCalc + 2) OR UnitOff OR NOT OU_CompOn
+        );
+        {ENDREGION}
+        
+    ELSIF((OpModeAllowCool))THEN // EBCH calculation
+        IF TON_Energybalance.Q THEN
+            EBCH := LIMIT(EBCHMin, ((EBCH - (SupplyTempCalcCH - Offset_EBCH - CoolReg_Temp) / 60)), EBCHMax);
+        END_IF;
+        Offset_EBCH := LIMIT(0, 0.01 * EBCH, 2);
         EBHP := 0;
+        
+        {REGION CH ALLOW START/STOP OF OUTDOOR UNIT} // EBCH logic to allow heatpump start and stop
+        SR_Energybalance_CH(
+            S1 := EBCH >= EBCHCompStrt AND UnitOn,
+            R := EBCH <= EBCHCompStop OR UnitOff OR NOT OU_CompOn
+        );
+        {ENDREGION}
     END_IF;   
     {ENDREGION}
     

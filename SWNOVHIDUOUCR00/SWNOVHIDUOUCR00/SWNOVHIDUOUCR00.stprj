@@ -8,7 +8,7 @@
       <File path="ExpFilt_v.1.0.2.stlib" buildaction="Compile" libnodeid="7507d007-3531-4175-a1a4-685f81faf36f" />
       <File path="IOMng_Basic_v.2.1.1.C.stlib" buildaction="Compile" libnodeid="f6b740f5-e55c-4756-92b9-07d4a8001688" />
       <File path="Logics_v.1.0.0.stlib" buildaction="Compile" libnodeid="b239c18b-9209-4e30-8d6d-a9245a04a8db" />
-      <File path="PID_ADV_v.3.0.0.stlib" buildaction="Compile" libnodeid="88df16c7-bc12-4710-ae91-90b24d18aa7e" />
+      <File path="PID_ADV_v.4.0.3.stlib" buildaction="Compile" libnodeid="3d9fdf91-5026-4345-981d-7a6b1f3608e7" />
       <File path="PID_Incr_v.1.1.1.stlib" buildaction="Compile" libnodeid="0d28d89e-71a6-4e58-ae68-ff03c48306b9" />
       <File path="SignalGeneration_v.1.0.0.stlib" buildaction="Compile" libnodeid="9f560764-180f-4bb1-9204-38b7f3fbd41f" />
       <File path="SystemMenu_v.1.0.1.stlib" buildaction="Compile" libnodeid="1e8154b3-e375-4cbe-9cde-30854e5be2b3" />

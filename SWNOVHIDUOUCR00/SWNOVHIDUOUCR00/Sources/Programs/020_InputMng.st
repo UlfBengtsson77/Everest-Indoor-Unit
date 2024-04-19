@@ -302,6 +302,10 @@ PROGRAM InputMng
         Ain_Info.Arr,
         uConfig
     );
+
+    HandleSpecialID(1, LIB_IO_PROBE_U_FREQ, 5, uID1);
+    WaterFlow_DHW2 := (TO_REAL(uID1.ui) * 0.0106);    // 530 pulses per litre    
+    
     
     HandleSpecialID(2, LIB_IO_PROBE_U_FREQ, 5, uID2);
     WaterFlow_DHW := (TO_REAL(uID2.ui) * 0.0106);    // 530 pulses per litre

@@ -131,7 +131,7 @@ PROGRAM HeatingRegulation
         ManModeVal_PID_Incr   := ManModeVal,
         En_PrePos_PID_Incr    := FALSE,
         En_ManMode_PID_Incr   := NOT OU_CompOn OR OU_HP_Status = 2 OR OU_HP_Status = 8 OR TOF_RPSBlock.Q,
-        En_PID_Incr           := OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1
+        En_PID_Incr           := OpState = OpStage_Status#HEATING AND SR_Energybalance_HP.Q1
     );
  
 

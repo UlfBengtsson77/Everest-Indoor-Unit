@@ -962,7 +962,7 @@
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="EBHPStopComp"
+          Name="EBHPCompStop"
           Index="54"
           Kind="HoldingRegister"
           Size="1" />
@@ -1176,6 +1176,30 @@
           Name="OU_WaterFlowLimit"
           UoM="LITER_PER_MINUTE"
           Index="86"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EBCHMin"
+          Index="87"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EBCHMax"
+          Index="88"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EBCHCompStrt"
+          Index="89"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EBCHCompStop"
+          Index="90"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -1795,6 +1819,18 @@
           Name="CircPmp_Req"
           UoM="PERCENT"
           Index="73"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="WaterFlow_DHW2"
+          Index="74"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EBCH"
+          Index="75"
           Kind="InputRegister"
           Size="1" />
         <ModbusVariable

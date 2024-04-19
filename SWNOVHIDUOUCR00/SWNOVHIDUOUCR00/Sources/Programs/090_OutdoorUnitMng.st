@@ -6,8 +6,7 @@ USING Libs.Timer;
     VAR_GLOBAL
         (**Compressor speed when starting DHW*)
         DHW_InitRPS             : REAL;
-        (**Allow/block OU from energybalance*)
-        SR_Energybalance        : SR;
+
     
     END_VAR
     
@@ -17,18 +16,15 @@ PROGRAM OutdoorUnitMng
         OU_OnOff                : BOOL;
         (**First DHW cycle*)
         DHW_FirstCycle          : BOOL;
+        (**Outdoor unit cool/heat mode*)
+        OU_CoolHeat             : BOOL;
     END_VAR
     
     IF RestoreDefault THEN
         RETURN;
     END_IF;
     
-    {REGION ALLOW START/STOP OF OUTDOOR UNIT}
-        SR_Energybalance(
-            S1 := EBHP <= EBHPCompStrt AND UnitOn,
-            R := (EBHP >= EBHPStopComp AND OU_Unit.CondInTemp >= SupplyTempCalc + 2) OR UnitOff OR NOT OU_CompOn
-        );
-    {ENDREGION}
+
     
     OU_Unit.Info.Enabled := NOT(NoOutdoorUnit);  
     OU_ComError := (NOT (OU_Unit.Info.isOnline)) AND NOT(NoOutdoorUnit);            //Communication error with outdoor unit
@@ -59,7 +55,7 @@ PROGRAM OutdoorUnitMng
         
         {REGION DHW SWITCH MANAGEMENT}
         
-        //Store current compressor speed when going into DHW
+        //Store current information when going into DHW
         IF(OpState = OpStage_Status#DHW AND DHW_FirstCycle)THEN
             DHW_InitRPS      := OU_Unit.CurrSpd_RPS;
             FixedEBCount     := Ain_Data.Fct.ClimSupplyTemp;
@@ -79,10 +75,11 @@ PROGRAM OutdoorUnitMng
         ELSIF(UnitOff OR NoOutdoorUnit OR CompBlock)THEN //Unit off or outdoor unit not required
             OU_Req := 0;
             OU_OnOff := FALSE;
+            OU_CoolHeat := TRUE;
         ELSIF(OpState = OpStage_Status#DHW)THEN //DHW charge request
             IF(OU_Unit.CompOn AND DHW_InitRPS > 50.0)THEN //Keep compressor at steady speed if running at 50+ rps
                 OU_OnOff := TRUE;
-                
+                OU_CoolHeat := TRUE;
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
                     OU_Req := MIN(DHW_InitRPS + 30.0, OU_CompMaxRps);
                 ELSE
@@ -90,19 +87,25 @@ PROGRAM OutdoorUnitMng
                 END_IF;
             ELSE //DHW charge request locked at 50 rps
                 OU_OnOff := TRUE;
-                
+                OU_CoolHeat := TRUE;
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
                     OU_Req := MIN(50.0 + 30.0, OU_CompMaxRps);
                 ELSE
                     OU_Req := MIN(50.0 , OU_CompMaxRps);
                 END_IF;
             END_IF;
-        ELSIF(OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1)THEN //Heating request
+        ELSIF(OpState = OpStage_Status#HEATING AND SR_Energybalance_HP.Q1)THEN //Heating request
             OU_Req := ScalerLimited(PID_HeatReq, 0.0, 100.0, OU_Unit.MinRPS, OU_CompMaxRps);
             OU_OnOff := TRUE;
+            OU_CoolHeat := TRUE;
+        ELSIF(OpState = Opstage_Status#COOLING AND SR_Energybalance_CH.Q1) THEN //Cooling request
+            OU_Req := ScalerLimited(PID_CoolReq, 0.0, 100.0, OU_Unit.MinRPS, OU_CompMaxRps);
+            OU_OnOff := TRUE;
+            OU_CoolHeat := FALSE;
         ELSE 
             OU_Req := 0; 
             OU_OnOff := TRUE;
+            OU_CoolHeat := TRUE;
         END_IF;
         {ENDREGION}
                
@@ -112,6 +115,7 @@ PROGRAM OutdoorUnitMng
         OU_Unit.AlrmReset       := AlrmRes;
         OU_Unit.OnOff           := OU_OnOff;
         OU_Unit.Comp_MaxSpdLim  := CompSpdMax;
+        OU_Unit.Unit_CoolHeat   := OU_CoolHeat;
         
         OU_Unit.SkipFreqBand1   := SkipFreqBand1 * 2;
         OU_Unit.SkipFreqBand2   := SkipFreqBand2 * 2;

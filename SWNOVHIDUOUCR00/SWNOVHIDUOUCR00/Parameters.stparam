@@ -1207,11 +1207,6 @@
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
-      InitValue="100"
-      Name="EBHPStopComp"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       InitValue="-700"
       Name="EBShunt"
       Persistence="Persistent"
@@ -1221,9 +1216,6 @@
       Attributes="None" />
     <Parameter
       Name="CoolingBlock"
-      Attributes="None" />
-    <Parameter
-      Name="CircPmp_Req"
       Attributes="None" />
     <Parameter
       InitValue="72"
@@ -1480,9 +1472,6 @@
       Attributes="None" />
     <Parameter
       Name="Circ2Act_Req"
-      Attributes="None" />
-    <Parameter
-      Name="Circ1Act_Req"
       Attributes="None" />
     <Parameter
       Name="OU_CurrDSH"
@@ -2295,6 +2284,40 @@
     <Parameter
       InitValue="10"
       Name="OU_WaterFlowLimit"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="CircPmp_Req"
+      Attributes="None" />
+    <Parameter
+      Name="Circ1Act_Req"
+      Attributes="None" />
+    <Parameter
+      InitValue="100"
+      Name="EBHPCompStop"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="EBCH"
+      Attributes="None" />
+    <Parameter
+      InitValue="1000"
+      Name="EBCHMax"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1000"
+      Name="EBCHMin"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="60"
+      Name="EBCHCompStrt"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-100"
+      Name="EBCHCompStop"
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
   </Parameters>
