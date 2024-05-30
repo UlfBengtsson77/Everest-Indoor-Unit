@@ -4,7 +4,7 @@ USING Libs.Math;
 USING Libs.PID_Incr;
 USING Libs.Timer;
 USING Libs.ExpFilt;
-USING Libs.PID_ADV;
+
 
 VAR_GLOBAL
     DhwPumpMin1 : REAL;
@@ -13,19 +13,31 @@ VAR_GLOBAL
 
     (**DHW charging period timer*)
     TON_DHWChrg       : TON_s;
+    (**DHW ondelay step 2 timer*)
+    TON_ChangeState      : TON_s;
     (**Extra hotwater timer*)
     TOF_ExtHotWatr     : TOF_s;  
     (**Extra hotwater pulse*)
     R_Edge_tmp          : system.timer.R_Edge;
+    (**PreSet dhw controller*)
+    R_Edge_Dhw          : system.timer.R_Edge;    
     (**Charge regulation PID*)
-    DHWChrgRegPID : PID_ADV;
+    DHWChrgRegPID : PID_Incr;
        
     temp : real;
     
     PumpSpdDHW              : REAL;
     (**DHW charge pump state *)
-    DHWPumpState              : UINT := 1;
+    DHWPumpState              : UINT := 0;
+    
+    DhwChrgPumpSetP         : REAL;
+    
+    DhwChrgPumpPGain        : REAL := 1;
+    DhwChrgPumpIGain        : UINT := 50;
+    DhwChrgPumpDGain        : UINT := 0;
             
+        (**Circulation pump 1 timer*)
+        TON_CircPump1     : TON_s;
    
 END_VAR
 
@@ -41,8 +53,6 @@ PROGRAM DHWRegulation
         DHWBottomProc     : REAL;
         (**Set/Reset DHW need*)
         SR_DHWNeed        : RS;        
-        (**Circulation pump 1 timer*)
-        TON_CircPump1     : TON_s;
 //        (**Charge regulation PID*)
 //        DHWChrgRegPID : PID_Incr;
         (**Temperature regulation PID*)
@@ -65,7 +75,8 @@ PROGRAM DHWRegulation
         TON_GP1_LowSpd      : TON_s;
         (**Timer to increase dhw pump to increase temperature*)    
         TON_DHWPumpTimer        : TON_s;
-        
+        (**PrePosition regulator*)
+        PrePosDhwChrgReg    : BOOL := FALSE;
     END_VAR
     
     (*All the Programs are skipped while the default valeus are being installed*)
@@ -134,7 +145,7 @@ PROGRAM DHWRegulation
                     OR (Ain_Data.Fct.DHWMiddleTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr))   //Low middle temp.(Extra hot water)
                     AND AllowDHW AND NOT TON_CircPump1.Q)                                                  //DHW is allowed
                                                                          
-                    OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                               //Pump active and low top temp.
+                    OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWMiddleTemp < DHWStartTemp)                               //Pump active and low top temp.
                     AND UnitOn AND AllowDHW), 
                     //OR DHWProc < DHWStrtProc                                                           (**DHW STOP CONDITIONS*)
         R1  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                           //Bottom temp. reached
@@ -147,55 +158,74 @@ PROGRAM DHWRegulation
     
     {REGION DHW Charge Regulation}
     IF DHWChrgMode = 0 THEN                                                                     //Auto mode enabled
+        IF OpState = OpStage_Status#DHW AND OU_CompOn THEN   
+            TON_ChangeState(
+                IN := OpState = OpStage_Status#DHW AND OU_CompOn,
+                PT := 20
+                );
             TON_DHWPumpTimer(
-                IN := NOT TON_DHWPumpTimer.Q,
-                PT := 5
+                IN := NOT TON_DHWPumpTimer.Q AND TON_ChangeState.Q,
+                PT := 1
             );  
-        IF OpState = OpStage_Status#DHW AND NOT OU_FreezeProtAct THEN   
-            DHWChrgRegPID(
-                Input           := OU_CondOutTemp - OU_CondInTemp,//REAL,
-                //SetP            := 10,//SEL(DHWPumpState = 4, 10, 5),//REAL,
-                DeadBand        := 0,//REAL,
-                AntiBump        := TRUE,//BOOL,
-                Kp              := 5,//REAL,
-                Ti              := 10,//REAL,
-                Td              := 0,//REAL,
-                ManMode         := NOT TO_BOOL(DHWPumpState = 3 OR DHWPumpState = 4),//BOOL,
-                ManOut          := DHWChrgPumpSetPoint,//REAL,
-                RI              := FALSE,//NOT TO_BOOL(DHWPumpState = 3 OR DHWPumpState = 4),//FALSE,//BOOL,
-                I0              := DHWChrgRegPID.Iterm,//REAL,
-                LimitedMode     := TRUE,//BOOL,
-                LowLim          := 10.0,//REAL,
-                HighLim         := 100.0,//REAL,
-                CoolHeatMode    := FALSE,//BOOL,
-                DirRevMode      := TRUE,//BOOL,
-                En_FB           := TRUE//BOOL,
-            );
-            IF DHWPumpState = 1 THEN                                                             //Initiation
-                PumpSpdDHW := PumpSpdDhwFix;
-                DHWChrgRegPID.SetP := DHWChargeDeltaT;
-                DHWPumpState := 2;
+            IF DHWPumpState = 0 THEN                                                             //Initiation for 60 seconds the speed down pump 1% per seconds until OU_CondOut > max(45, Ain_Data.Fct.DHWMiddleTemp)
+                PumpSpdDHW := 10;
+                DHWPumpstate := 1;
                 DHWChrgPumpSetPoint := PumpSpdDHW;
-            ELSIF DHWPumpState = 2 AND TON_DHWPumpTimer.Q AND PumpspdDHW > 10 THEN              //Fast mode to find usable dhw -> Max of 45 or middle temperature sensor.
-                PumpSpdDHW := PumpSpdDHW - 1; 
-                IF OU_CondOutTemp > max(45, Ain_Data.Fct.DHWMiddleTemp) THEN
+            ELSIF DHWPumpState = 1 AND TON_DHWPumpTimer.Q THEN 
+                
+                DHWChrgPumpSetPoint := PumpSpdDHW;
+                PumpSpdDHW := Max(PumpSpdDHW - 1,10);
+                
+                IF  OU_CondOutTemp > max(45, Ain_Data.Fct.DHWMiddleTemp) THEN                          // Change mode
+                    DHWPumpState := 2;
+                    PrePosDhwChrgReg := TRUE;
+                END_IF;
+            ELSIF DHWPumpState = 2 THEN //AND TON_DHWPumpTimer.Q AND PumpspdDHW > 10 THEN              //Fast mode to find usable dhw -> Max of 45 or middle temperature sensor.                //PumpSpdDHW := PumpSpdDHW - 1; 
+                DhwChrgPumpSetP := max(45, Ain_Data.Fct.DHWMiddleTemp)-Ain_Data.Fct.DHWBottomTemp;     //Delta T between Tank temp middle and bottom -> use this sensor to get a more stable regulator the using condensor in/out
+                PrePosDhwChrgReg := FALSE;
+                IF OU_CondOutTemp > max(45, Ain_Data.Fct.DHWMiddleTemp) AND Ain_Data.Fct.DHWBottomTemp > (OU_CondOutTemp - DHWChargeDeltaT) THEN
                     DHWPumpState := 3;
+                 
                 END_IF;
-                DHWChrgPumpSetPoint := PumpSpdDHW;
+                
             ELSIF DHWPumpState = 3 OR DHWPumpState = 4 THEN  //Delta T control
+
                 IF DHWPumpState = 3 THEN
-                    DHWChrgRegPID.SetP := DHWChargeDeltaT; //10;
+                    DhwChrgPumpSetP := DHWChargeDeltaT; //10;
                 ELSE
-                    DHWChrgRegPID.SetP := DHWChargeMaxEnergy; //5;
+                    DhwChrgPumpSetP := DHWChargeMaxEnergy; //5;
                 END_IF;
-                DHWChrgPumpSetPoint := DHWChrgRegPID.Output;
+
                   
-                IF OU_CondOutTemp + 2 > DHWStopTemp THEN                                         //Change mood to maximize energy in tank
+                IF OU_CondOutTemp + 2 > DHWStopTemp AND OU_CondInTemp > (OU_CondOutTemp - DHWChargeDeltaT) THEN                                         //Change mood to maximize energy in tank
                     DHWPumpState := 4;
                 END_IF;
             END_IF;
+          
         ELSE  
-            DHWPumpState := 1;
+            DHWPumpState := 0;
+        END_IF;
+        DHWChrgRegPID(
+            RegVar_PID_Incr       := OU_CondOutTemp - OU_CondInTemp,  //replaced OU_CondInTem
+            SetP_PID_Incr         := DhwChrgPumpSetP,
+            DeadBand_PID_Incr     := 0.0,
+            Kp_PID_Incr           := TO_REAL(DhwChrgPumpPGain),
+            Ti_PID_Incr           := TO_UINT(DhwChrgPumpIGain),
+            Td_PID_Incr           := TO_UINT(DhwChrgPumpDGain),
+            LowLim_PID_Incr       := TO_REAL(10),//DhwPumpMin1,//
+            HighLim_PID_Incr      := TO_REAL(100),//DhwPumpMax1,//
+            Period_PID_Incr       := 100,
+            CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Cool,
+            RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
+            ManModeVal_PID_Incr   := 0,
+            En_PrePos_PID_Incr    := PrePosDhwChrgReg,
+            En_ManMode_PID_Incr   := 0,
+            En_PID_Incr           := TO_BOOL(DHWPumpState = 2 OR DHWPumpState = 3 OR DHWPumpState = 4)
+        );
+
+        
+        IF DHWPumpState = 2 OR DHWPumpState = 3 OR DHWPumpState = 4 THEN
+            DHWChrgPumpSetPoint := DHWChrgRegPID.Req_PID_Incr;
         END_IF;
     ELSE
         DHWChrgPumpSetPoint := PumpSpdDhwFix;                                                   //Fixed speed mode
@@ -261,6 +291,12 @@ PROGRAM DHWRegulation
     DhwPumpMin1 := Limit(0, DHWPumpEstimate - 40, 100);   //Calculated pumpflow vs pump pwm 0-100% y= 7.69 x -84.5 
     DhwPumpMax1 := Limit(0, DHWPumpEstimate + 10, 100);
     
+    (*Preset regulator*)
+    R_Edge_Dhw(
+    In := TON_CircPump1.Q,
+    Reset := R_Edge_Dhw.Out
+    );
+    
     (*Temperature regulation PID*)
     DHWTempRegPID(
         RegVar_PID_Incr       := Ain_Data.Fct.DHWSupplyTemp,
@@ -275,7 +311,7 @@ PROGRAM DHWRegulation
         CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
         ManModeVal_PID_Incr   := TO_REAL(PumpSpdGP2Man),
-        En_PrePos_PID_Incr    := FALSE,
+        En_PrePos_PID_Incr    := R_Edge_Dhw.Out,
         En_ManMode_PID_Incr   := PumpSpdGP2Man > 0,
         En_PID_Incr           := TON_CircPump1.Q
     );

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SToneProject name="Hysteresis_v.1.0.0 (1) [SWNOVHIDUOUCR00]" guid="ce5be9d2-05ca-4db5-afab-b56b140eccc4" type="Library" version="1.2" projectVersion="1.0.0" Z3VpZC1jcmM="973561076" author="Carel Industries S.p.A" vendor="Carel Industries S.p.A" reflibfathername="SWNOVHIDUOUCR00" libguid="b5c1671d-978a-4d16-96c7-1e47beffea55" libname="Hysteresis">
+  <Files>
+    <Folder path="Libs" />
+    <Folder path="Images" />
+    <File path="Hysteresis.st" buildaction="Compile" />
+    <File path="LibVer.g.st" buildaction="Compile" />
+  </Files>
+  <BuildOptions />
+  <Library Ver="1">
+    <Info Version="1.0.0" SourceCRC="0xADFED1B4" ProjectCRC="0xADFED1B4" ID="b5c1671d-978a-4d16-96c7-1e47beffea55" Name="Hysteresis" Description="" Author="Carel Industries S.p.A" Vendor="Carel Industries S.p.A">
+      <Dependency ID="b5c1671d-978a-4d16-96c7-1e47beffea55" Name="Hysteresis" Version="1.0.0" />
+    </Info>
+  </Library>
+  <Security Encoded="ngAAAMSxZFcPjdLAFwKZiypm4WEXL+FlR8cThZKs1A+MI2enS8ugOJ2L4Vn4UyYKCxFTuM2fex2fhHsAzYs2MslsVlvotDdTjTr43z1JkpMI2ZviJ1lROEUndmIZbUPfBx6t1xH7WzmOUTWtLnqIxB0b6kWiwCuoIAQvhNo03wPV2nKam6q1GxEfwA7lJyPOjlBz3dgI2KbcKsgGnQSmNEVkgDU=" />
+</SToneProject>

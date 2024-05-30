@@ -82,6 +82,14 @@
           Size="1" />
         <ModbusVariable
           DataType="BOOL"
+          Name="CoolHeat"
+          Index="43"
+          Hysteresis="0"
+          RWMode="NoReadWriteChangeWriteOnline"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
           Name="Comp_En_Man"
           Index="45"
           Hysteresis="0"
@@ -94,6 +102,14 @@
           Index="50"
           Hysteresis="0"
           RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="RevValve"
+          Index="60"
+          Hysteresis="0"
+          RWMode="ReadPollWriteChange"
           Kind="CoilStatus"
           Size="1" />
         <ModbusVariable
@@ -825,14 +841,6 @@
           Kind="InputRegister"
           Size="1" />
         <ModbusVariable
-          DataType="UINT"
-          Name="Comp_Status"
-          Index="368"
-          Hysteresis="0"
-          RWMode="ReadPollNoWrite"
-          Kind="InputRegister"
-          Size="1" />
-        <ModbusVariable
           DataType="REAL"
           Name="HR_07_MinOutFreq"
           Index="23"
@@ -1074,14 +1082,6 @@
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="WaterFlow"
-          Index="53"
-          Hysteresis="0"
-          RWMode="ReadPollNoWrite"
-          Kind="InputRegister"
-          Size="1" />
-        <ModbusVariable
-          DataType="REAL"
           Name="CondInTemp"
           Index="54"
           Hysteresis="0"
@@ -1096,6 +1096,14 @@
           RWMode="ReadPollNoWrite"
           Kind="InputRegister"
           Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="WaterFlow"
+          Index="56"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="2" />
         <ModbusVariable
           DataType="REAL"
           Name="LiqdTemp"
@@ -2140,6 +2148,14 @@
           DataType="REAL"
           Name="EEV_PID_DynTi"
           Index="367"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="Comp_Status"
+          Index="368"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
           Kind="InputRegister"

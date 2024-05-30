@@ -1593,6 +1593,8 @@
         <Item Key="HERTZ_PER_SECOND" Value="Hz/s" />
         <Item Key="CYCLE_PER_SECOND" Value="cps" />
         <Item Key="STEPS" Value="steps" />
+        <Item Key="MICROSIEMENS_PER_CENTIMETER" Value="uS/cm" />
+        <Item Key="MICROGRAM_PER_CUBIC_METER" Value="ug/m3" />
       </Items>
     </Section>
     <Section Name="System_IO_AnalogInputEventMode" Category="Enums" EmbedTranslation="false">
@@ -2385,6 +2387,640 @@
     <Section Name="System_Net_BACnet_BACnetYear" Category="Enums" EmbedTranslation="false">
       <Items>
         <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="Descriptions" Category="Other" EmbedTranslation="false">
+      <Items>
+        <Item Key="Access_Service" Value="Logged in pGD1 display as Service" />
+        <Item Key="Access_Sys" Value="Logged in pGD1 display as System Manager" />
+        <Item Key="Active_Alrm_1" OriginalName="Active_Alrm[1]" Value="Active_Alrm[1]" />
+        <Item Key="Active_Alrm_10" OriginalName="Active_Alrm[10]" Value="Active_Alrm[10]" />
+        <Item Key="Active_Alrm_11" OriginalName="Active_Alrm[11]" Value="Active_Alrm[11]" />
+        <Item Key="Active_Alrm_12" OriginalName="Active_Alrm[12]" Value="Active_Alrm[12]" />
+        <Item Key="Active_Alrm_13" OriginalName="Active_Alrm[13]" Value="Active_Alrm[13]" />
+        <Item Key="Active_Alrm_14" OriginalName="Active_Alrm[14]" Value="Active_Alrm[14]" />
+        <Item Key="Active_Alrm_15" OriginalName="Active_Alrm[15]" Value="Active_Alrm[15]" />
+        <Item Key="Active_Alrm_16" OriginalName="Active_Alrm[16]" Value="Active_Alrm[16]" />
+        <Item Key="Active_Alrm_17" OriginalName="Active_Alrm[17]" Value="Active_Alrm[17]" />
+        <Item Key="Active_Alrm_18" OriginalName="Active_Alrm[18]" Value="Active_Alrm[18]" />
+        <Item Key="Active_Alrm_19" OriginalName="Active_Alrm[19]" Value="Active_Alrm[19]" />
+        <Item Key="Active_Alrm_2" OriginalName="Active_Alrm[2]" Value="Active_Alrm[2]" />
+        <Item Key="Active_Alrm_20" OriginalName="Active_Alrm[20]" Value="Active_Alrm[20]" />
+        <Item Key="Active_Alrm_21" OriginalName="Active_Alrm[21]" Value="Active_Alrm[21]" />
+        <Item Key="Active_Alrm_22" OriginalName="Active_Alrm[22]" Value="Active_Alrm[22]" />
+        <Item Key="Active_Alrm_23" OriginalName="Active_Alrm[23]" Value="Active_Alrm[23]" />
+        <Item Key="Active_Alrm_24" OriginalName="Active_Alrm[24]" Value="Active_Alrm[24]" />
+        <Item Key="Active_Alrm_25" OriginalName="Active_Alrm[25]" Value="Active_Alrm[25]" />
+        <Item Key="Active_Alrm_26" OriginalName="Active_Alrm[26]" Value="Active_Alrm[26]" />
+        <Item Key="Active_Alrm_27" OriginalName="Active_Alrm[27]" Value="Active_Alrm[27]" />
+        <Item Key="Active_Alrm_28" OriginalName="Active_Alrm[28]" Value="Active_Alrm[28]" />
+        <Item Key="Active_Alrm_3" OriginalName="Active_Alrm[3]" Value="Active_Alrm[3]" />
+        <Item Key="Active_Alrm_4" OriginalName="Active_Alrm[4]" Value="Active_Alrm[4]" />
+        <Item Key="Active_Alrm_5" OriginalName="Active_Alrm[5]" Value="Active_Alrm[5]" />
+        <Item Key="Active_Alrm_6" OriginalName="Active_Alrm[6]" Value="Active_Alrm[6]" />
+        <Item Key="Active_Alrm_7" OriginalName="Active_Alrm[7]" Value="Active_Alrm[7]" />
+        <Item Key="Active_Alrm_8" OriginalName="Active_Alrm[8]" Value="Active_Alrm[8]" />
+        <Item Key="Active_Alrm_9" OriginalName="Active_Alrm[9]" Value="Active_Alrm[9]" />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_Board" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_Ch" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_Enable" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_Filter" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_ClimSupplyTemp_ModeType" OriginalName="Ain_Cfg.Fct.ClimSupplyTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_Board" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_Ch" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_Enable" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_Filter" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_DHWBottomTemp_ModeType" OriginalName="Ain_Cfg.Fct.DHWBottomTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_Board" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_Ch" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_Enable" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_Filter" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_DHWMiddleTemp_ModeType" OriginalName="Ain_Cfg.Fct.DHWMiddleTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_Board" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_Ch" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_Enable" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_Filter" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_DHWSupplyTemp_ModeType" OriginalName="Ain_Cfg.Fct.DHWSupplyTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.DHWTopTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_Board" OriginalName="Ain_Cfg.Fct.DHWTopTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_Ch" OriginalName="Ain_Cfg.Fct.DHWTopTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_Enable" OriginalName="Ain_Cfg.Fct.DHWTopTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_Filter" OriginalName="Ain_Cfg.Fct.DHWTopTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_DHWTopTemp_ModeType" OriginalName="Ain_Cfg.Fct.DHWTopTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_AlrmDT" OriginalName="Ain_Cfg.Fct.OutDoorTemp.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_Board" OriginalName="Ain_Cfg.Fct.OutDoorTemp.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_Ch" OriginalName="Ain_Cfg.Fct.OutDoorTemp.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_Enable" OriginalName="Ain_Cfg.Fct.OutDoorTemp.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_Filter" OriginalName="Ain_Cfg.Fct.OutDoorTemp.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_OutDoorTemp_ModeType" OriginalName="Ain_Cfg.Fct.OutDoorTemp.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Cfg_Fct_SysPress_AlrmDT" OriginalName="Ain_Cfg.Fct.SysPress.AlrmDT" Value="Broken probe alarm delay (0..9999)" />
+        <Item Key="Ain_Cfg_Fct_SysPress_Board" OriginalName="Ain_Cfg.Fct.SysPress.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Ain_Cfg_Fct_SysPress_Ch" OriginalName="Ain_Cfg.Fct.SysPress.Ch" Value="Configuration channel (0:Not used, 1..20:Universal channel (U)) " />
+        <Item Key="Ain_Cfg_Fct_SysPress_Enable" OriginalName="Ain_Cfg.Fct.SysPress.Enable" Value="Function is enabled" />
+        <Item Key="Ain_Cfg_Fct_SysPress_Filter" OriginalName="Ain_Cfg.Fct.SysPress.Filter" Value="Stability of the probe: P parameter of internal PID for noise reduction" />
+        <Item Key="Ain_Cfg_Fct_SysPress_ModeType" OriginalName="Ain_Cfg.Fct.SysPress.ModeType" Value=" Probe type. NOTE: Cosidered if Universal channel (U) is used as Ain" />
+        <Item Key="Ain_Data_Fct_ClimSupplyTemp" OriginalName="Ain_Data.Fct.ClimSupplyTemp" Value="BT6 Climate system supply temperature" />
+        <Item Key="Ain_Data_Fct_OutDoorTemp" OriginalName="Ain_Data.Fct.OutDoorTemp" Value="BT1 Outdoor temperature" />
+        <Item Key="Ain_Data_Fct_SysPress" OriginalName="Ain_Data.Fct.SysPress" Value="BP1 System pressure" />
+        <Item Key="Ain_Max_Fct_ClimSupplyTemp" OriginalName="Ain_Max.Fct.ClimSupplyTemp" Value="BT6 Climate system supply temperature" />
+        <Item Key="Ain_Max_Fct_DHWBottomTemp" OriginalName="Ain_Max.Fct.DHWBottomTemp" Value="BT5 DHW bottom temperature" />
+        <Item Key="Ain_Max_Fct_DHWMiddleTemp" OriginalName="Ain_Max.Fct.DHWMiddleTemp" Value="BT4 DHW middle temperature" />
+        <Item Key="Ain_Max_Fct_DHWSupplyTemp" OriginalName="Ain_Max.Fct.DHWSupplyTemp" Value="BT7 DHW supply temperature" />
+        <Item Key="Ain_Max_Fct_DHWTopTemp" OriginalName="Ain_Max.Fct.DHWTopTemp" Value="BT3 DHW top temperature" />
+        <Item Key="Ain_Max_Fct_OutDoorTemp" OriginalName="Ain_Max.Fct.OutDoorTemp" Value="BT1 Outdoor temperature" />
+        <Item Key="Ain_Max_Fct_SysPress" OriginalName="Ain_Max.Fct.SysPress" Value="BP1 System pressure" />
+        <Item Key="Ain_Min_Fct_ClimSupplyTemp" OriginalName="Ain_Min.Fct.ClimSupplyTemp" Value="BT6 Climate system supply temperature" />
+        <Item Key="Ain_Min_Fct_DHWBottomTemp" OriginalName="Ain_Min.Fct.DHWBottomTemp" Value="BT5 DHW bottom temperature" />
+        <Item Key="Ain_Min_Fct_DHWMiddleTemp" OriginalName="Ain_Min.Fct.DHWMiddleTemp" Value="BT4 DHW middle temperature" />
+        <Item Key="Ain_Min_Fct_DHWSupplyTemp" OriginalName="Ain_Min.Fct.DHWSupplyTemp" Value="BT7 DHW supply temperature" />
+        <Item Key="Ain_Min_Fct_DHWTopTemp" OriginalName="Ain_Min.Fct.DHWTopTemp" Value="BT3 DHW top temperature" />
+        <Item Key="Ain_Min_Fct_OutDoorTemp" OriginalName="Ain_Min.Fct.OutDoorTemp" Value="BT1 Outdoor temperature" />
+        <Item Key="Ain_Min_Fct_SysPress" OriginalName="Ain_Min.Fct.SysPress" Value="BP1 System pressure" />
+        <Item Key="Ain_Offset_Fct_ClimSupplyTemp" OriginalName="Ain_Offset.Fct.ClimSupplyTemp" Value="BT6 Climate system supply temperature" />
+        <Item Key="Ain_Offset_Fct_DHWBottomTemp" OriginalName="Ain_Offset.Fct.DHWBottomTemp" Value="BT5 DHW bottom temperature" />
+        <Item Key="Ain_Offset_Fct_DHWMiddleTemp" OriginalName="Ain_Offset.Fct.DHWMiddleTemp" Value="BT4 DHW middle temperature" />
+        <Item Key="Ain_Offset_Fct_DHWSupplyTemp" OriginalName="Ain_Offset.Fct.DHWSupplyTemp" Value="BT7 DHW supply temperature" />
+        <Item Key="Ain_Offset_Fct_DHWTopTemp" OriginalName="Ain_Offset.Fct.DHWTopTemp" Value="BT3 DHW top temperature" />
+        <Item Key="Ain_Offset_Fct_OutDoorTemp" OriginalName="Ain_Offset.Fct.OutDoorTemp" Value="BT1 Outdoor temperature" />
+        <Item Key="Ain_Offset_Fct_SysPress" OriginalName="Ain_Offset.Fct.SysPress" Value="BP1 System pressure" />
+        <Item Key="AlrmRes" Value="A request to reset all alarms is active (FALSE=NO, TRUE=Reset)" />
+        <Item Key="Aout_Cfg_Fct_CircPump1_Board" OriginalName="Aout_Cfg.Fct.CircPump1.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Aout_Cfg_Fct_CircPump1_Ch" OriginalName="Aout_Cfg.Fct.CircPump1.Ch" Value="Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Analog Output (Y), &gt; DELTA_UNIV_CH: Universal Channel (U) used as Analog Output" />
+        <Item Key="Aout_Cfg_Fct_CircPump1_ModeType" OriginalName="Aout_Cfg.Fct.CircPump1.ModeType" Value=" Channel mode type" />
+        <Item Key="Aout_Cfg_Fct_CircPump2_Board" OriginalName="Aout_Cfg.Fct.CircPump2.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Aout_Cfg_Fct_CircPump2_Ch" OriginalName="Aout_Cfg.Fct.CircPump2.Ch" Value="Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Analog Output (Y), &gt; DELTA_UNIV_CH: Universal Channel (U) used as Analog Output" />
+        <Item Key="Aout_Cfg_Fct_CircPump2_Enable" OriginalName="Aout_Cfg.Fct.CircPump2.Enable" Value="Function is enabled" />
+        <Item Key="Aout_Cfg_Fct_CircPump2_ModeType" OriginalName="Aout_Cfg.Fct.CircPump2.ModeType" Value=" Channel mode type" />
+        <Item Key="Aout_Data_Fct_CircPump1" OriginalName="Aout_Data.Fct.CircPump1" Value="Circulation pump 1" />
+        <Item Key="Aout_Data_Fct_CircPump2" OriginalName="Aout_Data.Fct.CircPump2" Value="Circulation pump 2" />
+        <Item Key="APPsCfgRTC_DateTime" OriginalName="APPsCfgRTC.DateTime" Value="(Reserve to APPs) New &quot;Date and Time&quot; used to update the RTC" />
+        <Item Key="APPsCfgRTC_SetRTC" OriginalName="APPsCfgRTC.SetRTC" Value="(Reserve to APPs) Every time it's value change the PLC change it's RTC" />
+        <Item Key="APPsCfgRTC_TimeZone" OriginalName="APPsCfgRTC.TimeZone" Value="(Reserve to APPs) New &quot;Time Zone&quot; used to update the RTC" />
+        <Item Key="BootVersion" Value="Boot version" />
+        <Item Key="Circ1Act_Req" Value="Actual PWM request heat medium pump" />
+        <Item Key="Circ2Act_Req" Value="Actual PWM request DHW Pump" />
+        <Item Key="CircPmp_Req" Value="GP1 - Request" />
+        <Item Key="CompBlock" Value="Block compressor" />
+        <Item Key="CompRunTimerMin" Value="Compressor min running time when changing mode" />
+        <Item Key="CompSpdMan" Value="OU - Manual request" />
+        <Item Key="CompSpdMax" Value="Compressor max speed" />
+        <Item Key="Conn_OutDoorTemp" Value="Outdoor temperature from connectivity card" />
+        <Item Key="CoolingBlock" Value="Block cooling mode" />
+        <Item Key="CoolModeTemp" Value="Cooling mode block temperature" />
+        <Item Key="CoolModeTempHyst" Value="Cooling mode block hysteresis" />
+        <Item Key="CoolReq" Value="Cooling mode needed" />
+        <Item Key="CurrSysT" Value="Current System Time" />
+        <Item Key="Day_Week" Value="Current day of week" />
+        <Item Key="DHW_CompOn" Value="Compressor on from DHW charge" />
+        <Item Key="DHWBoost" Value="Boost compressor speed during DHW charge" />
+        <Item Key="DHWBottomTemp" OriginalName="Ain_Data.Fct.DHWBottomTemp" Value="BT5 DHW bottom temperature" />
+        <Item Key="DhwBT3StopCom" Value="DhwBT3StopCom" />
+        <Item Key="DhwBT3StopEco" Value="DhwBT3StopEco" />
+        <Item Key="DhwBT3StopNor" Value="DhwBT3StopNor" />
+        <Item Key="DhwBT3StrtCom" Value="DhwBT3StrtCom" />
+        <Item Key="DhwBT3StrtEco" Value="DhwBT3StrtEco" />
+        <Item Key="DhwBT3StrtNor" Value="DhwBT3StrtNor" />
+        <Item Key="DhwCircPump1Spd" Value="Circulation pump GT1 speed" />
+        <Item Key="DhwComfStartTemp" Value="DhwComfStartTemp" />
+        <Item Key="DhwComfStopTemp" Value="DhwComfStopTemp" />
+        <Item Key="DHWCompBlock" Value="DHWBlockComp blocks compressor due to EB calculation, probably there is a need for more heat in the near future" />
+        <Item Key="DHWCompBlockTime" Value="Off delay time for blocking DHW mode for compressor" />
+        <Item Key="DhwEcoStartTemp" Value="DhwEcoStartTemp" />
+        <Item Key="DhwEcoStopTemp" Value="DhwEcoStopTemp" />
+        <Item Key="DhwFlowSwitchOnDel" Value="Circulation pump on delay" />
+        <Item Key="DHWMiddleTemp" OriginalName="Ain_Data.Fct.DHWMiddleTemp" Value="BT4 DHW middle temperature" />
+        <Item Key="DhwMode" Value="DHW operation mode" />
+        <Item Key="DHWNeed" Value="DHW operation required" />
+        <Item Key="DhwNormStartTemp" Value="DhwNormStartTemp" />
+        <Item Key="DhwNormStopTemp" Value="DhwNormStopTemp" />
+        <Item Key="DHWProc" Value="DHW fill in percent" />
+        <Item Key="DhwPumpDGain" Value="Circulation pump PID - Derivative time" />
+        <Item Key="DhwPumpIGain" Value="Circulation pump PID - Integral time" />
+        <Item Key="DhwPumpManReq" Value="DHW pump manual request" />
+        <Item Key="DhwPumpMax" Value="Circulation pump PID max request" />
+        <Item Key="DhwPumpMin" Value="Circulation pump PID min request" />
+        <Item Key="DhwPumpPGain" Value="Circulation pump PID - proportional gain" />
+        <Item Key="DHWPumpReg" Value="DHWPumpReg" />
+        <Item Key="DhwPumpSetP" Value="Circulation pump PID - Setpoint" />
+        <Item Key="DHWPumpState" Value="DHW charge pump state " />
+        <Item Key="DhwRefBottom" Value="DHW reference bottom" />
+        <Item Key="DhwRefBottomN" Value="Reference value for fully loaded DHW in Normal mode" />
+        <Item Key="DhwRefMiddle" Value="DHW reference middle" />
+        <Item Key="DhwRefMiddleN" Value="Reference value for fully loaded DHW in Normal mode" />
+        <Item Key="DhwRefTop" Value="DHW reference top" />
+        <Item Key="DhwRefTopN" Value="Reference value for fully loaded DHW in Normal mode" />
+        <Item Key="DHWReg_SetP" Value="DHW regulation setpoint" />
+        <Item Key="DHWRegDGain" Value="DHW PID - Derivative time" />
+        <Item Key="DHWRegIGain" Value="DHW PID - Integral time" />
+        <Item Key="DHWRegPGain" Value="DHW PID - proportional gain" />
+        <Item Key="DHWReq" Value="DHW mode needed" />
+        <Item Key="DhwSetPointStpCom" Value="DHW pump stop setpoint in &quot;Comfort&quot; mode" />
+        <Item Key="DhwSetPointStpEco" Value="DHW pump stop setpoint in &quot;ECO&quot; mode" />
+        <Item Key="DhwSetPointStpNor" Value="DHW pump stop setpoint in &quot;Normal&quot; mode" />
+        <Item Key="DhwSetPointStrtCom" Value="DHW pump start setpoint in &quot;Comfort&quot; mode" />
+        <Item Key="DhwSetPointStrtEco" Value="DHW pump start setpoint in &quot;ECO&quot; mode" />
+        <Item Key="DhwSetPointStrtNor" Value="DHW pump start setpoint in &quot;Normal&quot; mode" />
+        <Item Key="DHWStartTemp" Value="DHW start temperature" />
+        <Item Key="DHWStopTemp" Value="DHW stop temperature" />
+        <Item Key="DHWStrtProc" Value="DHW start fill percentage" />
+        <Item Key="DHWSupplyTemp" OriginalName="Ain_Data.Fct.DHWSupplyTemp" Value="BT7 DHW supply temperature" />
+        <Item Key="DhwTimerIncComp" Value="DHW charging period" />
+        <Item Key="DhwTimerStop" Value="DHW max charging period" />
+        <Item Key="DHWTopTemp" OriginalName="Ain_Data.Fct.DHWTopTemp" Value="BT3 DHW top temperature" />
+        <Item Key="Din_Cfg_Fct_FlowSw_Ch" OriginalName="Din_Cfg.Fct.FlowSw.Ch" Value="Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Digital Input (ID), &gt;DELTA_UNIV_CH: Universal Channel (U) used as Digital Input" />
+        <Item Key="Din_Cfg_Fct_FlowSw_Enable" OriginalName="Din_Cfg.Fct.FlowSw.Enable" Value="Function is enabled" />
+        <Item Key="Din_Cfg_Fct_FlowSw_Logic" OriginalName="Din_Cfg.Fct.FlowSw.Logic" Value="Invert the logic of Digital Input" />
+        <Item Key="Din_Cfg_Fct_FlowSw_ModeType" OriginalName="Din_Cfg.Fct.FlowSw.ModeType" Value="Channel mode type. NOTE: LIB_IO_DIN_COUNT and LIB_IO_DIN_FREQ only for Universal channel (U) used as Digital Input" />
+        <Item Key="Din_Cfg_Fct_SG1_Ch" OriginalName="Din_Cfg.Fct.SG1.Ch" Value="Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Digital Input (ID), &gt;DELTA_UNIV_CH: Universal Channel (U) used as Digital Input" />
+        <Item Key="Din_Cfg_Fct_SG1_Enable" OriginalName="Din_Cfg.Fct.SG1.Enable" Value="Function is enabled" />
+        <Item Key="Din_Cfg_Fct_SG1_Logic" OriginalName="Din_Cfg.Fct.SG1.Logic" Value="Invert the logic of Digital Input" />
+        <Item Key="Din_Cfg_Fct_SG2_Ch" OriginalName="Din_Cfg.Fct.SG2.Ch" Value="Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Digital Input (ID), &gt;DELTA_UNIV_CH: Universal Channel (U) used as Digital Input" />
+        <Item Key="Din_Cfg_Fct_SG2_Enable" OriginalName="Din_Cfg.Fct.SG2.Enable" Value="Function is enabled" />
+        <Item Key="Din_Cfg_Fct_SG2_Logic" OriginalName="Din_Cfg.Fct.SG2.Logic" Value="Invert the logic of Digital Input" />
+        <Item Key="Din_Data_Fct_FlowSw" OriginalName="Din_Data.Fct.FlowSw" Value="Flow switch" />
+        <Item Key="Din_Data_Fct_SG1" OriginalName="Din_Data.Fct.SG1" Value="SG input 1" />
+        <Item Key="Din_Data_Fct_SG2" OriginalName="Din_Data.Fct.SG2" Value="SG input 2" />
+        <Item Key="Dout_Cfg_Fct_GlbAl_AlrmDT" OriginalName="Dout_Cfg.Fct.GlbAl.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_GlbAl_GroupID" OriginalName="Dout_Cfg.Fct.GlbAl.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_GlbAl_ModeType" OriginalName="Dout_Cfg.Fct.GlbAl.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_GlbAl_tOff" OriginalName="Dout_Cfg.Fct.GlbAl.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_GlbAl_tOn" OriginalName="Dout_Cfg.Fct.GlbAl.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_AlrmDT" OriginalName="Dout_Cfg.Fct.ImmheatStep1.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_Board" OriginalName="Dout_Cfg.Fct.ImmheatStep1.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_Ch" OriginalName="Dout_Cfg.Fct.ImmheatStep1.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_Enable" OriginalName="Dout_Cfg.Fct.ImmheatStep1.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_GroupID" OriginalName="Dout_Cfg.Fct.ImmheatStep1.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_Logic" OriginalName="Dout_Cfg.Fct.ImmheatStep1.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_ModeType" OriginalName="Dout_Cfg.Fct.ImmheatStep1.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_tOff" OriginalName="Dout_Cfg.Fct.ImmheatStep1.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep1_tOn" OriginalName="Dout_Cfg.Fct.ImmheatStep1.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_AlrmDT" OriginalName="Dout_Cfg.Fct.ImmheatStep2.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_Board" OriginalName="Dout_Cfg.Fct.ImmheatStep2.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_Ch" OriginalName="Dout_Cfg.Fct.ImmheatStep2.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_Enable" OriginalName="Dout_Cfg.Fct.ImmheatStep2.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_GroupID" OriginalName="Dout_Cfg.Fct.ImmheatStep2.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_Logic" OriginalName="Dout_Cfg.Fct.ImmheatStep2.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_ModeType" OriginalName="Dout_Cfg.Fct.ImmheatStep2.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_tOff" OriginalName="Dout_Cfg.Fct.ImmheatStep2.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ImmheatStep2_tOn" OriginalName="Dout_Cfg.Fct.ImmheatStep2.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_AlrmDT" OriginalName="Dout_Cfg.Fct.RevVlv.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_Board" OriginalName="Dout_Cfg.Fct.RevVlv.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_Ch" OriginalName="Dout_Cfg.Fct.RevVlv.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_Enable" OriginalName="Dout_Cfg.Fct.RevVlv.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_GroupID" OriginalName="Dout_Cfg.Fct.RevVlv.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_RevVlv_Logic" OriginalName="Dout_Cfg.Fct.RevVlv.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_ModeType" OriginalName="Dout_Cfg.Fct.RevVlv.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_tOff" OriginalName="Dout_Cfg.Fct.RevVlv.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_RevVlv_tOn" OriginalName="Dout_Cfg.Fct.RevVlv.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_AlrmDT" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_Board" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_Ch" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_Enable" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_GroupID" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_Logic" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_ModeType" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_tOff" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvDout_tOn" OriginalName="Dout_Cfg.Fct.ShuntVlvDout.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_AlrmDT" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_Board" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_Ch" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_Enable" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_GroupID" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_Logic" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_ModeType" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_tOff" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShuntVlvOffDout_tOn" OriginalName="Dout_Cfg.Fct.ShuntVlvOffDout.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_AlrmDT" OriginalName="Dout_Cfg.Fct.ShutOffVlv.AlrmDT" Value="Not used" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_Board" OriginalName="Dout_Cfg.Fct.ShutOffVlv.Board" Value="Identifier expected of the HW board used" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_Ch" OriginalName="Dout_Cfg.Fct.ShutOffVlv.Ch" Value="Configuration channel" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_Enable" OriginalName="Dout_Cfg.Fct.ShutOffVlv.Enable" Value="Function is enabled" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_GroupID" OriginalName="Dout_Cfg.Fct.ShutOffVlv.GroupID" Value="Group the work of two or more relè by ID " />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_Logic" OriginalName="Dout_Cfg.Fct.ShutOffVlv.Logic" Value="Invert the logic of Digital Output" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_ModeType" OriginalName="Dout_Cfg.Fct.ShutOffVlv.ModeType" Value="Channel mode type" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_tOff" OriginalName="Dout_Cfg.Fct.ShutOffVlv.tOff" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_Cfg_Fct_ShutOffVlv_tOn" OriginalName="Dout_Cfg.Fct.ShutOffVlv.tOn" Value="Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)" />
+        <Item Key="Dout_GlbAl" OriginalName="Dout_Data.Fct.GlbAl" Value="Global alarm" />
+        <Item Key="Dout_Info_Fct_GlbAl_Trigger" OriginalName="Dout_Info.Fct.GlbAl.Trigger" Value="Config alarm trigger" />
+        <Item Key="EBCH" Value="Energy balance for cooling" />
+        <Item Key="EBCHCompStop" Value="EB chiller compressor stop value" />
+        <Item Key="EBCHCompStrt" Value="EB chiller comp start value" />
+        <Item Key="EBCHMax" Value="EBCHMax" />
+        <Item Key="EBCHMin" Value="EBCHMin" />
+        <Item Key="EBHP" Value="Current energy balance" />
+        <Item Key="EBHPCompStop" Value="Stop OU from energybalance calculation" />
+        <Item Key="EBHPCompStrt" Value="Start OU from energybalance calculation" />
+        <Item Key="EBHPMax" Value="Maximum energybalance limit" />
+        <Item Key="EBHPMin" Value="Minimum energybalance limit" />
+        <Item Key="EBHPStepOut" Value="Immersion heater step out value" />
+        <Item Key="EBShunt" Value="Shunt valve energy balance level" />
+        <Item Key="EBStepImm" Value="EBStepImm" />
+        <Item Key="ECT" Value="ECT value for outdoor unit" />
+        <Item Key="ECT_Cool_Offset" Value="ECT value for outdoor unit while cooling" />
+        <Item Key="ECT_DHW_Offset" Value="ECT value for outdoor unit in DHW mode" />
+        <Item Key="ECT_Heat_Offset" Value="ECT value for outdoor unit while heating" />
+        <Item Key="En_AutoMode" Value="Enable unit auto mode" />
+        <Item Key="En_ExtHotWatr" Value="Enable extra hotwater function" />
+        <Item Key="En_OU" Value="Heatpump unit present" />
+        <Item Key="En_SelMode" Value="Enable selection of operating mode" />
+        <Item Key="En_SPV_OnOff" Value="Enable unit on/off command from supervisor" />
+        <Item Key="ErasureWindowSize" Value="Window size (time) for the algorithm to prevent excessive use of storage space" />
+        <Item Key="ErasureWindowsNumber" Value="Number of windows for the algorithm to prevent excessive use of storage space" />
+        <Item Key="ExtHotWatrDiff" Value="Differential during extra hotwater function" />
+        <Item Key="ExtHotWatrEnbl" Value="Enable extra hot water" />
+        <Item Key="ExtHotWatrStopTemp" Value="Stop temperature during extra hotwater mode" />
+        <Item Key="ExtHotWatrTime" Value="The extra hot water will be enabled for this time" />
+        <Item Key="FB2_Conf" Value="Client - Parity and stop bits" />
+        <Item Key="GblAlarm" Value="Global alarm" />
+        <Item Key="GoToState" Value="Intended stage unit wants to transition to" />
+        <Item Key="HeatingBlock" Value="Block heating mode" />
+        <Item Key="HeatModeTemp" Value="Heating mode block temperature" />
+        <Item Key="HeatModeTempHyst" Value="Heaeting mode block hysteresis" />
+        <Item Key="HeatReg_Temp" Value="Heat regulation temperature" />
+        <Item Key="HeatRegDGain" Value="Heating PID - Derivative time" />
+        <Item Key="HeatRegIGain" Value="Heating PID - Integral time" />
+        <Item Key="HeatRegPGain" Value="Heating PID - proportional gain" />
+        <Item Key="HeatReq" Value="Heating mode needed" />
+        <Item Key="I00" OriginalName="UnitStatus" Value="Unit status" />
+        <Item Key="I01" OriginalName="UnitPwrRun" Value="Unit capacity when running" />
+        <Item Key="I02" OriginalName="UnitPwrReq" Value="Unit capacity request" />
+        <Item Key="I19" OriginalName="Unit_CoolHeat" Value="Unit cooling/heating mode" />
+        <Item Key="I30" OriginalName="SwVersion" Value="Software version" />
+        <Item Key="ImmersionHeatAllow" Value="Immersion heater is allowed to step in" />
+        <Item Key="ImmHeatBlock" Value="Block immersion heater" />
+        <Item Key="ImmHeatManMode" Value="Immersion heater manual mode" />
+        <Item Key="ImmHeatOnly" Value="Immersion heater only active" />
+        <Item Key="ImmHeatReq" Value="Immersion heater needed" />
+        <Item Key="ImmHeatStage" Value="Allowed immersion heater steps" />
+        <Item Key="ImmHeatStepDelay" Value="Delay between immersion step in/out" />
+        <Item Key="ImmModeTemp" Value="Immersion heater block temperature" />
+        <Item Key="ImmModeTempHyst" Value="Immersion heater block hysteresis" />
+        <Item Key="L14" OriginalName="Din_Data.Fct.RemOnOff" Value="Unit remote On/Off" />
+        <Item Key="L14_B" OriginalName="Din_Cfg.Fct.RemOnOff.Board" Value="Unit remote On/Off - board" />
+        <Item Key="L14_C" OriginalName="Din_Cfg.Fct.RemOnOff.Ch" Value="Unit remote On/Off - channel" />
+        <Item Key="L14_cfg" OriginalName="Din_Info.Fct.RemOnOff.Configured" Value="Unit remote On/Off - configured" />
+        <Item Key="L14_E" OriginalName="Din_Cfg.Fct.RemOnOff.Enable" Value="Unit remote On/Off - enabled" />
+        <Item Key="L14_err" OriginalName="Din_Info.Fct.RemOnOff.Error" Value="Unit remote On/Off - error" />
+        <Item Key="L14_L" OriginalName="Din_Cfg.Fct.RemOnOff.Logic" Value="Unit remote On/Off - logic" />
+        <Item Key="L44_B" OriginalName="Dout_Cfg.Fct.GlbAl.Board" Value="Global alarm - board" />
+        <Item Key="L44_C" OriginalName="Dout_Cfg.Fct.GlbAl.Ch" Value="Global alarm - channel" />
+        <Item Key="L44_cfg" OriginalName="Dout_Info.Fct.GlbAl.Configured" Value="Global alarm - configured" />
+        <Item Key="L44_E" OriginalName="Dout_Cfg.Fct.GlbAl.Enable" Value="Global alarm - enabled" />
+        <Item Key="L44_err" OriginalName="Dout_Info.Fct.GlbAl.Error" Value="Global alarm - error" />
+        <Item Key="L44_L" OriginalName="Dout_Cfg.Fct.GlbAl.Logic" Value="Global alarm - logic" />
+        <Item Key="LocTime_Day" OriginalName="LocTime.Day" Value="LocTime.Day" />
+        <Item Key="LocTime_Hour" OriginalName="LocTime.Hour" Value="LocTime.Hour" />
+        <Item Key="LocTime_Millisecond" OriginalName="LocTime.Millisecond" Value="LocTime.Millisecond" />
+        <Item Key="LocTime_Minute" OriginalName="LocTime.Minute" Value="LocTime.Minute" />
+        <Item Key="LocTime_Month" OriginalName="LocTime.Month" Value="LocTime.Month" />
+        <Item Key="LocTime_Second" OriginalName="LocTime.Second" Value="LocTime.Second" />
+        <Item Key="LocTime_Year" OriginalName="LocTime.Year" Value="LocTime.Year" />
+        <Item Key="ManMode" Value="Manual unit On-Off" />
+        <Item Key="ManMode_Cool" Value="Manually enable cooling mode" />
+        <Item Key="ManMode_Heat" Value="Manually enable heating mode" />
+        <Item Key="MaxTankTemp" Value="Maximum tank temp" />
+        <Item Key="MaxTankTempOk" Value="MaxTankTemp within limits" />
+        <Item Key="MBM_Line_Info_DetectionRange" OriginalName="MBM_Line.Info.DetectionRange" Value=" Detection Range (s) " />
+        <Item Key="MBM_Line_Info_LastPollingLoopTime" OriginalName="MBM_Line.Info.LastPollingLoopTime" Value=" Last Polling Loop Time (ms) " />
+        <Item Key="MBM_Line_Info_LineType" OriginalName="MBM_Line.Info.LineType" Value=" Type of line (Serial or TCP) " />
+        <Item Key="MBM_Line_Info_PollingDelay" OriginalName="MBM_Line.Info.PollingDelay" Value=" Polling Delay (ms) " />
+        <Item Key="MBM_Line_Info_PollingLoopsNumber" OriginalName="MBM_Line.Info.PollingLoopsNumber" Value=" Polling Loops Number " />
+        <Item Key="MBM_Line_Info_Retry" OriginalName="MBM_Line.Info.Retry" Value=" Retry if device is online " />
+        <Item Key="MBM_Line_SerialSettings_Bits" OriginalName="MBM_Line.SerialSettings.Bits" Value=" Bits " />
+        <Item Key="MBM_Line_SerialSettings_Channel" OriginalName="MBM_Line.SerialSettings.Channel" Value=" Serial channel " />
+        <Item Key="MBM_Line_SerialSettings_HWMode" OriginalName="MBM_Line.SerialSettings.HWMode" Value=" Hardware mode: RS485 or 232 " />
+        <Item Key="MBM_Line_SerialSettings_MaskEvent" OriginalName="MBM_Line.SerialSettings.MaskEvent" Value=" Mask for the dynamic event " />
+        <Item Key="MBM_Line_SerialSettings_Mode" OriginalName="MBM_Line.SerialSettings.Mode" Value=" Select which communication is/are accepted " />
+        <Item Key="MBM_Line_SerialSettings_NotUseInterFrameDelay" OriginalName="MBM_Line.SerialSettings.NotUseInterFrameDelay" Value=" Interframe delay timeout: 0 to use interframe delay, 1 otherwise " />
+        <Item Key="MBM_Line_SerialSettings_Parity" OriginalName="MBM_Line.SerialSettings.Parity" Value=" Parity " />
+        <Item Key="MBM_Line_SerialSettings_Speed" OriginalName="MBM_Line.SerialSettings.Speed" Value=" Serial baudrate " />
+        <Item Key="MBM_Line_SerialSettings_Stops" OriginalName="MBM_Line.SerialSettings.Stops" Value=" Stop Bits " />
+        <Item Key="MBM_Line_TcpIpSettings_client" OriginalName="MBM_Line.TcpIpSettings.client" Value=" Client address. " />
+        <Item Key="MBM_Line_TcpIpSettings_EventMask" OriginalName="MBM_Line.TcpIpSettings.EventMask" Value=" Mask Event. " />
+        <Item Key="MBM_Line_TcpIpSettings_mode" OriginalName="MBM_Line.TcpIpSettings.mode" Value=" Server or Client mode. " />
+        <Item Key="MBM_Line_TcpIpSettings_port" OriginalName="MBM_Line.TcpIpSettings.port" Value=" Client port. " />
+        <Item Key="MBM_Line_TcpIpSettings_proto" OriginalName="MBM_Line.TcpIpSettings.proto" Value=" Protocol: TCP, UDP, or UDP_BROADCAST. " />
+        <Item Key="NoOutdoorUnit" Value="No outdoor unit present" />
+        <Item Key="OpModeAllowCool" Value="Allow cooling mode" />
+        <Item Key="OpModeAllowHeat" Value="Allow heating mode" />
+        <Item Key="OpModeAllowImm" Value="Allow immersion heater" />
+        <Item Key="OpModeSwitchDelay" Value="Delay between allowing/blocking operation modes" />
+        <Item Key="OpState" Value="Current state of operation" />
+        <Item Key="OS_Version" Value="OS version" />
+        <Item Key="OU_CompHeat" Value="Activate compressor heating due to low ECT" />
+        <Item Key="OU_CompOn" Value="Compressor running on outdoor unit" />
+        <Item Key="OU_CompTemp" Value="Compressor temperature" />
+        <Item Key="OU_CondInTemp" Value="Condensor in temperature" />
+        <Item Key="OU_CondOutTemp" Value="Condensor Out temperatur" />
+        <Item Key="OU_CondTemp" Value="Condensing temperature" />
+        <Item Key="OU_CurrDSH" Value="urrent DSH temperature" />
+        <Item Key="OU_CurrSH" Value="Outdoor unit - Current suction superheat" />
+        <Item Key="OU_CurrSpd" Value="Outdoor unit - Current speed" />
+        <Item Key="OU_DscgP" Value="Outdoor unit - Discharge pressure" />
+        <Item Key="OU_DscgTemp" Value="Outdoor unit - Discharge temperature" />
+        <Item Key="OU_EnvZone" Value="Outdoor unit envelope zone" />
+        <Item Key="OU_EvapTemp" Value="Evaporator temperature" />
+        <Item Key="OU_Online" Value="Outdoor unit online" />
+        <Item Key="OU_OutsideTemp" Value="Outside temperature from heatpump" />
+        <Item Key="OU_Req" Value="RPS request to heatpump unit" />
+        <Item Key="OU_SHSetP" Value="Outdoor unit - Current SH setpoint" />
+        <Item Key="OU_SuctP" Value="Outdoor unit - Suction pressure" />
+        <Item Key="OU_SuctTemp" Value="Outdoor unit - Suction temperature" />
+        <Item Key="OU_Unit_Alarm_BMS_Offline" OriginalName="OU_Unit.Alarm_BMS_Offline" Value="OU_Unit.Alarm_BMS_Offline" />
+        <Item Key="OU_Unit_Alarm_CompFault" OriginalName="OU_Unit.Alarm_CompFault" Value="OU_Unit.Alarm_CompFault" />
+        <Item Key="OU_Unit_Alarm_DisStartDP" OriginalName="OU_Unit.Alarm_DisStartDP" Value="OU_Unit.Alarm_DisStartDP" />
+        <Item Key="OU_Unit_Alarm_DscgP" OriginalName="OU_Unit.Alarm_DscgP" Value="OU_Unit.Alarm_DscgP" />
+        <Item Key="OU_Unit_Alarm_DscgTemp" OriginalName="OU_Unit.Alarm_DscgTemp" Value="OU_Unit.Alarm_DscgTemp" />
+        <Item Key="OU_Unit_Alarm_EEV" OriginalName="OU_Unit.Alarm_EEV" Value="OU_Unit.Alarm_EEV" />
+        <Item Key="OU_Unit_Alarm_Envelope" OriginalName="OU_Unit.Alarm_Envelope" Value="OU_Unit.Alarm_Envelope" />
+        <Item Key="OU_Unit_Alarm_HiDscgP" OriginalName="OU_Unit.Alarm_HiDscgP" Value="OU_Unit.Alarm_HiDscgP" />
+        <Item Key="OU_Unit_Alarm_HiDscgTemp" OriginalName="OU_Unit.Alarm_HiDscgTemp" Value="OU_Unit.Alarm_HiDscgTemp" />
+        <Item Key="OU_Unit_Alarm_Inv" OriginalName="OU_Unit.Alarm_Inv" Value="OU_Unit.Alarm_Inv" />
+        <Item Key="OU_Unit_Alarm_LiqT" OriginalName="OU_Unit.Alarm_LiqT" Value="OU_Unit.Alarm_LiqT" />
+        <Item Key="OU_Unit_Alarm_LowSuctP" OriginalName="OU_Unit.Alarm_LowSuctP" Value="OU_Unit.Alarm_LowSuctP" />
+        <Item Key="OU_Unit_Alarm_Offline_Inv" OriginalName="OU_Unit.Alarm_Offline_Inv" Value="OU_Unit.Alarm_Offline_Inv" />
+        <Item Key="OU_Unit_Alarm_PowerFailure" OriginalName="OU_Unit.Alarm_PowerFailure" Value="OU_Unit.Alarm_PowerFailure" />
+        <Item Key="OU_Unit_Alarm_RetainMem" OriginalName="OU_Unit.Alarm_RetainMem" Value="OU_Unit.Alarm_RetainMem" />
+        <Item Key="OU_Unit_Alarm_StartFailure" OriginalName="OU_Unit.Alarm_StartFailure" Value="OU_Unit.Alarm_StartFailure" />
+        <Item Key="OU_Unit_Alarm_SuctP" OriginalName="OU_Unit.Alarm_SuctP" Value="OU_Unit.Alarm_SuctP" />
+        <Item Key="OU_Unit_Alarm_SuctTemp" OriginalName="OU_Unit.Alarm_SuctTemp" Value="OU_Unit.Alarm_SuctTemp" />
+        <Item Key="OU_Unit_Alarm_WkrHrsComp" OriginalName="OU_Unit.Alarm_WkrHrsComp" Value="OU_Unit.Alarm_WkrHrsComp" />
+        <Item Key="OU_Unit_Alarm_WrkHrsSrc" OriginalName="OU_Unit.Alarm_WrkHrsSrc" Value="OU_Unit.Alarm_WrkHrsSrc" />
+        <Item Key="OU_Unit_AlrmReset" OriginalName="OU_Unit.AlrmReset" Value="OU_Unit.AlrmReset" />
+        <Item Key="OU_Unit_AlrmStatus" OriginalName="OU_Unit.AlrmStatus" Value="OU_Unit.AlrmStatus" />
+        <Item Key="OU_Unit_BLDC_lrmResetType" OriginalName="OU_Unit.BLDC_lrmResetType" Value="OU_Unit.BLDC_lrmResetType" />
+        <Item Key="OU_Unit_CapTemp" OriginalName="OU_Unit.CapTemp" Value="OU_Unit.CapTemp" />
+        <Item Key="OU_Unit_Comp_CstDec" OriginalName="OU_Unit.Comp_CstDec" Value="OU_Unit.Comp_CstDec" />
+        <Item Key="OU_Unit_Comp_En_Man" OriginalName="OU_Unit.Comp_En_Man" Value="OU_Unit.Comp_En_Man" />
+        <Item Key="OU_Unit_Comp_MaxSpdLim" OriginalName="OU_Unit.Comp_MaxSpdLim" Value="OU_Unit.Comp_MaxSpdLim" />
+        <Item Key="OU_Unit_CompBeltHeat_On" OriginalName="OU_Unit.CompBeltHeat_On" Value="OU_Unit.CompBeltHeat_On" />
+        <Item Key="OU_Unit_CompMinOffT" OriginalName="OU_Unit.CompMinOffT" Value="OU_Unit.CompMinOffT" />
+        <Item Key="OU_Unit_CompMinOnT" OriginalName="OU_Unit.CompMinOnT" Value="OU_Unit.CompMinOnT" />
+        <Item Key="OU_Unit_CompOn" OriginalName="OU_Unit.CompOn" Value="OU_Unit.CompOn" />
+        <Item Key="OU_Unit_CompReq" OriginalName="OU_Unit.CompReq" Value="OU_Unit.CompReq" />
+        <Item Key="OU_Unit_CompTemp" OriginalName="OU_Unit.CompTemp" Value="OU_Unit.CompTemp" />
+        <Item Key="OU_Unit_CondInTemp" OriginalName="OU_Unit.CondInTemp" Value="OU_Unit.CondInTemp" />
+        <Item Key="OU_Unit_CondOutTemp" OriginalName="OU_Unit.CondOutTemp" Value="OU_Unit.CondOutTemp" />
+        <Item Key="OU_Unit_CondTemp" OriginalName="OU_Unit.CondTemp" Value="OU_Unit.CondTemp" />
+        <Item Key="OU_Unit_CurrDSH" OriginalName="OU_Unit.CurrDSH" Value="OU_Unit.CurrDSH" />
+        <Item Key="OU_Unit_CurrSH" OriginalName="OU_Unit.CurrSH" Value="OU_Unit.CurrSH" />
+        <Item Key="OU_Unit_CurrSHSetP" OriginalName="OU_Unit.CurrSHSetP" Value="OU_Unit.CurrSHSetP" />
+        <Item Key="OU_Unit_CurrSpd_RPS" OriginalName="OU_Unit.CurrSpd_RPS" Value="OU_Unit.CurrSpd_RPS" />
+        <Item Key="OU_Unit_DayIn" OriginalName="OU_Unit.DayIn" Value="OU_Unit.DayIn" />
+        <Item Key="OU_Unit_DefrostRun" OriginalName="OU_Unit.DefrostRun" Value="OU_Unit.DefrostRun" />
+        <Item Key="OU_Unit_DeltaP_Circ1" OriginalName="OU_Unit.DeltaP_Circ1" Value="OU_Unit.DeltaP_Circ1" />
+        <Item Key="OU_Unit_Dfr_CompMinOnTime" OriginalName="OU_Unit.Dfr_CompMinOnTime" Value="OU_Unit.Dfr_CompMinOnTime" />
+        <Item Key="OU_Unit_Dfr_DT_AfterChgOver" OriginalName="OU_Unit.Dfr_DT_AfterChgOver" Value="OU_Unit.Dfr_DT_AfterChgOver" />
+        <Item Key="OU_Unit_Dfr_DT_BeforeChgOver" OriginalName="OU_Unit.Dfr_DT_BeforeChgOver" Value="OU_Unit.Dfr_DT_BeforeChgOver" />
+        <Item Key="OU_Unit_Dfr_EndThrsh" OriginalName="OU_Unit.Dfr_EndThrsh" Value="OU_Unit.Dfr_EndThrsh" />
+        <Item Key="OU_Unit_Dfr_FrcCompSpeedMax" OriginalName="OU_Unit.Dfr_FrcCompSpeedMax" Value="OU_Unit.Dfr_FrcCompSpeedMax" />
+        <Item Key="OU_Unit_Dfr_IntervalT" OriginalName="OU_Unit.Dfr_IntervalT" Value="OU_Unit.Dfr_IntervalT" />
+        <Item Key="OU_Unit_Dfr_MaxT" OriginalName="OU_Unit.Dfr_MaxT" Value="OU_Unit.Dfr_MaxT" />
+        <Item Key="OU_Unit_Dfr_MinT" OriginalName="OU_Unit.Dfr_MinT" Value="OU_Unit.Dfr_MinT" />
+        <Item Key="OU_Unit_Dfr_PostDripT" OriginalName="OU_Unit.Dfr_PostDripT" Value="OU_Unit.Dfr_PostDripT" />
+        <Item Key="OU_Unit_Dfr_RevVlvDeltaP" OriginalName="OU_Unit.Dfr_RevVlvDeltaP" Value="OU_Unit.Dfr_RevVlvDeltaP" />
+        <Item Key="OU_Unit_Dfr_SmartStartT" OriginalName="OU_Unit.Dfr_SmartStartT" Value="OU_Unit.Dfr_SmartStartT" />
+        <Item Key="OU_Unit_Dfr_StartThrsh" OriginalName="OU_Unit.Dfr_StartThrsh" Value="OU_Unit.Dfr_StartThrsh" />
+        <Item Key="OU_Unit_Dfr_StartThrshRes" OriginalName="OU_Unit.Dfr_StartThrshRes" Value="OU_Unit.Dfr_StartThrshRes" />
+        <Item Key="OU_Unit_DfrBlock" OriginalName="OU_Unit.DfrBlock" Value="OU_Unit.DfrBlock" />
+        <Item Key="OU_Unit_DfrStatus_Circ1" OriginalName="OU_Unit.DfrStatus_Circ1" Value="OU_Unit.DfrStatus_Circ1" />
+        <Item Key="OU_Unit_Dout_TrayHeat" OriginalName="OU_Unit.Dout_TrayHeat" Value="OU_Unit.Dout_TrayHeat" />
+        <Item Key="OU_Unit_DscgP" OriginalName="OU_Unit.DscgP" Value="OU_Unit.DscgP" />
+        <Item Key="OU_Unit_DscgTemp" OriginalName="OU_Unit.DscgTemp" Value="OU_Unit.DscgTemp" />
+        <Item Key="OU_Unit_ECT" OriginalName="OU_Unit.ECT" Value="OU_Unit.ECT" />
+        <Item Key="OU_Unit_EEV_AlrmCode_Circ1" OriginalName="OU_Unit.EEV_AlrmCode_Circ1" Value="OU_Unit.EEV_AlrmCode_Circ1" />
+        <Item Key="OU_Unit_EEV_CompHeat" OriginalName="OU_Unit.EEV_CompHeat" Value="OU_Unit.EEV_CompHeat" />
+        <Item Key="OU_Unit_EEV_Dfr_Td" OriginalName="OU_Unit.EEV_Dfr_Td" Value="OU_Unit.EEV_Dfr_Td" />
+        <Item Key="OU_Unit_EEV_Dfr_Ti" OriginalName="OU_Unit.EEV_Dfr_Ti" Value="OU_Unit.EEV_Dfr_Ti" />
+        <Item Key="OU_Unit_EEV_En_Man" OriginalName="OU_Unit.EEV_En_Man" Value="OU_Unit.EEV_En_Man" />
+        <Item Key="OU_Unit_EEV_ManPositSteps" OriginalName="OU_Unit.EEV_ManPositSteps" Value="OU_Unit.EEV_ManPositSteps" />
+        <Item Key="OU_Unit_EEV_PID_DynTi" OriginalName="OU_Unit.EEV_PID_DynTi" Value="OU_Unit.EEV_PID_DynTi" />
+        <Item Key="OU_Unit_EEV_PosPerc" OriginalName="OU_Unit.EEV_PosPerc" Value="OU_Unit.EEV_PosPerc" />
+        <Item Key="OU_Unit_EEV_PosSteps" OriginalName="OU_Unit.EEV_PosSteps" Value="OU_Unit.EEV_PosSteps" />
+        <Item Key="OU_Unit_EEVStatus_Circ1" OriginalName="OU_Unit.EEVStatus_Circ1" Value="OU_Unit.EEVStatus_Circ1" />
+        <Item Key="OU_Unit_EnvZone" OriginalName="OU_Unit.EnvZone" Value="OU_Unit.EnvZone" />
+        <Item Key="OU_Unit_EvapTemp" OriginalName="OU_Unit.EvapTemp" Value="OU_Unit.EvapTemp" />
+        <Item Key="OU_Unit_FrcDefrostOff" OriginalName="OU_Unit.FrcDefrostOff" Value="OU_Unit.FrcDefrostOff" />
+        <Item Key="OU_Unit_FrcDefrostOn" OriginalName="OU_Unit.FrcDefrostOn" Value="OU_Unit.FrcDefrostOn" />
+        <Item Key="OU_Unit_HourIn" OriginalName="OU_Unit.HourIn" Value="OU_Unit.HourIn" />
+        <Item Key="OU_Unit_HP_Status" OriginalName="OU_Unit.HP_Status" Value="OU_Unit.HP_Status" />
+        <Item Key="OU_Unit_Info_CommandDelay" OriginalName="OU_Unit.Info.CommandDelay" Value=" Command delay (ms) of the device (see Help for more info)" />
+        <Item Key="OU_Unit_Info_CommandsCount" OriginalName="OU_Unit.Info.CommandsCount" Value=" Counts the number of times in which the client try to communicate with the server. " />
+        <Item Key="OU_Unit_Info_DetectionTimeOut" OriginalName="OU_Unit.Info.DetectionTimeOut" Value=" Detection timeout (ms) of the device (see Help for more info) " />
+        <Item Key="OU_Unit_Info_DeviceError" OriginalName="OU_Unit.Info.DeviceError" Value=" Current device error:&#xD;&#xA; - NoError: Device answered as expected;&#xD;&#xA; - Offline: Device did not answer (offline);&#xD;&#xA; - InvalidPacket: Device answered with an invalid packet;&#xD;&#xA; - ErrorCodeReceived: Device answered with an error code;&#xD;&#xA; - NotYetQueried: Device has yet to be queried." />
+        <Item Key="OU_Unit_Info_Enabled" OriginalName="OU_Unit.Info.Enabled" Value=" Enables or disables the device  " />
+        <Item Key="OU_Unit_Info_ErrorsCount" OriginalName="OU_Unit.Info.ErrorsCount" Value=" Counts the number in which Device Error changes state. " />
+        <Item Key="OU_Unit_Info_forceMultipleCoilWrite" OriginalName="OU_Unit.Info.forceMultipleCoilWrite" Value=" Force to use only the multiple writes command for coils. " />
+        <Item Key="OU_Unit_Info_forceMultipleRegisterWrite" OriginalName="OU_Unit.Info.forceMultipleRegisterWrite" Value=" Force to use only the multiple writes command for registers. " />
+        <Item Key="OU_Unit_Info_Ident" OriginalName="OU_Unit.Info.Ident" Value=" Ident of the device  " />
+        <Item Key="OU_Unit_Info_isOnline" OriginalName="OU_Unit.Info.isOnline" Value=" Sets if the device is online or offline " />
+        <Item Key="OU_Unit_Info_LastErrorInfo_ErrorCode" OriginalName="OU_Unit.Info.LastErrorInfo.ErrorCode" Value=" Contains the error code returned by the device. " />
+        <Item Key="OU_Unit_Info_LastErrorInfo_FunctionCode" OriginalName="OU_Unit.Info.LastErrorInfo.FunctionCode" Value=" Function code that generates the error. " />
+        <Item Key="OU_Unit_Info_LastErrorInfo_RegistersCount" OriginalName="OU_Unit.Info.LastErrorInfo.RegistersCount" Value=" Number of registers involved on function that generates the error. " />
+        <Item Key="OU_Unit_Info_LastErrorInfo_StartingRegister" OriginalName="OU_Unit.Info.LastErrorInfo.StartingRegister" Value=" Starting register of the function that generates the error. " />
+        <Item Key="OU_Unit_Info_NetworkAddress" OriginalName="OU_Unit.Info.NetworkAddress" Value=" Current IP or hostname of the device " />
+        <Item Key="OU_Unit_Info_PollsCount" OriginalName="OU_Unit.Info.PollsCount" Value=" Counts the number of complete poll of server. " />
+        <Item Key="OU_Unit_Info_ReadChangesCount" OriginalName="OU_Unit.Info.ReadChangesCount" Value=" Counts the number of times data is updated from a device. " />
+        <Item Key="OU_Unit_Info_TimeOut" OriginalName="OU_Unit.Info.TimeOut" Value=" Timeout (ms) of the device (see Help for more info)" />
+        <Item Key="OU_Unit_Info_Zone" OriginalName="OU_Unit.Info.Zone" Value=" Zone of the device " />
+        <Item Key="OU_Unit_LiqdTemp" OriginalName="OU_Unit.LiqdTemp" Value="OU_Unit.LiqdTemp" />
+        <Item Key="OU_Unit_MaxRPS" OriginalName="OU_Unit.MaxRPS" Value="OU_Unit.MaxRPS" />
+        <Item Key="OU_Unit_MinRPS" OriginalName="OU_Unit.MinRPS" Value="OU_Unit.MinRPS" />
+        <Item Key="OU_Unit_MinuteIn" OriginalName="OU_Unit.MinuteIn" Value="OU_Unit.MinuteIn" />
+        <Item Key="OU_Unit_MonthIn" OriginalName="OU_Unit.MonthIn" Value="OU_Unit.MonthIn" />
+        <Item Key="OU_Unit_OnOff" OriginalName="OU_Unit.OnOff" Value="OU_Unit.OnOff" />
+        <Item Key="OU_Unit_OutDoorTemp" OriginalName="OU_Unit.OutDoorTemp" Value="OU_Unit.OutDoorTemp" />
+        <Item Key="OU_Unit_PWRP_AlrmResetType" OriginalName="OU_Unit.PWRP_AlrmResetType" Value="OU_Unit.PWRP_AlrmResetType" />
+        <Item Key="OU_Unit_SecondsIn" OriginalName="OU_Unit.SecondsIn" Value="OU_Unit.SecondsIn" />
+        <Item Key="OU_Unit_SetClock" OriginalName="OU_Unit.SetClock" Value="OU_Unit.SetClock" />
+        <Item Key="OU_Unit_SkipFreqBand1" OriginalName="OU_Unit.SkipFreqBand1" Value="OU_Unit.SkipFreqBand1" />
+        <Item Key="OU_Unit_SkipFreqBand2" OriginalName="OU_Unit.SkipFreqBand2" Value="OU_Unit.SkipFreqBand2" />
+        <Item Key="OU_Unit_SkipFreqBand3" OriginalName="OU_Unit.SkipFreqBand3" Value="OU_Unit.SkipFreqBand3" />
+        <Item Key="OU_Unit_SkipFreqF1" OriginalName="OU_Unit.SkipFreqF1" Value="OU_Unit.SkipFreqF1" />
+        <Item Key="OU_Unit_SkipFreqF2" OriginalName="OU_Unit.SkipFreqF2" Value="OU_Unit.SkipFreqF2" />
+        <Item Key="OU_Unit_SkipFreqF3" OriginalName="OU_Unit.SkipFreqF3" Value="OU_Unit.SkipFreqF3" />
+        <Item Key="OU_Unit_Src_En_Man" OriginalName="OU_Unit.Src_En_Man" Value="OU_Unit.Src_En_Man" />
+        <Item Key="OU_Unit_Src_Man" OriginalName="OU_Unit.Src_Man" Value="OU_Unit.Src_Man" />
+        <Item Key="OU_Unit_SrcCirc1_SetP" OriginalName="OU_Unit.SrcCirc1_SetP" Value="OU_Unit.SrcCirc1_SetP" />
+        <Item Key="OU_Unit_SSH_LimNeg" OriginalName="OU_Unit.SSH_LimNeg" Value="OU_Unit.SSH_LimNeg" />
+        <Item Key="OU_Unit_SSH_LimPos" OriginalName="OU_Unit.SSH_LimPos" Value="OU_Unit.SSH_LimPos" />
+        <Item Key="OU_Unit_SSH_SP" OriginalName="OU_Unit.SSH_SP" Value="OU_Unit.SSH_SP" />
+        <Item Key="OU_Unit_SSH_SP_Max" OriginalName="OU_Unit.SSH_SP_Max" Value="OU_Unit.SSH_SP_Max" />
+        <Item Key="OU_Unit_SSH_SP_Min" OriginalName="OU_Unit.SSH_SP_Min" Value="OU_Unit.SSH_SP_Min" />
+        <Item Key="OU_Unit_SSH_Ti_Fast" OriginalName="OU_Unit.SSH_Ti_Fast" Value="OU_Unit.SSH_Ti_Fast" />
+        <Item Key="OU_Unit_SSH_Ti_Slow" OriginalName="OU_Unit.SSH_Ti_Slow" Value="OU_Unit.SSH_Ti_Slow" />
+        <Item Key="OU_Unit_SuctP" OriginalName="OU_Unit.SuctP" Value="OU_Unit.SuctP" />
+        <Item Key="OU_Unit_SuctTemp" OriginalName="OU_Unit.SuctTemp" Value="OU_Unit.SuctTemp" />
+        <Item Key="OU_Unit_SwVersion" OriginalName="OU_Unit.SwVersion" Value="OU_Unit.SwVersion" />
+        <Item Key="OU_Unit_TrayHeat_OffDelay" OriginalName="OU_Unit.TrayHeat_OffDelay" Value="OU_Unit.TrayHeat_OffDelay" />
+        <Item Key="OU_Unit_TrayHeat_On" OriginalName="OU_Unit.TrayHeat_On" Value="OU_Unit.TrayHeat_On" />
+        <Item Key="OU_Unit_Unit_CoolHeat" OriginalName="OU_Unit.Unit_CoolHeat" Value="OU_Unit.Unit_CoolHeat" />
+        <Item Key="OU_Unit_UnitStatus" OriginalName="OU_Unit.UnitStatus" Value="OU_Unit.UnitStatus" />
+        <Item Key="OU_Unit_uSafe_HR_00_ResetCommand" OriginalName="OU_Unit.uSafe_HR_00_ResetCommand" Value="OU_Unit.uSafe_HR_00_ResetCommand" />
+        <Item Key="OU_Unit_uSafe_HR_01_ResetCmdFeedback" OriginalName="OU_Unit.uSafe_HR_01_ResetCmdFeedback" Value="OU_Unit.uSafe_HR_01_ResetCmdFeedback" />
+        <Item Key="OU_Unit_uSafe_IR_02_AlarmStatus1" OriginalName="OU_Unit.uSafe_IR_02_AlarmStatus1" Value="OU_Unit.uSafe_IR_02_AlarmStatus1" />
+        <Item Key="OU_Unit_uSafe_IR_03_AlarmStatus2" OriginalName="OU_Unit.uSafe_IR_03_AlarmStatus2" Value="OU_Unit.uSafe_IR_03_AlarmStatus2" />
+        <Item Key="OU_Unit_uSafe_IR_04_CntdwnRstAlrms" OriginalName="OU_Unit.uSafe_IR_04_CntdwnRstAlrms" Value="OU_Unit.uSafe_IR_04_CntdwnRstAlrms" />
+        <Item Key="OU_Unit_uSafe_IR_35_PhaseUCurr" OriginalName="OU_Unit.uSafe_IR_35_PhaseUCurr" Value="OU_Unit.uSafe_IR_35_PhaseUCurr" />
+        <Item Key="OU_Unit_uSafe_IR_36_PhaseVCurr" OriginalName="OU_Unit.uSafe_IR_36_PhaseVCurr" Value="OU_Unit.uSafe_IR_36_PhaseVCurr" />
+        <Item Key="OU_Unit_uSafe_IR_37_PhaseWCurr" OriginalName="OU_Unit.uSafe_IR_37_PhaseWCurr" Value="OU_Unit.uSafe_IR_37_PhaseWCurr" />
+        <Item Key="OU_Unit_uSafe_IR_38_DCbusV" OriginalName="OU_Unit.uSafe_IR_38_DCbusV" Value="OU_Unit.uSafe_IR_38_DCbusV" />
+        <Item Key="OU_Unit_uSafe_IR_39_DCbusA" OriginalName="OU_Unit.uSafe_IR_39_DCbusA" Value="OU_Unit.uSafe_IR_39_DCbusA" />
+        <Item Key="OU_Unit_uSafe_IR_40_DCbusPwr" OriginalName="OU_Unit.uSafe_IR_40_DCbusPwr" Value="OU_Unit.uSafe_IR_40_DCbusPwr" />
+        <Item Key="OU_Unit_uSafe_IR_41_PwrSupplyV" OriginalName="OU_Unit.uSafe_IR_41_PwrSupplyV" Value="OU_Unit.uSafe_IR_41_PwrSupplyV" />
+        <Item Key="OU_Unit_uSafe_IR_42_BoardT" OriginalName="OU_Unit.uSafe_IR_42_BoardT" Value="OU_Unit.uSafe_IR_42_BoardT" />
+        <Item Key="OU_Unit_uSafe_IR_43_OutStageModT" OriginalName="OU_Unit.uSafe_IR_43_OutStageModT" Value="OU_Unit.uSafe_IR_43_OutStageModT" />
+        <Item Key="OU_Unit_uSafe_IR_44_InStageModT" OriginalName="OU_Unit.uSafe_IR_44_InStageModT" Value="OU_Unit.uSafe_IR_44_InStageModT" />
+        <Item Key="OU_Unit_uSafe_IR_45_VCheck" OriginalName="OU_Unit.uSafe_IR_45_VCheck" Value="OU_Unit.uSafe_IR_45_VCheck" />
+        <Item Key="OU_Unit_uSafe_IR_46_AuxADC" OriginalName="OU_Unit.uSafe_IR_46_AuxADC" Value="OU_Unit.uSafe_IR_46_AuxADC" />
+        <Item Key="OU_Unit_uSafe_IR_47_MotPWMSwtF" OriginalName="OU_Unit.uSafe_IR_47_MotPWMSwtF" Value="OU_Unit.uSafe_IR_47_MotPWMSwtF" />
+        <Item Key="OU_Unit_uSafe_IR_48_CosPhi" OriginalName="OU_Unit.uSafe_IR_48_CosPhi" Value="OU_Unit.uSafe_IR_48_CosPhi" />
+        <Item Key="OU_Unit_uSafe_IR_49" OriginalName="OU_Unit.uSafe_IR_49" Value="OU_Unit.uSafe_IR_49" />
+        <Item Key="OU_Unit_uSafe_IR_50_DinMaskStatus" OriginalName="OU_Unit.uSafe_IR_50_DinMaskStatus" Value="OU_Unit.uSafe_IR_50_DinMaskStatus" />
+        <Item Key="OU_Unit_WaterFlow" OriginalName="OU_Unit.WaterFlow" Value="OU_Unit.WaterFlow" />
+        <Item Key="OU_Unit_YearIn" OriginalName="OU_Unit.YearIn" Value="OU_Unit.YearIn" />
+        <Item Key="OU_WaterFlowLimit" Value="Waterflow limit" />
+        <Item Key="OutDoorTemp" Value="OutDoorTemp from selected source" />
+        <Item Key="OutDoorTemp_FiltDelay" Value="OutDoorTemp_FiltDelay" />
+        <Item Key="OutDoorTemp_FiltHrs" Value="Outdoor temperature filter hours" />
+        <Item Key="OutDoorTempFilter" Value="Filtered outside temperature" />
+        <Item Key="OutDoorTempSel" Value="Outside temperature probe selection" />
+        <Item Key="PrbAlrm_DT" Value="Probe alarm delay" />
+        <Item Key="PumpSpdCoolAuto" Value="Pump speed while cooling" />
+        <Item Key="PumpSpdDefrost" Value="Pump speed during defrost" />
+        <Item Key="PumpSpdDhwFix" Value="Pump speed in DHW" />
+        <Item Key="PumpSpdGP1Man" Value="GP1 - Manual request" />
+        <Item Key="PumpSpdGP2Man" Value="If PumpSpdGP2Man ≠ 0 manual mode is activated" />
+        <Item Key="PumpspdHeatAuto" Value="Pump speed while heating" />
+        <Item Key="q00" OriginalName="KeybOnOff" Value="Unit on/off from keyboard" />
+        <Item Key="q01" OriginalName="ResAlrmByBMS" Value="Reset active alarms from supervisor" />
+        <Item Key="q02" OriginalName="BmsOnOff" Value="Unit on/off from supervisor" />
+        <Item Key="q03" OriginalName="BmsUnitReq" Value="Unit control request from supervisor" />
+        <Item Key="q13" OriginalName="KeybUnitReq" Value="Unit control request from keypad" />
+        <Item Key="RetainMemWrites" Value="RetainMemWrites" />
+        <Item Key="RevVlv_On" Value="Reversing valve status" />
+        <Item Key="SecondIn" Value="New second value" />
+        <Item Key="Sel_HeatCurve_SetP" Value="Heatcurve selection" />
+        <Item Key="SetClock" Value="Sets controller internal clock by display" />
+        <Item Key="SetP_ExtAdj" Value="External setpoint adjustment" />
+        <Item Key="SG_Offset" Value="Setpoint offset from smart grid" />
+        <Item Key="SG_Status" Value="Current smartgrid status" />
+        <Item Key="SGActive" Value="Enable inputs for smart grid" />
+        <Item Key="ShuntManClose" Value="Manually close shunt valve" />
+        <Item Key="ShuntManMode" Value="Enable shunt valve manual mode" />
+        <Item Key="ShuntManOpen" Value="Manually open shunt valve" />
+        <Item Key="ShuntVlv_Off" Value="Shuntvalve inactive" />
+        <Item Key="ShuntVlv_On" Value="Shuntvalve active" />
+        <Item Key="ShuntVlvBlock" Value="Block sunt valve regulation" />
+        <Item Key="ShuntVlvBlock_PulseIntervall" Value="Time between pulses for blocked shunt valve" />
+        <Item Key="ShuntVlvBlock_PulseTime" Value="Pulse time for blocked shunt valve" />
+        <Item Key="ShuntVlvBlock_Time" Value="Blocked shunt valve closing time" />
+        <Item Key="ShuntVlvPFactor" Value="Shunt valve P factor" />
+        <Item Key="ShuntVlvTimeFactor" Value="Shunt valve time factor" />
+        <Item Key="SPV_Online" Value="Supervisor online" />
+        <Item Key="SupplyTempCalc" Value="Heat regulation setpoint" />
+        <Item Key="SupplyTempHeat2Max" Value="Maximum supply temp to heating 2" />
+        <Item Key="SupplyTempHeat2Min" Value="Minimum supply temp to heating 2" />
+        <Item Key="SupplyTempHeatMax" Value="Maximum supply temp to heating" />
+        <Item Key="SupplyTempHeatMin" Value="Minimum supply temp to heating" />
+        <Item Key="SystemCfg" Value="SystemCfg" />
+        <Item Key="SystemCfg_AllowCool" Value="SystemCfg_AllowCool" />
+        <Item Key="SystemCfg_AllowDHW" Value="SystemCfg_AllowDHW" />
+        <Item Key="SystemCfg_AllowHeat" Value="SystemCfg_AllowHeat" />
+        <Item Key="SystemCfg_AllowImm" Value="SystemCfg_AllowImm" />
+        <Item Key="SystemCfg_NoCfgSel" Value="SystemCfg_NoCfgSel" />
+        <Item Key="TempSG1" Value="Offset for SmartGrid low price mode" />
+        <Item Key="TempSG2" Value="Offset for SmartGrid over capacity mode" />
+        <Item Key="TempSG3" Value="Offset for SmartGrid blocking mode" />
+        <Item Key="W43" OriginalName="UnitOn" Value="Unit ON/OFF status" />
+        <Item Key="WaterFlow_DHW" Value="WaterFlow for DHW" />
+        <Item Key="X16" OriginalName="MaxErasure" Value="Number of retentive writes to the window size to prevent intensive memory use" />
+        <Item Key="Y00" OriginalName="SPV_Port" Value="Supervisor serial port" />
+        <Item Key="Y03" OriginalName="SPV_Conf" Value="Supervisor parity and stop bits" />
+        <Item Key="Y04" OriginalName="SPV_OfflineTimeout" Value="Supervisor offline timeout" />
+        <Item Key="Y05" OriginalName="SPV_ChangeSet" Value="Supervisor apply settings" />
+        <Item Key="Y06" OriginalName="SPV_OfflineMng" Value="Supervisor offline management" />
+        <Item Key="Y07" OriginalName="LanguageID" Value="Language identifier" />
+        <Item Key="Y08" OriginalName="UoMZoneHMI" Value="Unit of measure" />
+        <Item Key="Y09" OriginalName="LogAlrmRes" Value="Clear alarm log" />
+        <Item Key="Y14" OriginalName="MBM_Line_Port" Value="Client - Port" />
+        <Item Key="Y15" OriginalName="FB2_Baud" Value="Client - Baudrate" />
+        <Item Key="Y17" OriginalName="FB2_ChangeSet" Value="Client - Apply settings" />
+        <Item Key="Y44" OriginalName="DayIn" Value="New day value" />
+        <Item Key="Y45" OriginalName="MonthIn" Value="New month value" />
+        <Item Key="Y46" OriginalName="YearIn" Value="New year value" />
+        <Item Key="Y47" OriginalName="HourIn" Value="New hour value" />
+        <Item Key="Y48" OriginalName="MinuteIn" Value="New minute value" />
+        <Item Key="Y50" OriginalName="TimezoneIdx" Value="Timezone index" />
+        <Item Key="Y99" OriginalName="RestoreDefault" Value="Factory initialization" />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_MmcModeType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="MMC_MODE_BUSY" Value="MMC_MODE_BUSY" />
+        <Item Key="MMC_MODE_EXTERNAL_DRIVE" Value="MMC_MODE_EXTERNAL_DRIVE" />
+        <Item Key="MMC_MODE_PUBLIC_PARTITION" Value="MMC_MODE_PUBLIC_PARTITION" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetPeriodType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="PeriodCalendarEntry" Value="PeriodCalendarEntry" />
+        <Item Key="PeriodCalendarReference" Value="PeriodCalendarReference" />
+        <Item Key="PeriodOtherEnum" Value="PeriodOtherEnum" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetScheduleDataTypes" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="dtNull" Value="dtNull" />
+        <Item Key="dtBoolean" Value="dtBoolean" />
+        <Item Key="dtUnsigned" Value="dtUnsigned" />
+        <Item Key="dtInteger" Value="dtInteger" />
+        <Item Key="dtReal" Value="dtReal" />
+        <Item Key="dtEnumerated" Value="dtEnumerated" />
+        <Item Key="dtUnsupported" Value="dtUnsupported" />
       </Items>
     </Section>
   </Sections>

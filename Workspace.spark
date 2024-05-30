@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Workspace Name="Workspace6" Version="1.1">
-  <Info N="SWNOVHIDUOUCR00" G="40c19f63-cf0d-4c86-a783-38d8aa3a1a0c" C="2481796564" CC="2481796564" V="0.8.0" />
+  <Info N="SWNOVHIDUOUCR00" G="40c19f63-cf0d-4c86-a783-38d8aa3a1a0c" C="4280359754" CC="4280359754" V="0.8.0" />
   <Parameters>
+    <Parameter Name="Access_Service" DataKind="BOOL" Dimension="1" />
+    <Parameter Name="Access_Sys" DataKind="BOOL" Dimension="1" />
     <Parameter Name="ActImmStep" DataKind="UINT" Min="0" Max="3" />
     <Parameter Name="Active_Alrm[10]" DataKind="UINT" Dimension="1" />
     <Parameter Name="Active_Alrm[11]" DataKind="UINT" Dimension="1" />
@@ -123,7 +125,7 @@
     <Parameter Name="Aout_Info.Fct.CircPump2.Error" DataKind="USINT" Min="0" Max="22" />
     <Parameter Name="BootVersion" DataKind="UINT" Dimension="1" />
     <Parameter Name="Circ1Act_Req" DataKind="REAL" Dimension="1" />
-    <Parameter Name="Circ2Act_Req" DataKind="REAL" Dimension="1" Tags="dhw" />
+    <Parameter Name="Circ2Act_Req" DataKind="REAL" Dimension="1" Min="0" Max="100" UoM="PERCENT" Tags="dhw" />
     <Parameter Name="CircPmp_Req" DataKind="REAL" Dimension="1" UoM="PERCENT" />
     <Parameter Name="CompBlock" DataKind="BOOL" Dimension="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="CompRunTimerMin" DataKind="UINT" Dimension="1" Min="0" Max="60" DefaultValue="5" UoM="MINUTE" Attributes="Retain,Configurable,Cloneable" />
@@ -134,6 +136,7 @@
     <Parameter Name="CoolModeTemp" DataKind="REAL" Dimension="1" DefaultValue="20" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="CoolModeTempHyst" DataKind="REAL" Dimension="1" Min="1" Max="10" DefaultValue="2" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="CoolReq" DataKind="BOOL" Dimension="1" />
+    <Parameter Name="CurrSysT" DataKind="UDINT" Dimension="1" UoM="MILLISECOND" />
     <Parameter Name="Day_Week" DataKind="USINT" Dimension="1" Min="0" Max="6" DefaultValue="0" />
     <Parameter Name="DHWBoost" DataKind="BOOL" Dimension="1" />
     <Parameter Name="DHWBottomTemp" DataKind="REAL" Dimension="1" Min="-99.9" Max="999.9" ReadOnly="true" UoM="CELSIUS" Tags="dhw" />
@@ -143,6 +146,7 @@
     <Parameter Name="DhwBT3StrtCom" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="45" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwBT3StrtEco" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="45" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwBT3StrtNor" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="45" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="DhwCircPump1Spd" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="50" UoM="PERCENT" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwComfStartTemp" DataKind="REAL" Dimension="1" Min="10" Max="65" DefaultValue="55" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwComfStopTemp" DataKind="REAL" Dimension="1" Min="10" Max="65" DefaultValue="55" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DHWCompBlock" DataKind="BOOL" Dimension="1" />
@@ -164,6 +168,7 @@
     <Parameter Name="DhwPumpPGain" DataKind="USINT" Dimension="1" Min="1" Max="255" DefaultValue="2" Attributes="Retain,Configurable,Cloneable" Tags="dhw" />
     <Parameter Name="DHWPumpReg" DataKind="REAL" Dimension="1" />
     <Parameter Name="DhwPumpSetP" DataKind="REAL" Dimension="1" Min="0" Max="99" UoM="CELSIUS" Attributes="Cloneable" />
+    <Parameter Name="DHWPumpState" DataKind="UINT" Dimension="1" DefaultValue="0" />
     <Parameter Name="DhwRefBottom" DataKind="REAL" Dimension="1" Min="0" Max="100" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwRefBottomN" DataKind="REAL" Dimension="1" DefaultValue="48" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwRefMiddle" DataKind="REAL" Dimension="1" Min="0" Max="100" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
@@ -173,6 +178,7 @@
     <Parameter Name="DHWRegDGain" DataKind="INT" Dimension="1" Min="0" Max="1000" DefaultValue="10" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DHWRegIGain" DataKind="INT" Dimension="1" Min="0" Max="1000" DefaultValue="100" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DHWRegPGain" DataKind="REAL" Dimension="1" DefaultValue="5" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="DHWReg_SetP" DataKind="REAL" Dimension="1" />
     <Parameter Name="DHWReq" DataKind="BOOL" Dimension="1" />
     <Parameter Name="DhwSetPointStpCom" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="40" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="DhwSetPointStpEco" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="40" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
@@ -262,12 +268,17 @@
     <Parameter Name="Dout_Cfg.Fct.ShutOffVlv.tOn" DataKind="UINT" Dimension="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Dout_GlbAl" DataKind="BOOL" Dimension="1" ReadOnly="true" />
     <Parameter Name="Dout_Info.Fct.GlbAl.Trigger" DataKind="BOOL" Dimension="1" />
+    <Parameter Name="EBCH" DataKind="REAL" Dimension="1" Min="EBCHMin" Max="EBCHMax" />
+    <Parameter Name="EBCHCompStop" DataKind="REAL" Dimension="1" Min="-1000" Max="0" DefaultValue="-100" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="EBCHCompStrt" DataKind="REAL" Dimension="1" Min="10" Max="500" DefaultValue="60" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="EBCHMax" DataKind="REAL" Dimension="1" Min="0" Max="1000" DefaultValue="1000" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="EBCHMin" DataKind="REAL" Dimension="1" Min="-1000" Max="0" DefaultValue="-1000" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBHP" DataKind="REAL" Dimension="1" />
+    <Parameter Name="EBHPCompStop" DataKind="REAL" Dimension="1" Min="0" Max="1000" DefaultValue="100" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBHPCompStrt" DataKind="REAL" Dimension="1" Min="-500" Max="1000" DefaultValue="-60" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBHPMax" DataKind="REAL" Dimension="1" Min="-32768" Max="32767" DefaultValue="1000" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBHPMin" DataKind="REAL" Dimension="1" Min="-32768" Max="32767" DefaultValue="-1000" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBHPStepOut" DataKind="REAL" Dimension="1" DefaultValue="50" Attributes="Retain,Configurable,Cloneable" />
-    <Parameter Name="EBHPStopComp" DataKind="REAL" Dimension="1" Min="0" Max="1000" DefaultValue="100" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBShunt" DataKind="REAL" Dimension="1" DefaultValue="-700" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="EBStepImm" DataKind="REAL" Dimension="1" DefaultValue="-700" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="ECT" DataKind="REAL" Dimension="1" UoM="CELSIUS" />
@@ -276,6 +287,8 @@
     <Parameter Name="ECT_Heat_Offset" DataKind="REAL" Dimension="1" Min="0" Max="30" DefaultValue="10" UoM="CELSIUS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="En_AutoMode" DataKind="BOOL" Dimension="1" DefaultValue="TRUE" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="En_ExtHotWatr" DataKind="BOOL" Dimension="1" />
+    <Parameter Name="En_OU" DataKind="BOOL" Dimension="1" />
+    <Parameter Name="En_SelMode" DataKind="BOOL" Dimension="1" />
     <Parameter Name="En_SPV_OnOff" DataKind="BOOL" Dimension="1" DefaultValue="TRUE" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="ErasureWindowSize" DataKind="UDINT" Dimension="1" DefaultValue="10" UoM="SECOND" Attributes="System,Retain,Configurable,Cloneable" />
     <Parameter Name="ErasureWindowsNumber" DataKind="USINT" Dimension="1" DefaultValue="3" Attributes="System,Retain,Configurable,Cloneable" />
@@ -362,7 +375,7 @@
     <Parameter Name="OpModeSwitchDelay" DataKind="UINT" Dimension="1" DefaultValue="2" UoM="MINUTE" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="OpState" DataKind="USINT" Dimension="1" />
     <Parameter Name="OS_Version" DataKind="UINT" Dimension="1" />
-    <Parameter Name="OutDoorTemp" DataKind="REAL" Dimension="1" Min="-99,9" Max="99,9" UoM="CELSIUS" />
+    <Parameter Name="OutDoorTemp" DataKind="REAL" Dimension="1" Min="-99.9" Max="99.9" UoM="CELSIUS" />
     <Parameter Name="OutDoorTempFilter" DataKind="REAL" Dimension="1" />
     <Parameter Name="OutDoorTempSel" DataKind="USINT" Dimension="1" Min="0" Max="2" DefaultValue="0" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="OutDoorTemp_FiltDelay" DataKind="UINT" Dimension="1" Min="1" Max="7200" DefaultValue="3600" Attributes="Retain,Configurable,Cloneable" />
@@ -609,6 +622,7 @@
     <Parameter Name="OU_Unit.uSafe_IR_50_DinMaskStatus" DataKind="UINT" Dimension="1" />
     <Parameter Name="OU_Unit.WaterFlow" DataKind="REAL" Dimension="1" />
     <Parameter Name="OU_Unit.YearIn" DataKind="USINT" Dimension="1" />
+    <Parameter Name="OU_WaterFlowLimit" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="10" UoM="LITER_PER_MINUTE" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="PrbAlrm_DT" DataKind="UINT" Dimension="1" Min="0" Max="999" DefaultValue="10" UoM="SECOND" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="PumpSpdCoolAuto" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="50" UoM="PERCENT" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="PumpSpdDefrost" DataKind="REAL" Dimension="1" Min="0" Max="100" DefaultValue="100" UoM="PERCENT" Attributes="Retain,Configurable,Cloneable" />
@@ -620,10 +634,11 @@
     <Parameter Name="q01" DataKind="BOOL" Dimension="1" Attributes="AlarmMasterReset" />
     <Parameter Name="q02" DataKind="BOOL" Dimension="1" />
     <Parameter Name="q03" DataKind="REAL" Dimension="1" Min="0" Max="120" UoM="RPS" />
+    <Parameter Name="q13" DataKind="REAL" Dimension="1" Min="0.0" Max="120" DefaultValue="0" UoM="RPS" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="RetainMemWrites" DataKind="ULINT" Dimension="1" />
     <Parameter Name="RevVlv_On" DataKind="BOOL" Dimension="1" />
     <Parameter Name="SecondIn" DataKind="USINT" Dimension="1" Min="0" Max="59" DefaultValue="0" UoM="SECOND" />
-    <Parameter Name="Sel_HeatCurve_SetP" DataKind="UINT" Dimension="1" Min="0" Max="10" DefaultValue="5" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="Sel_HeatCurve_SetP" DataKind="UINT" Dimension="1" Min="0" Max="14" DefaultValue="5" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="SetClock" DataKind="BOOL" Dimension="1" />
     <Parameter Name="SetP_ExtAdj" DataKind="REAL" Dimension="1" />
     <Parameter Name="SGActive" DataKind="BOOL" Dimension="1" Attributes="Retain,Configurable,Cloneable" />
@@ -663,11 +678,14 @@
     <Parameter Name="TempSG3" DataKind="REAL" Dimension="1" Min="-10" Max="0" DefaultValue="-4" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="W43" DataKind="BOOL" Dimension="1" ReadOnly="true" />
     <Parameter Name="WaterFlow_DHW" DataKind="REAL" Dimension="1" UoM="LITER_PER_MINUTE" Tags="dhw" />
+    <Parameter Name="WaterFlow_DHW2" DataKind="REAL" />
     <Parameter Name="X16" DataKind="UDINT" Dimension="1" DefaultValue="200" Attributes="System,Retain,Configurable,Cloneable" />
     <Parameter Name="Y00" DataKind="USINT" Dimension="1" Min="0" Max="2" DefaultValue="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Y03" DataKind="USINT" Dimension="1" Min="0" Max="5" DefaultValue="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Y04" DataKind="UINT" Dimension="1" Min="0" Max="999" DefaultValue="20" UoM="SECOND" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Y05" DataKind="BOOL" Dimension="1" DefaultValue="TRUE" />
+    <Parameter Name="Y06" DataKind="USINT" Dimension="1" Min="0" Max="2" DefaultValue="0" Attributes="Retain,Configurable,Cloneable" />
+    <Parameter Name="Y07" DataKind="UINT" Dimension="1" DefaultValue="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Y08" DataKind="USINT" Dimension="1" Min="0" Max="2" DefaultValue="1" Attributes="Retain,Configurable,Cloneable" />
     <Parameter Name="Y09" DataKind="BOOL" Dimension="1" Attributes="LogAlarmReset" />
     <Parameter Name="Y14" DataKind="USINT" Dimension="1" Min="0" Max="1" DefaultValue="0" Attributes="Retain,Configurable,Cloneable" />
@@ -843,7 +861,6 @@
         <Parameter Name="EBHPMax" Value="1000" />
         <Parameter Name="EBHPMin" Value="-1000" />
         <Parameter Name="EBHPStepOut" Value="50" />
-        <Parameter Name="EBHPStopComp" Value="100" />
         <Parameter Name="EBShunt" Value="-700" />
         <Parameter Name="ECT_Cool_Offset" Value="10" />
         <Parameter Name="ECT_DHW_Offset" Value="15" />
@@ -909,6 +926,8 @@
   </Configurations>
   <Languages>
     <Language Name="EN">
+      <Value Name="Access_Service">Logged in pGD1 display as Service</Value>
+      <Value Name="Access_Sys">Logged in pGD1 display as System Manager</Value>
       <Value Name="ActImmStep">Actual amount of active immersion heater steps</Value>
       <Value Name="Ain_Cfg.Fct.ClimSupplyTemp.AlrmDT">Broken probe alarm delay (0..9999)</Value>
       <Value Name="Ain_Cfg.Fct.ClimSupplyTemp.Board">Identifier expected of the HW board used</Value>
@@ -1012,10 +1031,12 @@
       <Value Name="CoolModeTemp">Cooling mode block temperature</Value>
       <Value Name="CoolModeTempHyst">Cooling mode block hysteresis</Value>
       <Value Name="CoolReq">Cooling mode needed</Value>
-      <Value Name="Day_Week">Current day of week</Value>
+      <Value Name="CurrSysT">Current System Time</Value>
+      <Value Name="Day_Week" EnumType="3">Current day of week</Value>
       <Value Name="DHW_CompOn">Compressor on from DHW charge</Value>
       <Value Name="DHWBoost">Boost compressor speed during DHW charge</Value>
       <Value Name="DHWBottomTemp">BT5 DHW bottom temperature</Value>
+      <Value Name="DhwCircPump1Spd">Circulation pump GT1 speed</Value>
       <Value Name="DHWCompBlock">DHWBlockComp blocks compressor due to EB calculation, probably there is a need for more heat in the near future</Value>
       <Value Name="DHWCompBlockTime">Off delay time for blocking DHW mode for compressor</Value>
       <Value Name="DhwFlowSwitchOnDel">Circulation pump on delay</Value>
@@ -1030,12 +1051,14 @@
       <Value Name="DhwPumpMin">Circulation pump PID min request</Value>
       <Value Name="DhwPumpPGain">Circulation pump PID - proportional gain</Value>
       <Value Name="DhwPumpSetP">Circulation pump PID - Setpoint</Value>
+      <Value Name="DHWPumpState">DHW charge pump state</Value>
       <Value Name="DhwRefBottom">DHW reference bottom</Value>
       <Value Name="DhwRefBottomN">Reference value for fully loaded DHW in Normal mode</Value>
       <Value Name="DhwRefMiddle">DHW reference middle</Value>
       <Value Name="DhwRefMiddleN">Reference value for fully loaded DHW in Normal mode</Value>
       <Value Name="DhwRefTop">DHW reference top</Value>
       <Value Name="DhwRefTopN">Reference value for fully loaded DHW in Normal mode</Value>
+      <Value Name="DHWReg_SetP">DHW regulation setpoint</Value>
       <Value Name="DHWRegDGain">DHW PID - Derivative time</Value>
       <Value Name="DHWRegIGain">DHW PID - Integral time</Value>
       <Value Name="DHWRegPGain">DHW PID - proportional gain</Value>
@@ -1056,7 +1079,7 @@
       <Value Name="Din_Cfg.Fct.FlowSw.Ch">Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Digital Input (ID), &gt;DELTA_UNIV_CH: Universal Channel (U) used as Digital Input</Value>
       <Value Name="Din_Cfg.Fct.FlowSw.Enable">Function is enabled</Value>
       <Value Name="Din_Cfg.Fct.FlowSw.Logic">Invert the logic of Digital Input</Value>
-      <Value Name="Din_Cfg.Fct.FlowSw.ModeType" EnumType="3">Channel mode type. NOTE: LIB_IO_DIN_COUNT and LIB_IO_DIN_FREQ only for Universal channel (U) used as Digital Input</Value>
+      <Value Name="Din_Cfg.Fct.FlowSw.ModeType" EnumType="4">Channel mode type. NOTE: LIB_IO_DIN_COUNT and LIB_IO_DIN_FREQ only for Universal channel (U) used as Digital Input</Value>
       <Value Name="Din_Cfg.Fct.SG1.Ch">Configuration channel (0:Not used, 1..DELTA_UNIV_CH:Digital Input (ID), &gt;DELTA_UNIV_CH: Universal Channel (U) used as Digital Input</Value>
       <Value Name="Din_Cfg.Fct.SG1.Enable">Function is enabled</Value>
       <Value Name="Din_Cfg.Fct.SG1.Logic">Invert the logic of Digital Input</Value>
@@ -1068,7 +1091,7 @@
       <Value Name="Din_Data.Fct.SG2">SG input 2</Value>
       <Value Name="Dout_Cfg.Fct.GlbAl.AlrmDT">Not used</Value>
       <Value Name="Dout_Cfg.Fct.GlbAl.GroupID">Group the work of two or more relè by ID</Value>
-      <Value Name="Dout_Cfg.Fct.GlbAl.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.GlbAl.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.GlbAl.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.GlbAl.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.AlrmDT">Not used</Value>
@@ -1077,7 +1100,7 @@
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.ImmheatStep1.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.ImmheatStep1.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep1.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.AlrmDT">Not used</Value>
@@ -1086,7 +1109,7 @@
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.ImmheatStep2.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.ImmheatStep2.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ImmheatStep2.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.RevVlv.AlrmDT">Not used</Value>
@@ -1095,7 +1118,7 @@
       <Value Name="Dout_Cfg.Fct.RevVlv.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.RevVlv.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.RevVlv.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.RevVlv.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.RevVlv.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.RevVlv.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.RevVlv.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.AlrmDT">Not used</Value>
@@ -1104,7 +1127,7 @@
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.ShuntVlvDout.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.ShuntVlvDout.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvDout.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.AlrmDT">Not used</Value>
@@ -1113,7 +1136,7 @@
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShuntVlvOffDout.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.AlrmDT">Not used</Value>
@@ -1122,17 +1145,20 @@
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.Enable">Function is enabled</Value>
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.GroupID">Group the work of two or more relè by ID</Value>
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.Logic">Invert the logic of Digital Output</Value>
-      <Value Name="Dout_Cfg.Fct.ShutOffVlv.ModeType" EnumType="4">Channel mode type</Value>
+      <Value Name="Dout_Cfg.Fct.ShutOffVlv.ModeType" EnumType="5">Channel mode type</Value>
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.tOff">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_Cfg.Fct.ShutOffVlv.tOn">Used to obtain a: Delayed Relay, Cyclic Relay, Delayed Relay no sync (see doc.)</Value>
       <Value Name="Dout_GlbAl">Global alarm</Value>
       <Value Name="Dout_Info.Fct.GlbAl.Trigger">Config alarm trigger</Value>
+      <Value Name="EBCH">Energy balance for cooling</Value>
+      <Value Name="EBCHCompStop">EB chiller compressor stop value</Value>
+      <Value Name="EBCHCompStrt">EB chiller comp start value</Value>
       <Value Name="EBHP">Current energy balance</Value>
+      <Value Name="EBHPCompStop">Stop OU from energybalance calculation</Value>
       <Value Name="EBHPCompStrt">Start OU from energybalance calculation</Value>
       <Value Name="EBHPMax">Maximum energybalance limit</Value>
       <Value Name="EBHPMin">Minimum energybalance limit</Value>
       <Value Name="EBHPStepOut">Immersion heater step out value</Value>
-      <Value Name="EBHPStopComp">Stop OU from energybalance calculation</Value>
       <Value Name="EBShunt">Shunt valve energy balance level</Value>
       <Value Name="ECT">ECT value for outdoor unit</Value>
       <Value Name="ECT_Cool_Offset">ECT value for outdoor unit while cooling</Value>
@@ -1140,6 +1166,8 @@
       <Value Name="ECT_Heat_Offset">ECT value for outdoor unit while heating</Value>
       <Value Name="En_AutoMode">Enable unit auto mode</Value>
       <Value Name="En_ExtHotWatr">Enable extra hotwater function</Value>
+      <Value Name="En_OU">Heatpump unit present</Value>
+      <Value Name="En_SelMode">Enable selection of operating mode</Value>
       <Value Name="En_SPV_OnOff">Enable unit on/off command from supervisor</Value>
       <Value Name="ErasureWindowSize">Window size (time) for the algorithm to prevent excessive use of storage space</Value>
       <Value Name="ErasureWindowsNumber">Number of windows for the algorithm to prevent excessive use of storage space</Value>
@@ -1147,7 +1175,7 @@
       <Value Name="ExtHotWatrEnbl">Enable extra hot water</Value>
       <Value Name="ExtHotWatrStopTemp">Stop temperature during extra hotwater mode</Value>
       <Value Name="ExtHotWatrTime">The extra hot water will be enabled for this time</Value>
-      <Value Name="FB2_Conf" EnumType="5">Client - Parity and stop bits</Value>
+      <Value Name="FB2_Conf" EnumType="6">Client - Parity and stop bits</Value>
       <Value Name="GblAlarm">Global alarm</Value>
       <Value Name="GoToState">Intended stage unit wants to transition to</Value>
       <Value Name="HeatCurve_Offset">HeatCurve offset to paralell move heatcurve</Value>
@@ -1159,7 +1187,7 @@
       <Value Name="HeatRegIGain">Heating PID - Integral time</Value>
       <Value Name="HeatRegPGain">Heating PID - proportional gain</Value>
       <Value Name="HeatReq">Heating mode needed</Value>
-      <Value Name="I00" EnumType="6">Unit status</Value>
+      <Value Name="I00" EnumType="7">Unit status</Value>
       <Value Name="I01">Unit capacity when running</Value>
       <Value Name="I02">Unit capacity request</Value>
       <Value Name="I19">Unit cooling/heating mode</Value>
@@ -1193,24 +1221,24 @@
       <Value Name="MaxTankTempOk">MaxTankTemp within limits</Value>
       <Value Name="MBM_Line.Info.DetectionRange">Detection Range (s)</Value>
       <Value Name="MBM_Line.Info.LastPollingLoopTime">Last Polling Loop Time (ms)</Value>
-      <Value Name="MBM_Line.Info.LineType" EnumType="7">Type of line (Serial or TCP)</Value>
+      <Value Name="MBM_Line.Info.LineType" EnumType="8">Type of line (Serial or TCP)</Value>
       <Value Name="MBM_Line.Info.PollingDelay">Polling Delay (ms)</Value>
       <Value Name="MBM_Line.Info.PollingLoopsNumber">Polling Loops Number</Value>
       <Value Name="MBM_Line.Info.Retry">Retry if device is online</Value>
       <Value Name="MBM_Line.SerialSettings.Bits">Bits</Value>
-      <Value Name="MBM_Line.SerialSettings.Channel" EnumType="8">Serial channel</Value>
-      <Value Name="MBM_Line.SerialSettings.HWMode" EnumType="9">Hardware mode: RS485 or 232</Value>
+      <Value Name="MBM_Line.SerialSettings.Channel" EnumType="9">Serial channel</Value>
+      <Value Name="MBM_Line.SerialSettings.HWMode" EnumType="10">Hardware mode: RS485 or 232</Value>
       <Value Name="MBM_Line.SerialSettings.MaskEvent">Mask for the dynamic event</Value>
-      <Value Name="MBM_Line.SerialSettings.Mode" EnumType="10">Select which communication is/are accepted</Value>
+      <Value Name="MBM_Line.SerialSettings.Mode" EnumType="11">Select which communication is/are accepted</Value>
       <Value Name="MBM_Line.SerialSettings.NotUseInterFrameDelay">Interframe delay timeout: 0 to use interframe delay, 1 otherwise</Value>
-      <Value Name="MBM_Line.SerialSettings.Parity" EnumType="11">Parity</Value>
+      <Value Name="MBM_Line.SerialSettings.Parity" EnumType="12">Parity</Value>
       <Value Name="MBM_Line.SerialSettings.Speed">Serial baudrate</Value>
       <Value Name="MBM_Line.SerialSettings.Stops">Stop Bits</Value>
       <Value Name="MBM_Line.TcpIpSettings.client">Client address.</Value>
       <Value Name="MBM_Line.TcpIpSettings.EventMask">Mask Event.</Value>
-      <Value Name="MBM_Line.TcpIpSettings.mode" EnumType="12">Server or Client mode.</Value>
+      <Value Name="MBM_Line.TcpIpSettings.mode" EnumType="13">Server or Client mode.</Value>
       <Value Name="MBM_Line.TcpIpSettings.port">Client port.</Value>
-      <Value Name="MBM_Line.TcpIpSettings.proto" EnumType="13">Protocol: TCP, UDP, or UDP_BROADCAST.</Value>
+      <Value Name="MBM_Line.TcpIpSettings.proto" EnumType="14">Protocol: TCP, UDP, or UDP_BROADCAST.</Value>
       <Value Name="NoOutdoorUnit">No outdoor unit present</Value>
       <Value Name="Offset_EBHP">The offset for the heat curve</Value>
       <Value Name="OpModeAllowCool">Allow cooling mode</Value>
@@ -1241,7 +1269,7 @@
       <Value Name="OU_Unit.Info.CommandDelay">Command delay (ms) of the device (see Help for more info)</Value>
       <Value Name="OU_Unit.Info.CommandsCount">Counts the number of times in which the client try to communicate with the server.</Value>
       <Value Name="OU_Unit.Info.DetectionTimeOut">Detection timeout (ms) of the device (see Help for more info)</Value>
-      <Value Name="OU_Unit.Info.DeviceError" EnumType="14">Current device error:
+      <Value Name="OU_Unit.Info.DeviceError" EnumType="15">Current device error:
  - NoError: Device answered as expected;
  - Offline: Device did not answer (offline);
  - InvalidPacket: Device answered with an invalid packet;
@@ -1262,6 +1290,7 @@
       <Value Name="OU_Unit.Info.ReadChangesCount">Counts the number of times data is updated from a device.</Value>
       <Value Name="OU_Unit.Info.TimeOut">Timeout (ms) of the device (see Help for more info)</Value>
       <Value Name="OU_Unit.Info.Zone">Zone of the device</Value>
+      <Value Name="OU_WaterFlowLimit">Waterflow limit</Value>
       <Value Name="OutDoorTemp">OutDoorTemp from selected source</Value>
       <Value Name="OutDoorTemp_FiltHrs">Outdoor temperature filter hours</Value>
       <Value Name="OutDoorTempFilter">Filtered outside temperature</Value>
@@ -1277,9 +1306,10 @@
       <Value Name="q01">Reset active alarms from supervisor</Value>
       <Value Name="q02">Unit on/off from supervisor</Value>
       <Value Name="q03">Unit control request from supervisor</Value>
+      <Value Name="q13">Unit control request from keypad</Value>
       <Value Name="RevVlv_On">Reversing valve status</Value>
       <Value Name="SecondIn">New second value</Value>
-      <Value Name="Sel_HeatCurve_SetP">Heatcurve</Value>
+      <Value Name="Sel_HeatCurve_SetP">Heatcurve selection</Value>
       <Value Name="SetClock">Sets controller internal clock by display</Value>
       <Value Name="SetP_ExtAdj">External setpoint adjustment</Value>
       <Value Name="SG_Offset">Setpoint offset from smart grid</Value>
@@ -1311,16 +1341,16 @@
       <Value Name="W43">Unit ON/OFF status</Value>
       <Value Name="WaterFlow_DHW">WaterFlow for DHW</Value>
       <Value Name="X16">Number of retentive writes to the window size to prevent intensive memory use</Value>
-      <Value Name="Y00" EnumType="15">Supervisor serial port</Value>
-      <Value Name="Y02" EnumType="16"></Value>
-      <Value Name="Y03" EnumType="5">Supervisor parity and stop bits</Value>
+      <Value Name="Y00" EnumType="16">Supervisor serial port</Value>
+      <Value Name="Y03" EnumType="6">Supervisor parity and stop bits</Value>
       <Value Name="Y04">Supervisor offline timeout</Value>
       <Value Name="Y05">Supervisor apply settings</Value>
-      <Value Name="Y08" EnumType="16">Unit of measure</Value>
+      <Value Name="Y06" EnumType="17">Supervisor offline management</Value>
+      <Value Name="Y07">Language identifier</Value>
+      <Value Name="Y08" EnumType="18">Unit of measure</Value>
       <Value Name="Y09">Clear alarm log</Value>
-      <Value Name="Y14" EnumType="17">Client - Port</Value>
-      <Value Name="Y15" EnumType="18">Client - Baudrate</Value>
-      <Value Name="Y16" EnumType="17"></Value>
+      <Value Name="Y14" EnumType="19">Client - Port</Value>
+      <Value Name="Y15" EnumType="20">Client - Baudrate</Value>
       <Value Name="Y17">Client - Apply settings</Value>
       <Value Name="Y44">New day value</Value>
       <Value Name="Y45">New month value</Value>
@@ -1329,59 +1359,63 @@
       <Value Name="Y48">New minute value</Value>
       <Value Name="Y50">Timezone index</Value>
       <Value Name="Y99">Factory initialization</Value>
-      <Enum Index="14" Name="DeviceError" Keys="NoError,Offline,InvalidPacket,ErrorCodeReceived,NotYetQueried,BadPDU,BadCRC,IllegalData,UnsupportedFunction,UnexpectedFunction,UnexpectedData,ReceivedDataOutOfRange">0," Device answered as expected ",1," Device did not answer (offline) ",2," Device answered with an invalid packet ",3," Device answered with an error code ",4," Device has yet to be queried ",5," Device answered with too short PDU ",6," Device answered with a wrong CRC ",7," Device answered with an invalid data ",8," Device answered with an unsupported function code ",9," Device answered with a different function code from that expected ",10," Device answered with different number of data from that expected ",11," Device answered with out of range data "</Enum>
+      <Enum Index="15" Name="DeviceError" Keys="NoError,Offline,InvalidPacket,ErrorCodeReceived,NotYetQueried,BadPDU,BadCRC,IllegalData,UnsupportedFunction,UnexpectedFunction,UnexpectedData,ReceivedDataOutOfRange">0," Device answered as expected ",1," Device did not answer (offline) ",2," Device answered with an invalid packet ",3," Device answered with an error code ",4," Device has yet to be queried ",5," Device answered with too short PDU ",6," Device answered with a wrong CRC ",7," Device answered with an invalid data ",8," Device answered with an unsupported function code ",9," Device answered with a different function code from that expected ",10," Device answered with different number of data from that expected ",11," Device answered with out of range data "</Enum>
       <Enum Index="1" Name="Libs_IOMng_Basic_v2_1_1_C_ERROR" Keys="NoError,BrokenProbe,ChannelOutOfRange,ChannelNotCompatibleSubGroup,ChannelNotCompatible,ChannelAlreadyUsed,Reserved0,Reserved1,Reserved2,Reserved3,Reserved4,ChipIOConfigComm,ProbeNotInUse,ProbeNotConnected,ShortCircuit,Overflow,Underflow,InvalidParam,ChannelNotFree,InvalidChannel,InternalTableError,InvalidProbeType,InternalStructureFull">0," No error ",1," Probe out of range / Probe broken",2," Channel out of premissible range",3," Channel not compatible with specified Group Type",4," Channel not compatible with specified type",5," Channel already used by another function",6,Reserved0,7,Reserved1,8,Reserved2,9,Reserved3,10,Reserved4,11," Error during chip IO configuration (from chip IO)",12," Probe not in use (from chip IO)",13," Probe not connected (from chip IO)",14," Probe short circuited (from chip IO)",15," Probe overflow (from chip IO)",16," Probe underflow (from chip IO)",17," Invalid param, range, direction and type may be out of range (from chip IO)",18," Channel busy, happens with the second channel of PT100 (from chip IO)",19," Channel not valid (from chip IO)",20," Missing scaling values for probes (from chip IO)",21," Invalid probe type (from chip IO)",22," Internal structure full (from chip IO)"</Enum>
       <Enum Index="0" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_AIN" Keys="LIB_IO_PROBE_NTC,LIB_IO_PROBE_PT1000,LIB_IO_PROBE_0_1V,LIB_IO_PROBE_0_10V,LIB_IO_PROBE_4_20MA,LIB_IO_PROBE_ONOFF,LIB_IO_PROBE_0_5V,LIB_IO_PROBE_NTC_0_150,LIB_IO_PROBE_CUSTOM_n50T90,LIB_IO_PROBE_CUSTOM_10T170,LIB_IO_PROBE_CUSTOM_1,LIB_IO_PROBE_CUSTOM_SENSATA,LIB_IO_PROBE_CUSTOM_2,LIB_IO_PROBE_CUSTOM_3,LIB_IO_PROBE_OHM_05,LIB_IO_PROBE_OHM_10,LIB_IO_PROBE_80MINUS,LIB_IO_PROBE_OHM,LIB_IO_PROBE_PT500,LIB_IO_PROBE_PT100,LIB_IO_PROBE_DIFF,LIB_IO_PROBE_0_5V_ASS,LIB_IO_PROBE_DIG_OPTO,LIB_IO_PROBE_U_CNT,LIB_IO_PROBE_U_FREQ,LIB_IO_PROBE_0_20MA,LIB_IO_PROBE_05_45V,LIB_IO_PROBE_HLVP,LIB_IO_PROBE_PTC_CAREL,LIB_IO_PROBE_SFL60,LIB_IO_PROBE_NO_CONN">0," Selection type NTC for AIN (U channel) ",1," Selection type PT1000 for AIN (U channel) ",2," Selection type 0..1 V for AIN (U channel) ",3," Selection type 0..10 V for AIN (U channel) ",4," Selection type 4..20 mA for AIN (U channel) ",5," Selection type ON OFF for AIN (U channel) ",6," Selection type 0..5V for AIN (U channel) ",7," Selection type NTC 0..150 for AIN (U channel) ",8," Selection type PROBE CUSTOM n50T90 for AIN (U channel) ",9," Selection type PROBE CUSTOM 10T170 for AIN (U channel) ",10," Selection type PROBE CUSTOM 1 for AIN (U channel) ",11," Selection type CUSTOM SENSATA for AIN (U channel) ",12," Selection type PROBE CUSTOM 2 for AIN (U channel) ",13," Selection type PROBE CUSTOM 3 for AIN (U channel) ",14," Selection type 0..5 OHM for AIN (U channel) ",15," Selection type 0..10 OHM  for AIN (U channel) ",16," Selection type 80 MINUS for AIN (U channel) ",17," Selection type OHM for AIN (U channel) ",18," Selection type PT500 for AIN (U channel) ",19," Selection type PT100 for AIN (U channel) ",20," Selection type DIFF for AIN (U channel) ",21," Selection type 0..5V ASS for AIN (U channel) ",22," Selection type DIG OPTO for AIN (U channel) ",23," Selection type U COUNTER for AIN (U channel) ",24," Selection type U FREQ for AIN (U channel) ",25," Selection type 0..20 mA for AIN (U channel) ",26," Selection type 0.5..4.5 V for AIN (U channel) ",27," Selection type HLVP for AIN (U channel) ",28," Selection type PTC CAREL for AIN (U channel) ",29," Selection type SFL60 for AIN (U channel) ",30," Selection type PROBE NO CONNECTION for AIN (U channel) "</Enum>
       <Enum Index="2" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_AOUT" Keys="LIB_IO_OUT_0_10V,LIB_IO_PWM_SYNC_MAIN_FREQ,LIB_IO_PHASE_CUTTING,LIB_IO_PWM100HZ0_10_SR,LIB_IO_OUT_0_10V_SRC,LIB_IO_PWM_2_KHZ,LIB_IO_PWM_VFC">0," Selection type 0..10 V for AOUT (Y channel) ",1," Selection type PWM synchronous with main frequency for AOUT (Y channel) ",2," Selection type phase cutting for AOUT (Y channel) ",3," Selection type PWM 100 HZ 0..10 SR for AOUT (Y channel) ",4," Selection type 0..10 V for AOUT (Y channel) ",5," Selection type PWM 2KHZ for AOUT (Y channel) ",6," Selection type PWM_VFC for AOUT (Y channel) "</Enum>
-      <Enum Index="3" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DIN" Keys="LIB_IO_DIN,LIB_IO_DIN_COUNT,LIB_IO_DIN_FREQ">0," Selection mode for digital input (U channel) ",1," Selection mode for analog DIN counter (U channel) ",2," Selection mode for analog DIN freq (U channel) "</Enum>
-      <Enum Index="4" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DOUT" Keys="LIB_IO_STANDARD_RELE,LIB_IO_DELAYED_RELE,LIB_IO_CYCLIC_RELE">0," Selection type normal mode for NO",1," Selection type delayed mode for NO",2," Selection type cycled mode for NO"</Enum>
-      <Enum Index="7" Name="Protocols_LineType" Keys="Serial,TCP_IP,UDP">0," it is a serial line ",1," it is a TCP line ",2," it is a UDP line "</Enum>
-      <Enum Index="17" Name="Serial_Channel_Client" Keys="FBUS1,FBUS2">0," FBUS1 serial channel ",1," FBUS2 serial channel "</Enum>
-      <Enum Index="15" Name="Serial_Channel_Server" Keys="BMS1,BMS2,Serial0">0," BMS1 serial channel ",1," BMS2 serial channel ",2," Serial0 serial channel "</Enum>
-      <Enum Index="5" Name="Serial_ParityStopBits" Keys="NONE_1,NONE_2,EVEN_1,EVEN_2,ODD_1,ODD_2">0,NONE-1,1,NONE-2,2,EVEN-1,3,EVEN-2,4,ODD-1,5,ODD-2</Enum>
-      <Enum Index="18" Name="Serial_Speed" Keys="Baud_1200,Baud_2400,Baud_4800,Baud_9600,Baud_19200,Baud_38400,Baud_57600,Baud_115200,Baud_375000">0,Baud rate 1200,1,Baud rate 2400,2,Baud rate 4800,3,Baud rate 9600,4,Baud rate 19200,5,Baud rate 38400,6,Baud rate 57600,7,Baud rate 115200,8,Baud rate 375000</Enum>
-      <Enum Index="12" Name="System_Net_TcpIp_TcpIp_Mode" Keys="Server,Client,Test">0," TCP IP server mode ",1," TCP IP client mode ",2," TCP IP test mode "</Enum>
-      <Enum Index="13" Name="System_Net_TcpIp_TcpIp_Protocol" Keys="TCP,UDP,UDP_BROADCAST">0," TCP IP tcp protocol ",1," TCP IP udp protocol ",2," TCP IP udp broadcast protocol "</Enum>
-      <Enum Index="9" Name="System_Serial_HardwareMode" Keys="RS485,Ser232">0," RS485 serial line ",1," 232 serial line "</Enum>
-      <Enum Index="8" Name="System_Serial_Serial_Channel" Keys="Serial0,BMS1,FBUS1,BMS2,FBUS2">0," Serial0 serial channel ",1," BMS1 serial channel ",2," FBUS1 serial channel ",3," BMS2 serial channel ",4," FBUS2 serial channel "</Enum>
-      <Enum Index="10" Name="System_Serial_Serial_Mode" Keys="IDEOnly,ModbusShared,IDEDisabled">0," Only IDE connection is accepted on the selected COM ",1," Both IDE and custom communication are accepted on the selected COM ",2," IDE communication is not accepted on the selected COM "</Enum>
-      <Enum Index="11" Name="System_Serial_Serial_Parity" Keys="None,Odd,Even">0," No parity ",1," Odd parity ",2," Even parity "</Enum>
-      <Enum Index="6" Name="UNIT_STATUS" Keys="Wait,UnitON,OffByAlarm,OffByNetwork,OffByBMS,OffByScheduler,OffByDI,OffByKeyboard,Manual,ChangeOver,SwitchON,ShutDown,PreConditioning,Dehumidification,Antifreeze,Defrost,AirPressure_Flow,AirQuality,Cooling,Heating,FreeCooling,FreeHeating,LowTemperatureControl,HighTemperatureControl,TestIO,DHW,InactivityStart,HighSaturationHumidity,Purging">0,Wait,1,Unit ON,2,Off By Alarm,3,Off By Network,4,Off By BMS,5,Off By Scheduler,6,Off By Digital Input,7,Off By Keyboard,8,Unit manual mode active,9,ChangeOver,10,Switch ON,11,Shut Down,12,Pre-Conditioning,13,Dehumidification,14,Antifreeze,15,Defrost,16,Air Pressure/Flow,17,Air Quality,18,Cooling,19,Heating,20,FreeCooling,21,FreeHeating,22,Low Temperature Control,23,High Temperature Control,24,Test I/O,25,Domestic Hot Water,26,Inactivity Start,27,High Saturation Humidity,28,Purging</Enum>
-      <Enum Index="16" Name="UOM_ZONE" Keys="NONE,SI,Imperial">0,No Zone,1,International System Zone [°C/bar],2,Imperial Zone [°F/psi]</Enum>
+      <Enum Index="4" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DIN" Keys="LIB_IO_DIN,LIB_IO_DIN_COUNT,LIB_IO_DIN_FREQ">0," Selection mode for digital input (U channel) ",1," Selection mode for analog DIN counter (U channel) ",2," Selection mode for analog DIN freq (U channel) "</Enum>
+      <Enum Index="5" Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DOUT" Keys="LIB_IO_STANDARD_RELE,LIB_IO_DELAYED_RELE,LIB_IO_CYCLIC_RELE">0," Selection type normal mode for NO",1," Selection type delayed mode for NO",2," Selection type cycled mode for NO"</Enum>
+      <Enum Index="8" Name="Protocols_LineType" Keys="Serial,TCP_IP,UDP">0," it is a serial line ",1," it is a TCP line ",2," it is a UDP line "</Enum>
+      <Enum Index="19" Name="Serial_Channel_Client" Keys="FBUS1,FBUS2">0," FBUS1 serial channel ",1," FBUS2 serial channel "</Enum>
+      <Enum Index="16" Name="Serial_Channel_Server" Keys="BMS1,BMS2,Serial0">0," BMS1 serial channel ",1," BMS2 serial channel ",2," Serial0 serial channel "</Enum>
+      <Enum Index="6" Name="Serial_ParityStopBits" Keys="NONE_1,NONE_2,EVEN_1,EVEN_2,ODD_1,ODD_2">0,NONE-1,1,NONE-2,2,EVEN-1,3,EVEN-2,4,ODD-1,5,ODD-2</Enum>
+      <Enum Index="20" Name="Serial_Speed" Keys="Baud_1200,Baud_2400,Baud_4800,Baud_9600,Baud_19200,Baud_38400,Baud_57600,Baud_115200,Baud_375000">0,Baud rate 1200,1,Baud rate 2400,2,Baud rate 4800,3,Baud rate 9600,4,Baud rate 19200,5,Baud rate 38400,6,Baud rate 57600,7,Baud rate 115200,8,Baud rate 375000</Enum>
+      <Enum Index="17" Name="SPV_OFFLINE_MNG" Keys="None,Warning,Alarm">0,No visualization,1,"Warning, visualization only",2,"Alarm, switch off the unit"</Enum>
+      <Enum Index="13" Name="System_Net_TcpIp_TcpIp_Mode" Keys="Server,Client,Test">0," TCP IP server mode ",1," TCP IP client mode ",2," TCP IP test mode "</Enum>
+      <Enum Index="14" Name="System_Net_TcpIp_TcpIp_Protocol" Keys="TCP,UDP,UDP_BROADCAST">0," TCP IP tcp protocol ",1," TCP IP udp protocol ",2," TCP IP udp broadcast protocol "</Enum>
+      <Enum Index="10" Name="System_Serial_HardwareMode" Keys="RS485,Ser232">0," RS485 serial line ",1," 232 serial line "</Enum>
+      <Enum Index="9" Name="System_Serial_Serial_Channel" Keys="Serial0,BMS1,FBUS1,BMS2,FBUS2">0," Serial0 serial channel ",1," BMS1 serial channel ",2," FBUS1 serial channel ",3," BMS2 serial channel ",4," FBUS2 serial channel "</Enum>
+      <Enum Index="11" Name="System_Serial_Serial_Mode" Keys="IDEOnly,ModbusShared,IDEDisabled">0," Only IDE connection is accepted on the selected COM ",1," Both IDE and custom communication are accepted on the selected COM ",2," IDE communication is not accepted on the selected COM "</Enum>
+      <Enum Index="12" Name="System_Serial_Serial_Parity" Keys="None,Odd,Even">0," No parity ",1," Odd parity ",2," Even parity "</Enum>
+      <Enum Index="3" Name="System_Timer_DayOfWeek" Keys="Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday">0,Sunday,1,Monday,2,Tuesday,3,Wednesday,4,Thursday,5,Friday,6,Saturday</Enum>
+      <Enum Index="7" Name="UNIT_STATUS" Keys="Wait,UnitON,OffByAlarm,OffByNetwork,OffByBMS,OffByScheduler,OffByDI,OffByKeyboard,Manual,ChangeOver,SwitchON,ShutDown,PreConditioning,Dehumidification,Antifreeze,Defrost,AirPressure_Flow,AirQuality,Cooling,Heating,FreeCooling,FreeHeating,LowTemperatureControl,HighTemperatureControl,TestIO,DHW,InactivityStart,HighSaturationHumidity,Purging">0,Wait,1,Unit ON,2,Off By Alarm,3,Off By Network,4,Off By BMS,5,Off By Scheduler,6,Off By Digital Input,7,Off By Keyboard,8,Unit manual mode active,9,ChangeOver,10,Switch ON,11,Shut Down,12,Pre-Conditioning,13,Dehumidification,14,Antifreeze,15,Defrost,16,Air Pressure/Flow,17,Air Quality,18,Cooling,19,Heating,20,FreeCooling,21,FreeHeating,22,Low Temperature Control,23,High Temperature Control,24,Test I/O,25,Domestic Hot Water,26,Inactivity Start,27,High Saturation Humidity,28,Purging</Enum>
+      <Enum Index="18" Name="UOM_ZONE" Keys="NONE,SI,Imperial">0,No Zone,1,International System Zone [°C/bar],2,Imperial Zone [°F/psi]</Enum>
     </Language>
   </Languages>
   <Layouts>
     <Layout N="Display" T="Modbus" />
-    <Layout N="Parameters" T="Parameters" C="3199044631" L="585" NS="11665">
+    <Layout N="Parameters" T="Parameters" C="357608229" L="602" NS="11835">
       <PS>
-        <P N="Active_Alrm[10]" O="24" />
-        <P N="Active_Alrm[11]" O="26" />
-        <P N="Active_Alrm[12]" O="28" />
-        <P N="Active_Alrm[13]" O="30" />
-        <P N="Active_Alrm[14]" O="32" />
-        <P N="Active_Alrm[15]" O="34" />
-        <P N="Active_Alrm[16]" O="36" />
-        <P N="Active_Alrm[17]" O="38" />
-        <P N="Active_Alrm[18]" O="40" />
-        <P N="Active_Alrm[19]" O="42" />
-        <P N="Active_Alrm[1]" O="6" />
-        <P N="Active_Alrm[20]" O="44" />
-        <P N="Active_Alrm[21]" O="46" />
-        <P N="Active_Alrm[22]" O="48" />
-        <P N="Active_Alrm[23]" O="50" />
-        <P N="Active_Alrm[24]" O="52" />
-        <P N="Active_Alrm[25]" O="54" />
-        <P N="Active_Alrm[26]" O="56" />
-        <P N="Active_Alrm[27]" O="58" />
-        <P N="Active_Alrm[28]" O="60" />
-        <P N="Active_Alrm[2]" O="8" />
-        <P N="Active_Alrm[3]" O="10" />
-        <P N="Active_Alrm[4]" O="12" />
-        <P N="Active_Alrm[5]" O="14" />
-        <P N="Active_Alrm[6]" O="16" />
-        <P N="Active_Alrm[7]" O="18" />
-        <P N="Active_Alrm[8]" O="20" />
-        <P N="Active_Alrm[9]" O="22" />
+        <P N="Access_Service" />
+        <P N="Access_Sys" B="1" />
+        <P N="Active_Alrm[10]" O="26" />
+        <P N="Active_Alrm[11]" O="28" />
+        <P N="Active_Alrm[12]" O="30" />
+        <P N="Active_Alrm[13]" O="32" />
+        <P N="Active_Alrm[14]" O="34" />
+        <P N="Active_Alrm[15]" O="36" />
+        <P N="Active_Alrm[16]" O="38" />
+        <P N="Active_Alrm[17]" O="40" />
+        <P N="Active_Alrm[18]" O="42" />
+        <P N="Active_Alrm[19]" O="44" />
+        <P N="Active_Alrm[1]" O="8" />
+        <P N="Active_Alrm[20]" O="46" />
+        <P N="Active_Alrm[21]" O="48" />
+        <P N="Active_Alrm[22]" O="50" />
+        <P N="Active_Alrm[23]" O="52" />
+        <P N="Active_Alrm[24]" O="54" />
+        <P N="Active_Alrm[25]" O="56" />
+        <P N="Active_Alrm[26]" O="58" />
+        <P N="Active_Alrm[27]" O="60" />
+        <P N="Active_Alrm[28]" O="62" />
+        <P N="Active_Alrm[2]" O="10" />
+        <P N="Active_Alrm[3]" O="12" />
+        <P N="Active_Alrm[4]" O="14" />
+        <P N="Active_Alrm[5]" O="16" />
+        <P N="Active_Alrm[6]" O="18" />
+        <P N="Active_Alrm[7]" O="20" />
+        <P N="Active_Alrm[8]" O="22" />
+        <P N="Active_Alrm[9]" O="24" />
         <P N="Ain_Cfg.Fct.ClimSupplyTemp.AlrmDT" S="1" O="68" />
         <P N="Ain_Cfg.Fct.ClimSupplyTemp.Board" S="1" O="60" />
         <P N="Ain_Cfg.Fct.ClimSupplyTemp.Ch" S="1" O="61" />
@@ -1466,13 +1500,14 @@
         <P N="CompRunTimerMin" S="1" O="206" />
         <P N="CompSpdMan" O="3056" />
         <P N="CompSpdMax" S="1" O="208" />
-        <P N="Conn_OutDoorTemp" O="21304" />
-        <P N="CoolingBlock" O="21308" />
+        <P N="Conn_OutDoorTemp" O="21516" />
+        <P N="CoolingBlock" O="21520" />
         <P N="CoolModeTemp" S="1" O="212" />
         <P N="CoolModeTempHyst" S="1" O="216" />
-        <P N="CoolReq" O="21308" B="1" />
-        <P N="Day_Week" O="21309" />
-        <P N="DHWBoost" O="21320" />
+        <P N="CoolReq" O="21528" />
+        <P N="CurrSysT" O="21532" />
+        <P N="Day_Week" O="21536" />
+        <P N="DHWBoost" O="21548" />
         <P N="DHWBottomTemp" O="64" />
         <P N="DhwBT3StopCom" S="1" O="228" />
         <P N="DhwBT3StopEco" S="1" O="232" />
@@ -1480,468 +1515,482 @@
         <P N="DhwBT3StrtCom" S="1" O="240" />
         <P N="DhwBT3StrtEco" S="1" O="244" />
         <P N="DhwBT3StrtNor" S="1" O="248" />
-        <P N="DhwComfStartTemp" S="1" O="252" />
-        <P N="DhwComfStopTemp" S="1" O="256" />
-        <P N="DHWCompBlock" O="21328" />
-        <P N="DHWCompBlockTime" S="1" O="260" />
-        <P N="DhwEcoStartTemp" S="1" O="264" />
-        <P N="DhwEcoStopTemp" S="1" O="268" />
-        <P N="DhwFlowSwitchOnDel" S="1" O="272" />
+        <P N="DhwCircPump1Spd" S="1" O="264" />
+        <P N="DhwComfStartTemp" S="1" O="268" />
+        <P N="DhwComfStopTemp" S="1" O="272" />
+        <P N="DHWCompBlock" O="21672" />
+        <P N="DHWCompBlockTime" S="1" O="276" />
+        <P N="DhwEcoStartTemp" S="1" O="280" />
+        <P N="DhwEcoStopTemp" S="1" O="284" />
+        <P N="DhwFlowSwitchOnDel" S="1" O="288" />
         <P N="DHWMiddleTemp" O="68" />
-        <P N="DhwMode" S="1" O="273" />
-        <P N="DHWNeed" O="21328" B="2" />
-        <P N="DhwNormStartTemp" S="1" O="276" />
-        <P N="DhwNormStopTemp" S="1" O="280" />
-        <P N="DHWProc" O="21332" />
-        <P N="DhwPumpDGain" S="1" O="284" />
-        <P N="DhwPumpIGain" S="1" O="286" />
-        <P N="DhwPumpManReq" O="21340" />
-        <P N="DhwPumpMax" S="1" O="288" />
-        <P N="DhwPumpMin" S="1" O="289" />
-        <P N="DhwPumpPGain" S="1" O="290" />
-        <P N="DHWPumpReg" O="21352" />
-        <P N="DhwPumpSetP" O="21356" />
-        <P N="DhwRefBottom" S="1" O="292" />
-        <P N="DhwRefBottomN" S="1" O="296" />
-        <P N="DhwRefMiddle" S="1" O="300" />
-        <P N="DhwRefMiddleN" S="1" O="304" />
-        <P N="DhwRefTop" S="1" O="308" />
-        <P N="DhwRefTopN" S="1" O="312" />
-        <P N="DHWRegDGain" S="1" O="316" />
-        <P N="DHWRegIGain" S="1" O="318" />
-        <P N="DHWRegPGain" S="1" O="320" />
-        <P N="DHWReq" O="21360" />
-        <P N="DhwSetPointStpCom" S="1" O="324" />
-        <P N="DhwSetPointStpEco" S="1" O="328" />
-        <P N="DhwSetPointStpNor" S="1" O="332" />
-        <P N="DhwSetPointStrtCom" S="1" O="336" />
-        <P N="DhwSetPointStrtEco" S="1" O="340" />
-        <P N="DhwSetPointStrtNor" S="1" O="344" />
-        <P N="DHWStartTemp" O="21364" />
-        <P N="DHWStopTemp" O="21368" />
-        <P N="DHWStrtProc" S="1" O="348" />
+        <P N="DhwMode" S="1" O="289" />
+        <P N="DHWNeed" O="21672" B="2" />
+        <P N="DhwNormStartTemp" S="1" O="292" />
+        <P N="DhwNormStopTemp" S="1" O="296" />
+        <P N="DHWProc" O="21676" />
+        <P N="DhwPumpDGain" S="1" O="300" />
+        <P N="DhwPumpIGain" S="1" O="302" />
+        <P N="DhwPumpManReq" O="21684" />
+        <P N="DhwPumpMax" S="1" O="304" />
+        <P N="DhwPumpMin" S="1" O="305" />
+        <P N="DhwPumpPGain" S="1" O="306" />
+        <P N="DHWPumpReg" O="21696" />
+        <P N="DhwPumpSetP" O="21700" />
+        <P N="DHWPumpState" O="21704" />
+        <P N="DhwRefBottom" S="1" O="308" />
+        <P N="DhwRefBottomN" S="1" O="312" />
+        <P N="DhwRefMiddle" S="1" O="316" />
+        <P N="DhwRefMiddleN" S="1" O="320" />
+        <P N="DhwRefTop" S="1" O="324" />
+        <P N="DhwRefTopN" S="1" O="328" />
+        <P N="DHWRegDGain" S="1" O="332" />
+        <P N="DHWRegIGain" S="1" O="334" />
+        <P N="DHWRegPGain" S="1" O="336" />
+        <P N="DHWReg_SetP" O="21708" />
+        <P N="DHWReq" O="21712" />
+        <P N="DhwSetPointStpCom" S="1" O="340" />
+        <P N="DhwSetPointStpEco" S="1" O="344" />
+        <P N="DhwSetPointStpNor" S="1" O="348" />
+        <P N="DhwSetPointStrtCom" S="1" O="352" />
+        <P N="DhwSetPointStrtEco" S="1" O="356" />
+        <P N="DhwSetPointStrtNor" S="1" O="360" />
+        <P N="DHWStartTemp" O="21716" />
+        <P N="DHWStopTemp" O="21720" />
+        <P N="DHWStrtProc" S="1" O="364" />
         <P N="DHWSupplyTemp" O="76" />
-        <P N="DhwTimerIncComp" S="1" O="350" />
-        <P N="DhwTimerStop" S="1" O="352" />
+        <P N="DhwTimerIncComp" S="1" O="366" />
+        <P N="DhwTimerStop" S="1" O="368" />
         <P N="DHWTopTemp" O="72" />
-        <P N="DHW_CompOn" O="21314" />
-        <P N="Din_Cfg.Fct.FlowSw.Ch" S="1" O="369" />
-        <P N="Din_Cfg.Fct.FlowSw.Enable" S="1" O="370" />
-        <P N="Din_Cfg.Fct.FlowSw.Logic" S="1" O="372" />
-        <P N="Din_Cfg.Fct.FlowSw.ModeType" S="1" O="371" />
-        <P N="Din_Cfg.Fct.SG1.Ch" S="1" O="381" />
-        <P N="Din_Cfg.Fct.SG1.Enable" S="1" O="382" />
-        <P N="Din_Cfg.Fct.SG1.Logic" S="1" O="384" />
-        <P N="Din_Cfg.Fct.SG2.Ch" S="1" O="393" />
-        <P N="Din_Cfg.Fct.SG2.Enable" S="1" O="394" />
-        <P N="Din_Cfg.Fct.SG2.Logic" S="1" O="396" />
-        <P N="Din_Data.Fct.FlowSw" O="21372" B="1" />
-        <P N="Din_Data.Fct.SG1" O="21372" B="2" />
-        <P N="Din_Data.Fct.SG2" O="21372" B="3" />
-        <P N="Dout_Cfg.Fct.GlbAl.AlrmDT" S="1" O="416" />
-        <P N="Dout_Cfg.Fct.GlbAl.GroupID" S="1" O="414" />
-        <P N="Dout_Cfg.Fct.GlbAl.ModeType" S="1" O="407" />
-        <P N="Dout_Cfg.Fct.GlbAl.tOff" S="1" O="412" />
-        <P N="Dout_Cfg.Fct.GlbAl.tOn" S="1" O="410" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.AlrmDT" S="1" O="448" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.Board" S="1" O="436" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.Ch" S="1" O="437" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.Enable" S="1" O="438" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.GroupID" S="1" O="446" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.Logic" S="1" O="440" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.ModeType" S="1" O="439" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.tOff" S="1" O="444" />
-        <P N="Dout_Cfg.Fct.ImmheatStep1.tOn" S="1" O="442" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.AlrmDT" S="1" O="464" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.Board" S="1" O="452" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.Ch" S="1" O="453" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.Enable" S="1" O="454" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.GroupID" S="1" O="462" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.Logic" S="1" O="456" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.ModeType" S="1" O="455" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.tOff" S="1" O="460" />
-        <P N="Dout_Cfg.Fct.ImmheatStep2.tOn" S="1" O="458" />
-        <P N="Dout_Cfg.Fct.RevVlv.AlrmDT" S="1" O="496" />
-        <P N="Dout_Cfg.Fct.RevVlv.Board" S="1" O="484" />
-        <P N="Dout_Cfg.Fct.RevVlv.Ch" S="1" O="485" />
-        <P N="Dout_Cfg.Fct.RevVlv.Enable" S="1" O="486" />
-        <P N="Dout_Cfg.Fct.RevVlv.GroupID" S="1" O="494" />
-        <P N="Dout_Cfg.Fct.RevVlv.Logic" S="1" O="488" />
-        <P N="Dout_Cfg.Fct.RevVlv.ModeType" S="1" O="487" />
-        <P N="Dout_Cfg.Fct.RevVlv.tOff" S="1" O="492" />
-        <P N="Dout_Cfg.Fct.RevVlv.tOn" S="1" O="490" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.AlrmDT" S="1" O="432" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.Board" S="1" O="420" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.Ch" S="1" O="421" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.Enable" S="1" O="422" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.GroupID" S="1" O="430" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.Logic" S="1" O="424" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.ModeType" S="1" O="423" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.tOff" S="1" O="428" />
-        <P N="Dout_Cfg.Fct.ShuntVlvDout.tOn" S="1" O="426" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.AlrmDT" S="1" O="480" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Board" S="1" O="468" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Ch" S="1" O="469" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Enable" S="1" O="470" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.GroupID" S="1" O="478" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Logic" S="1" O="472" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType" S="1" O="471" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.tOff" S="1" O="476" />
-        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.tOn" S="1" O="474" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.AlrmDT" S="1" O="512" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.Board" S="1" O="500" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.Ch" S="1" O="501" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.Enable" S="1" O="502" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.GroupID" S="1" O="510" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.Logic" S="1" O="504" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.ModeType" S="1" O="503" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.tOff" S="1" O="508" />
-        <P N="Dout_Cfg.Fct.ShutOffVlv.tOn" S="1" O="506" />
-        <P N="Dout_GlbAl" O="23514" />
-        <P N="Dout_Info.Fct.GlbAl.Trigger" O="23515" B="1" />
-        <P N="EBHP" O="23532" />
-        <P N="EBHPCompStrt" S="1" O="516" />
-        <P N="EBHPMax" S="1" O="520" />
-        <P N="EBHPMin" S="1" O="524" />
-        <P N="EBHPStepOut" S="1" O="528" />
-        <P N="EBHPStopComp" S="1" O="532" />
-        <P N="EBShunt" S="1" O="536" />
-        <P N="EBStepImm" S="1" O="540" />
-        <P N="ECT" O="23540" />
-        <P N="ECT_Cool_Offset" S="1" O="544" />
-        <P N="ECT_DHW_Offset" S="1" O="548" />
-        <P N="ECT_Heat_Offset" S="1" O="552" />
-        <P N="En_AutoMode" S="1" O="557" />
-        <P N="En_ExtHotWatr" O="23544" />
-        <P N="En_SPV_OnOff" S="1" O="558" />
-        <P N="ErasureWindowSize" S="1" O="560" />
-        <P N="ErasureWindowsNumber" S="1" O="564" />
-        <P N="ExtHotWatrDiff" S="1" O="568" />
-        <P N="ExtHotWatrEnbl" O="23544" B="1" />
-        <P N="ExtHotWatrStopTemp" S="1" O="572" />
-        <P N="ExtHotWatrTime" S="1" O="576" />
-        <P N="FB2_Conf" S="1" O="579" />
-        <P N="GblAlarm" O="23552" />
-        <P N="GoToState" O="23553" />
-        <P N="HeatingBlock" O="23620" />
-        <P N="HeatModeTemp" S="1" O="580" />
-        <P N="HeatModeTempHyst" S="1" O="584" />
-        <P N="HeatRegDGain" S="1" O="588" />
-        <P N="HeatRegIGain" S="1" O="590" />
-        <P N="HeatRegPGain" S="1" O="592" />
-        <P N="HeatReg_Temp" O="23624" />
-        <P N="HeatReq" O="23628" />
-        <P N="I00" O="33140" />
-        <P N="I01" O="33136" />
-        <P N="I02" O="33132" />
-        <P N="I19" O="33128" />
-        <P N="I30" O="32902" />
-        <P N="ImmersionHeatAllow" O="23632" />
-        <P N="ImmHeatBlock" O="23632" B="1" />
-        <P N="ImmHeatManMode" O="23634" />
-        <P N="ImmHeatOnly" S="1" O="596" />
-        <P N="ImmHeatReq" O="23636" />
-        <P N="ImmHeatStage" S="1" O="597" />
-        <P N="ImmHeatStepDelay" O="23638" />
-        <P N="ImmModeTemp" S="1" O="600" />
-        <P N="ImmModeTempHyst" S="1" O="604" />
-        <P N="L14" O="21372" />
-        <P N="L14-B" S="1" O="356" />
-        <P N="L14-C" S="1" O="357" />
-        <P N="L14-cfg" O="21373" />
-        <P N="L14-E" S="1" O="358" />
-        <P N="L14-err" O="21374" />
-        <P N="L14-L" S="1" O="360" />
-        <P N="L44-B" S="1" O="404" />
-        <P N="L44-C" S="1" O="405" />
-        <P N="L44-cfg" O="23515" />
-        <P N="L44-E" S="1" O="406" />
-        <P N="L44-err" O="23516" />
-        <P N="L44-L" S="1" O="408" />
-        <P N="LocTime.Day" O="23922" />
-        <P N="LocTime.Hour" O="23924" />
-        <P N="LocTime.Millisecond" O="23930" />
-        <P N="LocTime.Minute" O="23926" />
-        <P N="LocTime.Month" O="23920" />
-        <P N="LocTime.Second" O="23928" />
-        <P N="LocTime.Year" O="23918" />
-        <P N="ManMode" O="23936" />
-        <P N="ManMode_Cool" O="23936" B="1" />
-        <P N="ManMode_Heat" O="23936" B="2" />
-        <P N="MaxTankTemp" S="1" O="940" />
-        <P N="MaxTankTempOk" O="23936" B="3" />
-        <P N="MBM_Line.Info.DetectionRange" O="23972" />
-        <P N="MBM_Line.Info.LastPollingLoopTime" O="23984" />
-        <P N="MBM_Line.Info.LineType" O="23988" />
-        <P N="MBM_Line.Info.PollingDelay" O="23978" />
-        <P N="MBM_Line.Info.PollingLoopsNumber" O="23980" />
-        <P N="MBM_Line.Info.Retry" O="23976" />
-        <P N="MBM_Line.SerialSettings.Bits" O="23953" />
-        <P N="MBM_Line.SerialSettings.Channel" O="23952" />
-        <P N="MBM_Line.SerialSettings.HWMode" O="23958" />
-        <P N="MBM_Line.SerialSettings.MaskEvent" O="23944" />
-        <P N="MBM_Line.SerialSettings.Mode" O="23957" />
-        <P N="MBM_Line.SerialSettings.NotUseInterFrameDelay" O="23956" />
-        <P N="MBM_Line.SerialSettings.Parity" O="23954" />
-        <P N="MBM_Line.SerialSettings.Speed" O="23948" />
-        <P N="MBM_Line.SerialSettings.Stops" O="23955" />
-        <P N="MBM_Line.TcpIpSettings.client" O="23964" />
-        <P N="MBM_Line.TcpIpSettings.EventMask" O="23960" />
-        <P N="MBM_Line.TcpIpSettings.mode" O="23970" />
-        <P N="MBM_Line.TcpIpSettings.port" O="23968" />
-        <P N="MBM_Line.TcpIpSettings.proto" O="23971" />
-        <P N="NoOutdoorUnit" S="1" O="945" />
-        <P N="OpModeAllowCool" O="24252" />
-        <P N="OpModeAllowHeat" O="24252" B="1" />
-        <P N="OpModeAllowImm" O="24252" B="2" />
-        <P N="OpModeSwitchDelay" S="1" O="946" />
-        <P N="OpState" O="24253" />
-        <P N="OS_Version" O="24254" />
-        <P N="OutDoorTemp" O="29272" />
-        <P N="OutDoorTempFilter" O="29276" />
-        <P N="OutDoorTempSel" S="1" O="952" />
-        <P N="OutDoorTemp_FiltDelay" S="1" O="948" />
-        <P N="OutDoorTemp_FiltHrs" S="1" O="950" />
-        <P N="OU_CompHeat" O="24256" B="1" />
-        <P N="OU_CompOn" O="24264" />
-        <P N="OU_CompTemp" O="24268" />
-        <P N="OU_CondInTemp" O="24272" />
-        <P N="OU_CondOutTemp" O="24276" />
-        <P N="OU_CondTemp" O="24280" />
-        <P N="OU_CurrDSH" O="24284" />
-        <P N="OU_CurrSH" O="24288" />
-        <P N="OU_CurrSpd" O="24292" />
-        <P N="OU_DscgP" O="24296" />
-        <P N="OU_DscgTemp" O="24300" />
-        <P N="OU_EnvZone" O="24304" />
-        <P N="OU_EvapTemp" O="24308" />
-        <P N="OU_Online" O="24313" />
-        <P N="OU_OutsideTemp" O="24316" />
-        <P N="OU_Req" O="24320" />
-        <P N="OU_SHSetP" O="24324" />
-        <P N="OU_SuctP" O="24328" />
-        <P N="OU_SuctTemp" O="24332" />
-        <P N="OU_Unit.Alarm_BMS_Offline" O="24462" B="1" />
-        <P N="OU_Unit.Alarm_CompFault" O="24462" B="2" />
-        <P N="OU_Unit.Alarm_DisStartDP" O="24462" B="3" />
-        <P N="OU_Unit.Alarm_DscgP" O="24462" B="4" />
-        <P N="OU_Unit.Alarm_DscgTemp" O="24462" B="5" />
-        <P N="OU_Unit.Alarm_EEV" O="24462" B="6" />
-        <P N="OU_Unit.Alarm_Envelope" O="24462" B="7" />
-        <P N="OU_Unit.Alarm_HiDscgP" O="24463" B="1" />
-        <P N="OU_Unit.Alarm_HiDscgTemp" O="24463" />
-        <P N="OU_Unit.Alarm_Inv" O="24463" B="2" />
-        <P N="OU_Unit.Alarm_LiqT" O="24463" B="3" />
-        <P N="OU_Unit.Alarm_LowSuctP" O="24463" B="4" />
-        <P N="OU_Unit.Alarm_Offline_Inv" O="24463" B="5" />
-        <P N="OU_Unit.Alarm_PowerFailure" O="24463" B="6" />
-        <P N="OU_Unit.Alarm_RetainMem" O="24463" B="7" />
-        <P N="OU_Unit.Alarm_StartFailure" O="24464" />
-        <P N="OU_Unit.Alarm_SuctP" O="24464" B="1" />
-        <P N="OU_Unit.Alarm_SuctTemp" O="24464" B="2" />
-        <P N="OU_Unit.Alarm_WkrHrsComp" O="24464" B="3" />
-        <P N="OU_Unit.Alarm_WrkHrsSrc" O="24464" B="5" />
-        <P N="OU_Unit.AlrmReset" O="24460" B="2" />
-        <P N="OU_Unit.AlrmStatus" O="24462" />
-        <P N="OU_Unit.BLDC_lrmResetType" O="24460" B="5" />
-        <P N="OU_Unit.CapTemp" O="24780" />
-        <P N="OU_Unit.CompBeltHeat_On" O="24464" B="4" />
-        <P N="OU_Unit.CompMinOffT" O="24516" />
-        <P N="OU_Unit.CompMinOnT" O="24518" />
-        <P N="OU_Unit.CompOn" O="24461" B="5" />
-        <P N="OU_Unit.CompReq" O="24468" />
-        <P N="OU_Unit.CompTemp" O="24784" />
-        <P N="OU_Unit.Comp_CstDec" O="24520" />
-        <P N="OU_Unit.Comp_En_Man" O="24461" B="1" />
-        <P N="OU_Unit.Comp_MaxSpdLim" O="24572" />
-        <P N="OU_Unit.CondInTemp" O="24796" />
-        <P N="OU_Unit.CondOutTemp" O="24800" />
-        <P N="OU_Unit.CondTemp" O="24812" />
-        <P N="OU_Unit.CurrDSH" O="24820" />
-        <P N="OU_Unit.CurrSH" O="24816" />
-        <P N="OU_Unit.CurrSHSetP" O="24856" />
-        <P N="OU_Unit.CurrSpd_RPS" O="24580" />
-        <P N="OU_Unit.DayIn" O="24610" />
-        <P N="OU_Unit.DefrostRun" O="24461" B="6" />
-        <P N="OU_Unit.DeltaP_Circ1" O="25104" />
-        <P N="OU_Unit.DfrBlock" O="24461" B="2" />
-        <P N="OU_Unit.DfrStatus_Circ1" O="25126" />
-        <P N="OU_Unit.Dfr_CompMinOnTime" O="24482" />
-        <P N="OU_Unit.Dfr_DT_AfterChgOver" O="24528" />
-        <P N="OU_Unit.Dfr_DT_BeforeChgOver" O="24530" />
-        <P N="OU_Unit.Dfr_EndThrsh" O="24532" />
-        <P N="OU_Unit.Dfr_FrcCompSpeedMax" O="24536" />
-        <P N="OU_Unit.Dfr_IntervalT" O="24540" />
-        <P N="OU_Unit.Dfr_MaxT" O="24542" />
-        <P N="OU_Unit.Dfr_MinT" O="24544" />
-        <P N="OU_Unit.Dfr_PostDripT" O="24546" />
-        <P N="OU_Unit.Dfr_RevVlvDeltaP" O="24548" />
-        <P N="OU_Unit.Dfr_SmartStartT" O="24552" />
-        <P N="OU_Unit.Dfr_StartThrsh" O="24556" />
-        <P N="OU_Unit.Dfr_StartThrshRes" O="24560" />
-        <P N="OU_Unit.Dout_TrayHeat" O="24461" />
-        <P N="OU_Unit.DscgP" O="24616" />
-        <P N="OU_Unit.DscgTemp" O="24624" />
-        <P N="OU_Unit.ECT" O="24524" />
-        <P N="OU_Unit.EEVStatus_Circ1" O="24846" />
-        <P N="OU_Unit.EEV_AlrmCode_Circ1" O="25124" />
-        <P N="OU_Unit.EEV_CompHeat" O="24460" B="3" />
-        <P N="OU_Unit.EEV_Dfr_Td" O="24488" />
-        <P N="OU_Unit.EEV_Dfr_Ti" O="24484" />
-        <P N="OU_Unit.EEV_En_Man" O="24461" B="4" />
-        <P N="OU_Unit.EEV_ManPositSteps" O="24564" />
-        <P N="OU_Unit.EEV_PID_DynTi" O="25112" />
-        <P N="OU_Unit.EEV_PosPerc" O="24828" />
-        <P N="OU_Unit.EEV_PosSteps" O="24472" />
-        <P N="OU_Unit.EnvZone" O="24636" />
-        <P N="OU_Unit.EvapTemp" O="24808" />
-        <P N="OU_Unit.FrcDefrostOff" O="24460" B="4" />
-        <P N="OU_Unit.FrcDefrostOn" O="24460" B="1" />
-        <P N="OU_Unit.HourIn" O="24611" />
-        <P N="OU_Unit.HP_Status" O="24640" />
-        <P N="OU_Unit.Info.CommandDelay" O="24434" />
-        <P N="OU_Unit.Info.CommandsCount" O="24452" />
-        <P N="OU_Unit.Info.DetectionTimeOut" O="24430" />
-        <P N="OU_Unit.Info.DeviceError" O="24440" />
-        <P N="OU_Unit.Info.Enabled" O="24344" B="1" />
-        <P N="OU_Unit.Info.ErrorsCount" O="24450" />
-        <P N="OU_Unit.Info.forceMultipleCoilWrite" O="24458" B="1" />
-        <P N="OU_Unit.Info.forceMultipleRegisterWrite" O="24458" />
-        <P N="OU_Unit.Info.Ident" O="24345" />
-        <P N="OU_Unit.Info.isOnline" O="24344" />
-        <P N="OU_Unit.Info.LastErrorInfo.ErrorCode" O="24442" />
-        <P N="OU_Unit.Info.LastErrorInfo.FunctionCode" O="24444" />
-        <P N="OU_Unit.Info.LastErrorInfo.RegistersCount" O="24448" />
-        <P N="OU_Unit.Info.LastErrorInfo.StartingRegister" O="24446" />
-        <P N="OU_Unit.Info.NetworkAddress" D="80" O="24346" />
-        <P N="OU_Unit.Info.PollsCount" O="24454" />
-        <P N="OU_Unit.Info.ReadChangesCount" O="24456" />
-        <P N="OU_Unit.Info.TimeOut" O="24432" />
-        <P N="OU_Unit.Info.Zone" O="24436" />
-        <P N="OU_Unit.LiqdTemp" O="24804" />
-        <P N="OU_Unit.MaxRPS" O="24588" />
-        <P N="OU_Unit.MinRPS" O="24584" />
-        <P N="OU_Unit.MinuteIn" O="24612" />
-        <P N="OU_Unit.MonthIn" O="24609" />
-        <P N="OU_Unit.OnOff" O="24460" />
-        <P N="OU_Unit.OutDoorTemp" O="24632" />
-        <P N="OU_Unit.PWRP_AlrmResetType" O="24460" B="7" />
-        <P N="OU_Unit.SecondsIn" O="24613" />
-        <P N="OU_Unit.SetClock" O="24460" B="6" />
-        <P N="OU_Unit.SkipFreqBand1" O="24492" />
-        <P N="OU_Unit.SkipFreqBand2" O="24496" />
-        <P N="OU_Unit.SkipFreqBand3" O="24500" />
-        <P N="OU_Unit.SkipFreqF1" O="24504" />
-        <P N="OU_Unit.SkipFreqF2" O="24508" />
-        <P N="OU_Unit.SkipFreqF3" O="24512" />
-        <P N="OU_Unit.SrcCirc1_SetP" O="25116" />
-        <P N="OU_Unit.Src_En_Man" O="24461" B="3" />
-        <P N="OU_Unit.Src_Man" O="24476" />
-        <P N="OU_Unit.SSH_LimNeg" O="24600" />
-        <P N="OU_Unit.SSH_LimPos" O="24604" />
-        <P N="OU_Unit.SSH_SP" O="25108" />
-        <P N="OU_Unit.SSH_SP_Max" O="24568" />
-        <P N="OU_Unit.SSH_SP_Min" O="24576" />
-        <P N="OU_Unit.SSH_Ti_Fast" O="24592" />
-        <P N="OU_Unit.SSH_Ti_Slow" O="24596" />
-        <P N="OU_Unit.SuctP" O="24620" />
-        <P N="OU_Unit.SuctTemp" O="24628" />
-        <P N="OU_Unit.SwVersion" O="24638" />
-        <P N="OU_Unit.TrayHeat_OffDelay" O="24480" />
-        <P N="OU_Unit.TrayHeat_On" O="24464" B="6" />
-        <P N="OU_Unit.UnitStatus" O="24614" />
-        <P N="OU_Unit.Unit_CoolHeat" O="24461" B="7" />
-        <P N="OU_Unit.uSafe_HR_00_ResetCommand" O="24832" />
-        <P N="OU_Unit.uSafe_HR_01_ResetCmdFeedback" O="24834" />
-        <P N="OU_Unit.uSafe_IR_02_AlarmStatus1" O="25054" />
-        <P N="OU_Unit.uSafe_IR_03_AlarmStatus2" O="25056" />
-        <P N="OU_Unit.uSafe_IR_04_CntdwnRstAlrms" O="25020" />
-        <P N="OU_Unit.uSafe_IR_35_PhaseUCurr" O="25022" />
-        <P N="OU_Unit.uSafe_IR_36_PhaseVCurr" O="25024" />
-        <P N="OU_Unit.uSafe_IR_37_PhaseWCurr" O="25026" />
-        <P N="OU_Unit.uSafe_IR_38_DCbusV" O="25028" />
-        <P N="OU_Unit.uSafe_IR_39_DCbusA" O="25030" />
-        <P N="OU_Unit.uSafe_IR_40_DCbusPwr" O="25032" />
-        <P N="OU_Unit.uSafe_IR_41_PwrSupplyV" O="25034" />
-        <P N="OU_Unit.uSafe_IR_42_BoardT" O="25036" />
-        <P N="OU_Unit.uSafe_IR_43_OutStageModT" O="25038" />
-        <P N="OU_Unit.uSafe_IR_44_InStageModT" O="25040" />
-        <P N="OU_Unit.uSafe_IR_45_VCheck" O="25042" />
-        <P N="OU_Unit.uSafe_IR_46_AuxADC" O="25044" />
-        <P N="OU_Unit.uSafe_IR_47_MotPWMSwtF" O="25046" />
-        <P N="OU_Unit.uSafe_IR_48_CosPhi" O="25048" />
-        <P N="OU_Unit.uSafe_IR_49" O="25050" />
-        <P N="OU_Unit.uSafe_IR_50_DinMaskStatus" O="25052" />
-        <P N="OU_Unit.WaterFlow" O="24792" />
-        <P N="OU_Unit.YearIn" O="24608" />
-        <P N="PrbAlrm_DT" S="1" O="954" />
-        <P N="PumpSpdCoolAuto" S="1" O="956" />
-        <P N="PumpSpdDefrost" S="1" O="960" />
-        <P N="PumpSpdDhwFix" S="1" O="964" />
-        <P N="PumpSpdGP1Man" O="30712" />
-        <P N="PumpSpdGP2Man" O="30713" />
-        <P N="PumpspdHeatAuto" S="1" O="968" />
-        <P N="q00" S="1" O="608" />
-        <P N="q01" O="30715" B="3" />
+        <P N="DHW_CompOn" O="21540" />
+        <P N="Din_Cfg.Fct.FlowSw.Ch" S="1" O="385" />
+        <P N="Din_Cfg.Fct.FlowSw.Enable" S="1" O="386" />
+        <P N="Din_Cfg.Fct.FlowSw.Logic" S="1" O="388" />
+        <P N="Din_Cfg.Fct.FlowSw.ModeType" S="1" O="387" />
+        <P N="Din_Cfg.Fct.SG1.Ch" S="1" O="397" />
+        <P N="Din_Cfg.Fct.SG1.Enable" S="1" O="398" />
+        <P N="Din_Cfg.Fct.SG1.Logic" S="1" O="400" />
+        <P N="Din_Cfg.Fct.SG2.Ch" S="1" O="409" />
+        <P N="Din_Cfg.Fct.SG2.Enable" S="1" O="410" />
+        <P N="Din_Cfg.Fct.SG2.Logic" S="1" O="412" />
+        <P N="Din_Data.Fct.FlowSw" O="21724" B="1" />
+        <P N="Din_Data.Fct.SG1" O="21724" B="2" />
+        <P N="Din_Data.Fct.SG2" O="21724" B="3" />
+        <P N="Dout_Cfg.Fct.GlbAl.AlrmDT" S="1" O="432" />
+        <P N="Dout_Cfg.Fct.GlbAl.GroupID" S="1" O="430" />
+        <P N="Dout_Cfg.Fct.GlbAl.ModeType" S="1" O="423" />
+        <P N="Dout_Cfg.Fct.GlbAl.tOff" S="1" O="428" />
+        <P N="Dout_Cfg.Fct.GlbAl.tOn" S="1" O="426" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.AlrmDT" S="1" O="464" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.Board" S="1" O="452" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.Ch" S="1" O="453" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.Enable" S="1" O="454" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.GroupID" S="1" O="462" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.Logic" S="1" O="456" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.ModeType" S="1" O="455" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.tOff" S="1" O="460" />
+        <P N="Dout_Cfg.Fct.ImmheatStep1.tOn" S="1" O="458" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.AlrmDT" S="1" O="480" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.Board" S="1" O="468" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.Ch" S="1" O="469" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.Enable" S="1" O="470" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.GroupID" S="1" O="478" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.Logic" S="1" O="472" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.ModeType" S="1" O="471" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.tOff" S="1" O="476" />
+        <P N="Dout_Cfg.Fct.ImmheatStep2.tOn" S="1" O="474" />
+        <P N="Dout_Cfg.Fct.RevVlv.AlrmDT" S="1" O="512" />
+        <P N="Dout_Cfg.Fct.RevVlv.Board" S="1" O="500" />
+        <P N="Dout_Cfg.Fct.RevVlv.Ch" S="1" O="501" />
+        <P N="Dout_Cfg.Fct.RevVlv.Enable" S="1" O="502" />
+        <P N="Dout_Cfg.Fct.RevVlv.GroupID" S="1" O="510" />
+        <P N="Dout_Cfg.Fct.RevVlv.Logic" S="1" O="504" />
+        <P N="Dout_Cfg.Fct.RevVlv.ModeType" S="1" O="503" />
+        <P N="Dout_Cfg.Fct.RevVlv.tOff" S="1" O="508" />
+        <P N="Dout_Cfg.Fct.RevVlv.tOn" S="1" O="506" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.AlrmDT" S="1" O="448" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.Board" S="1" O="436" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.Ch" S="1" O="437" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.Enable" S="1" O="438" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.GroupID" S="1" O="446" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.Logic" S="1" O="440" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.ModeType" S="1" O="439" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.tOff" S="1" O="444" />
+        <P N="Dout_Cfg.Fct.ShuntVlvDout.tOn" S="1" O="442" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.AlrmDT" S="1" O="496" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Board" S="1" O="484" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Ch" S="1" O="485" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Enable" S="1" O="486" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.GroupID" S="1" O="494" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.Logic" S="1" O="488" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType" S="1" O="487" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.tOff" S="1" O="492" />
+        <P N="Dout_Cfg.Fct.ShuntVlvOffDout.tOn" S="1" O="490" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.AlrmDT" S="1" O="528" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.Board" S="1" O="516" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.Ch" S="1" O="517" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.Enable" S="1" O="518" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.GroupID" S="1" O="526" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.Logic" S="1" O="520" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.ModeType" S="1" O="519" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.tOff" S="1" O="524" />
+        <P N="Dout_Cfg.Fct.ShutOffVlv.tOn" S="1" O="522" />
+        <P N="Dout_GlbAl" O="23866" />
+        <P N="Dout_Info.Fct.GlbAl.Trigger" O="23867" B="1" />
+        <P N="EBCH" O="23884" />
+        <P N="EBCHCompStop" S="1" O="532" />
+        <P N="EBCHCompStrt" S="1" O="536" />
+        <P N="EBCHMax" S="1" O="540" />
+        <P N="EBCHMin" S="1" O="544" />
+        <P N="EBHP" O="23888" />
+        <P N="EBHPCompStop" S="1" O="548" />
+        <P N="EBHPCompStrt" S="1" O="552" />
+        <P N="EBHPMax" S="1" O="556" />
+        <P N="EBHPMin" S="1" O="560" />
+        <P N="EBHPStepOut" S="1" O="564" />
+        <P N="EBShunt" S="1" O="568" />
+        <P N="EBStepImm" S="1" O="572" />
+        <P N="ECT" O="23896" />
+        <P N="ECT_Cool_Offset" S="1" O="576" />
+        <P N="ECT_DHW_Offset" S="1" O="580" />
+        <P N="ECT_Heat_Offset" S="1" O="584" />
+        <P N="En_AutoMode" S="1" O="589" />
+        <P N="En_ExtHotWatr" O="23900" />
+        <P N="En_OU" O="23900" B="1" />
+        <P N="En_SelMode" O="23900" B="2" />
+        <P N="En_SPV_OnOff" S="1" O="590" />
+        <P N="ErasureWindowSize" S="1" O="592" />
+        <P N="ErasureWindowsNumber" S="1" O="596" />
+        <P N="ExtHotWatrDiff" S="1" O="600" />
+        <P N="ExtHotWatrEnbl" O="23900" B="3" />
+        <P N="ExtHotWatrStopTemp" S="1" O="604" />
+        <P N="ExtHotWatrTime" S="1" O="608" />
+        <P N="FB2_Conf" S="1" O="611" />
+        <P N="GblAlarm" O="23908" />
+        <P N="GoToState" O="23909" />
+        <P N="HeatingBlock" O="23976" />
+        <P N="HeatModeTemp" S="1" O="612" />
+        <P N="HeatModeTempHyst" S="1" O="616" />
+        <P N="HeatRegDGain" S="1" O="620" />
+        <P N="HeatRegIGain" S="1" O="622" />
+        <P N="HeatRegPGain" S="1" O="624" />
+        <P N="HeatReg_Temp" O="23980" />
+        <P N="HeatReq" O="23984" />
+        <P N="I00" O="33592" />
+        <P N="I01" O="33588" />
+        <P N="I02" O="33584" />
+        <P N="I19" O="33580" />
+        <P N="I30" O="33286" />
+        <P N="ImmersionHeatAllow" O="23988" />
+        <P N="ImmHeatBlock" O="23988" B="1" />
+        <P N="ImmHeatManMode" O="23990" />
+        <P N="ImmHeatOnly" S="1" O="628" />
+        <P N="ImmHeatReq" O="23992" />
+        <P N="ImmHeatStage" S="1" O="629" />
+        <P N="ImmHeatStepDelay" O="23994" />
+        <P N="ImmModeTemp" S="1" O="632" />
+        <P N="ImmModeTempHyst" S="1" O="636" />
+        <P N="L14" O="21724" />
+        <P N="L14-B" S="1" O="372" />
+        <P N="L14-C" S="1" O="373" />
+        <P N="L14-cfg" O="21725" />
+        <P N="L14-E" S="1" O="374" />
+        <P N="L14-err" O="21726" />
+        <P N="L14-L" S="1" O="376" />
+        <P N="L44-B" S="1" O="420" />
+        <P N="L44-C" S="1" O="421" />
+        <P N="L44-cfg" O="23867" />
+        <P N="L44-E" S="1" O="422" />
+        <P N="L44-err" O="23868" />
+        <P N="L44-L" S="1" O="424" />
+        <P N="LocTime.Day" O="24278" />
+        <P N="LocTime.Hour" O="24280" />
+        <P N="LocTime.Millisecond" O="24286" />
+        <P N="LocTime.Minute" O="24282" />
+        <P N="LocTime.Month" O="24276" />
+        <P N="LocTime.Second" O="24284" />
+        <P N="LocTime.Year" O="24274" />
+        <P N="ManMode" O="24292" />
+        <P N="ManMode_Cool" O="24292" B="1" />
+        <P N="ManMode_Heat" O="24292" B="2" />
+        <P N="MaxTankTemp" S="1" O="980" />
+        <P N="MaxTankTempOk" O="24292" B="3" />
+        <P N="MBM_Line.Info.DetectionRange" O="24328" />
+        <P N="MBM_Line.Info.LastPollingLoopTime" O="24340" />
+        <P N="MBM_Line.Info.LineType" O="24344" />
+        <P N="MBM_Line.Info.PollingDelay" O="24334" />
+        <P N="MBM_Line.Info.PollingLoopsNumber" O="24336" />
+        <P N="MBM_Line.Info.Retry" O="24332" />
+        <P N="MBM_Line.SerialSettings.Bits" O="24309" />
+        <P N="MBM_Line.SerialSettings.Channel" O="24308" />
+        <P N="MBM_Line.SerialSettings.HWMode" O="24314" />
+        <P N="MBM_Line.SerialSettings.MaskEvent" O="24300" />
+        <P N="MBM_Line.SerialSettings.Mode" O="24313" />
+        <P N="MBM_Line.SerialSettings.NotUseInterFrameDelay" O="24312" />
+        <P N="MBM_Line.SerialSettings.Parity" O="24310" />
+        <P N="MBM_Line.SerialSettings.Speed" O="24304" />
+        <P N="MBM_Line.SerialSettings.Stops" O="24311" />
+        <P N="MBM_Line.TcpIpSettings.client" O="24320" />
+        <P N="MBM_Line.TcpIpSettings.EventMask" O="24316" />
+        <P N="MBM_Line.TcpIpSettings.mode" O="24326" />
+        <P N="MBM_Line.TcpIpSettings.port" O="24324" />
+        <P N="MBM_Line.TcpIpSettings.proto" O="24327" />
+        <P N="NoOutdoorUnit" S="1" O="985" />
+        <P N="OpModeAllowCool" O="24612" />
+        <P N="OpModeAllowHeat" O="24612" B="1" />
+        <P N="OpModeAllowImm" O="24612" B="2" />
+        <P N="OpModeSwitchDelay" S="1" O="986" />
+        <P N="OpState" O="24613" />
+        <P N="OS_Version" O="24614" />
+        <P N="OutDoorTemp" O="29636" />
+        <P N="OutDoorTempFilter" O="29640" />
+        <P N="OutDoorTempSel" S="1" O="996" />
+        <P N="OutDoorTemp_FiltDelay" S="1" O="992" />
+        <P N="OutDoorTemp_FiltHrs" S="1" O="994" />
+        <P N="OU_CompHeat" O="24616" B="1" />
+        <P N="OU_CompOn" O="24624" />
+        <P N="OU_CompTemp" O="24628" />
+        <P N="OU_CondInTemp" O="24632" />
+        <P N="OU_CondOutTemp" O="24636" />
+        <P N="OU_CondTemp" O="24640" />
+        <P N="OU_CurrDSH" O="24644" />
+        <P N="OU_CurrSH" O="24648" />
+        <P N="OU_CurrSpd" O="24652" />
+        <P N="OU_DscgP" O="24656" />
+        <P N="OU_DscgTemp" O="24660" />
+        <P N="OU_EnvZone" O="24664" />
+        <P N="OU_EvapTemp" O="24668" />
+        <P N="OU_Online" O="24674" />
+        <P N="OU_OutsideTemp" O="24676" />
+        <P N="OU_Req" O="24680" />
+        <P N="OU_SHSetP" O="24688" />
+        <P N="OU_SuctP" O="24692" />
+        <P N="OU_SuctTemp" O="24696" />
+        <P N="OU_Unit.Alarm_BMS_Offline" O="24826" B="3" />
+        <P N="OU_Unit.Alarm_CompFault" O="24826" B="4" />
+        <P N="OU_Unit.Alarm_DisStartDP" O="24826" B="5" />
+        <P N="OU_Unit.Alarm_DscgP" O="24826" B="6" />
+        <P N="OU_Unit.Alarm_DscgTemp" O="24826" B="7" />
+        <P N="OU_Unit.Alarm_EEV" O="24827" />
+        <P N="OU_Unit.Alarm_Envelope" O="24827" B="1" />
+        <P N="OU_Unit.Alarm_HiDscgP" O="24827" B="3" />
+        <P N="OU_Unit.Alarm_HiDscgTemp" O="24827" B="2" />
+        <P N="OU_Unit.Alarm_Inv" O="24827" B="4" />
+        <P N="OU_Unit.Alarm_LiqT" O="24827" B="5" />
+        <P N="OU_Unit.Alarm_LowSuctP" O="24827" B="6" />
+        <P N="OU_Unit.Alarm_Offline_Inv" O="24827" B="7" />
+        <P N="OU_Unit.Alarm_PowerFailure" O="24828" />
+        <P N="OU_Unit.Alarm_RetainMem" O="24828" B="1" />
+        <P N="OU_Unit.Alarm_StartFailure" O="24828" B="2" />
+        <P N="OU_Unit.Alarm_SuctP" O="24828" B="3" />
+        <P N="OU_Unit.Alarm_SuctTemp" O="24828" B="4" />
+        <P N="OU_Unit.Alarm_WkrHrsComp" O="24828" B="5" />
+        <P N="OU_Unit.Alarm_WrkHrsSrc" O="24828" B="7" />
+        <P N="OU_Unit.AlrmReset" O="24824" B="2" />
+        <P N="OU_Unit.AlrmStatus" O="24826" B="2" />
+        <P N="OU_Unit.BLDC_lrmResetType" O="24824" B="5" />
+        <P N="OU_Unit.CapTemp" O="25140" />
+        <P N="OU_Unit.CompBeltHeat_On" O="24828" B="6" />
+        <P N="OU_Unit.CompMinOffT" O="24880" />
+        <P N="OU_Unit.CompMinOnT" O="24882" />
+        <P N="OU_Unit.CompOn" O="24825" B="7" />
+        <P N="OU_Unit.CompReq" O="24832" />
+        <P N="OU_Unit.CompTemp" O="25144" />
+        <P N="OU_Unit.Comp_CstDec" O="24884" />
+        <P N="OU_Unit.Comp_En_Man" O="24825" B="2" />
+        <P N="OU_Unit.Comp_MaxSpdLim" O="24936" />
+        <P N="OU_Unit.CondInTemp" O="25152" />
+        <P N="OU_Unit.CondOutTemp" O="25156" />
+        <P N="OU_Unit.CondTemp" O="25172" />
+        <P N="OU_Unit.CurrDSH" O="25180" />
+        <P N="OU_Unit.CurrSH" O="25176" />
+        <P N="OU_Unit.CurrSHSetP" O="25216" />
+        <P N="OU_Unit.CurrSpd_RPS" O="24944" />
+        <P N="OU_Unit.DayIn" O="24974" />
+        <P N="OU_Unit.DefrostRun" O="24826" />
+        <P N="OU_Unit.DeltaP_Circ1" O="25464" />
+        <P N="OU_Unit.DfrBlock" O="24825" B="3" />
+        <P N="OU_Unit.DfrStatus_Circ1" O="25490" />
+        <P N="OU_Unit.Dfr_CompMinOnTime" O="24846" />
+        <P N="OU_Unit.Dfr_DT_AfterChgOver" O="24892" />
+        <P N="OU_Unit.Dfr_DT_BeforeChgOver" O="24894" />
+        <P N="OU_Unit.Dfr_EndThrsh" O="24896" />
+        <P N="OU_Unit.Dfr_FrcCompSpeedMax" O="24900" />
+        <P N="OU_Unit.Dfr_IntervalT" O="24904" />
+        <P N="OU_Unit.Dfr_MaxT" O="24906" />
+        <P N="OU_Unit.Dfr_MinT" O="24908" />
+        <P N="OU_Unit.Dfr_PostDripT" O="24910" />
+        <P N="OU_Unit.Dfr_RevVlvDeltaP" O="24912" />
+        <P N="OU_Unit.Dfr_SmartStartT" O="24916" />
+        <P N="OU_Unit.Dfr_StartThrsh" O="24920" />
+        <P N="OU_Unit.Dfr_StartThrshRes" O="24924" />
+        <P N="OU_Unit.Dout_TrayHeat" O="24825" />
+        <P N="OU_Unit.DscgP" O="24980" />
+        <P N="OU_Unit.DscgTemp" O="24988" />
+        <P N="OU_Unit.ECT" O="24888" />
+        <P N="OU_Unit.EEVStatus_Circ1" O="25206" />
+        <P N="OU_Unit.EEV_AlrmCode_Circ1" O="25488" />
+        <P N="OU_Unit.EEV_CompHeat" O="24824" B="3" />
+        <P N="OU_Unit.EEV_Dfr_Td" O="24852" />
+        <P N="OU_Unit.EEV_Dfr_Ti" O="24848" />
+        <P N="OU_Unit.EEV_En_Man" O="24825" B="6" />
+        <P N="OU_Unit.EEV_ManPositSteps" O="24928" />
+        <P N="OU_Unit.EEV_PID_DynTi" O="25472" />
+        <P N="OU_Unit.EEV_PosPerc" O="25188" />
+        <P N="OU_Unit.EEV_PosSteps" O="24836" />
+        <P N="OU_Unit.EnvZone" O="25000" />
+        <P N="OU_Unit.EvapTemp" O="25168" />
+        <P N="OU_Unit.FrcDefrostOff" O="24824" B="4" />
+        <P N="OU_Unit.FrcDefrostOn" O="24824" B="1" />
+        <P N="OU_Unit.HourIn" O="24975" />
+        <P N="OU_Unit.HP_Status" O="25004" />
+        <P N="OU_Unit.Info.CommandDelay" O="24798" />
+        <P N="OU_Unit.Info.CommandsCount" O="24816" />
+        <P N="OU_Unit.Info.DetectionTimeOut" O="24794" />
+        <P N="OU_Unit.Info.DeviceError" O="24804" />
+        <P N="OU_Unit.Info.Enabled" O="24708" B="1" />
+        <P N="OU_Unit.Info.ErrorsCount" O="24814" />
+        <P N="OU_Unit.Info.forceMultipleCoilWrite" O="24822" B="1" />
+        <P N="OU_Unit.Info.forceMultipleRegisterWrite" O="24822" />
+        <P N="OU_Unit.Info.Ident" O="24709" />
+        <P N="OU_Unit.Info.isOnline" O="24708" />
+        <P N="OU_Unit.Info.LastErrorInfo.ErrorCode" O="24806" />
+        <P N="OU_Unit.Info.LastErrorInfo.FunctionCode" O="24808" />
+        <P N="OU_Unit.Info.LastErrorInfo.RegistersCount" O="24812" />
+        <P N="OU_Unit.Info.LastErrorInfo.StartingRegister" O="24810" />
+        <P N="OU_Unit.Info.NetworkAddress" D="80" O="24710" />
+        <P N="OU_Unit.Info.PollsCount" O="24818" />
+        <P N="OU_Unit.Info.ReadChangesCount" O="24820" />
+        <P N="OU_Unit.Info.TimeOut" O="24796" />
+        <P N="OU_Unit.Info.Zone" O="24800" />
+        <P N="OU_Unit.LiqdTemp" O="25164" />
+        <P N="OU_Unit.MaxRPS" O="24952" />
+        <P N="OU_Unit.MinRPS" O="24948" />
+        <P N="OU_Unit.MinuteIn" O="24976" />
+        <P N="OU_Unit.MonthIn" O="24973" />
+        <P N="OU_Unit.OnOff" O="24824" />
+        <P N="OU_Unit.OutDoorTemp" O="24996" />
+        <P N="OU_Unit.PWRP_AlrmResetType" O="24824" B="7" />
+        <P N="OU_Unit.SecondsIn" O="24977" />
+        <P N="OU_Unit.SetClock" O="24824" B="6" />
+        <P N="OU_Unit.SkipFreqBand1" O="24856" />
+        <P N="OU_Unit.SkipFreqBand2" O="24860" />
+        <P N="OU_Unit.SkipFreqBand3" O="24864" />
+        <P N="OU_Unit.SkipFreqF1" O="24868" />
+        <P N="OU_Unit.SkipFreqF2" O="24872" />
+        <P N="OU_Unit.SkipFreqF3" O="24876" />
+        <P N="OU_Unit.SrcCirc1_SetP" O="25480" />
+        <P N="OU_Unit.Src_En_Man" O="24825" B="5" />
+        <P N="OU_Unit.Src_Man" O="24840" />
+        <P N="OU_Unit.SSH_LimNeg" O="24964" />
+        <P N="OU_Unit.SSH_LimPos" O="24968" />
+        <P N="OU_Unit.SSH_SP" O="25468" />
+        <P N="OU_Unit.SSH_SP_Max" O="24932" />
+        <P N="OU_Unit.SSH_SP_Min" O="24940" />
+        <P N="OU_Unit.SSH_Ti_Fast" O="24956" />
+        <P N="OU_Unit.SSH_Ti_Slow" O="24960" />
+        <P N="OU_Unit.SuctP" O="24984" />
+        <P N="OU_Unit.SuctTemp" O="24992" />
+        <P N="OU_Unit.SwVersion" O="25002" />
+        <P N="OU_Unit.TrayHeat_OffDelay" O="24844" />
+        <P N="OU_Unit.TrayHeat_On" O="24829" />
+        <P N="OU_Unit.UnitStatus" O="24978" />
+        <P N="OU_Unit.Unit_CoolHeat" O="24826" B="1" />
+        <P N="OU_Unit.uSafe_HR_00_ResetCommand" O="25192" />
+        <P N="OU_Unit.uSafe_HR_01_ResetCmdFeedback" O="25194" />
+        <P N="OU_Unit.uSafe_IR_02_AlarmStatus1" O="25414" />
+        <P N="OU_Unit.uSafe_IR_03_AlarmStatus2" O="25416" />
+        <P N="OU_Unit.uSafe_IR_04_CntdwnRstAlrms" O="25380" />
+        <P N="OU_Unit.uSafe_IR_35_PhaseUCurr" O="25382" />
+        <P N="OU_Unit.uSafe_IR_36_PhaseVCurr" O="25384" />
+        <P N="OU_Unit.uSafe_IR_37_PhaseWCurr" O="25386" />
+        <P N="OU_Unit.uSafe_IR_38_DCbusV" O="25388" />
+        <P N="OU_Unit.uSafe_IR_39_DCbusA" O="25390" />
+        <P N="OU_Unit.uSafe_IR_40_DCbusPwr" O="25392" />
+        <P N="OU_Unit.uSafe_IR_41_PwrSupplyV" O="25394" />
+        <P N="OU_Unit.uSafe_IR_42_BoardT" O="25396" />
+        <P N="OU_Unit.uSafe_IR_43_OutStageModT" O="25398" />
+        <P N="OU_Unit.uSafe_IR_44_InStageModT" O="25400" />
+        <P N="OU_Unit.uSafe_IR_45_VCheck" O="25402" />
+        <P N="OU_Unit.uSafe_IR_46_AuxADC" O="25404" />
+        <P N="OU_Unit.uSafe_IR_47_MotPWMSwtF" O="25406" />
+        <P N="OU_Unit.uSafe_IR_48_CosPhi" O="25408" />
+        <P N="OU_Unit.uSafe_IR_49" O="25410" />
+        <P N="OU_Unit.uSafe_IR_50_DinMaskStatus" O="25412" />
+        <P N="OU_Unit.WaterFlow" O="25160" />
+        <P N="OU_Unit.YearIn" O="24972" />
+        <P N="OU_WaterFlowLimit" S="1" O="988" />
+        <P N="PrbAlrm_DT" S="1" O="998" />
+        <P N="PumpSpdCoolAuto" S="1" O="1000" />
+        <P N="PumpSpdDefrost" S="1" O="1004" />
+        <P N="PumpSpdDhwFix" S="1" O="1008" />
+        <P N="PumpSpdGP1Man" O="31088" />
+        <P N="PumpSpdGP2Man" O="31089" />
+        <P N="PumpspdHeatAuto" S="1" O="1012" />
+        <P N="q00" S="1" O="640" />
+        <P N="q01" O="31092" B="3" />
         <P N="q02" O="3012" />
         <P N="q03" O="3016" />
-        <P N="RetainMemWrites" O="30716" />
-        <P N="RevVlv_On" O="30732" />
-        <P N="SecondIn" O="30733" />
-        <P N="Sel_HeatCurve_SetP" S="1" O="972" />
-        <P N="SetClock" O="30734" />
-        <P N="SetP_ExtAdj" O="30736" />
-        <P N="SGActive" S="1" O="974" />
-        <P N="SG_Offset" O="30740" />
-        <P N="SG_Status" O="30744" />
-        <P N="ShuntManClose" O="30745" />
-        <P N="ShuntManMode" O="30745" B="1" />
-        <P N="ShuntManOpen" O="30745" B="2" />
-        <P N="ShuntVlvBlock" S="1" O="975" />
-        <P N="ShuntVlvBlock_PulseIntervall" S="1" O="976" />
-        <P N="ShuntVlvBlock_PulseTime" S="1" O="978" />
-        <P N="ShuntVlvBlock_Time" S="1" O="980" />
-        <P N="ShuntVlvPFactor" S="1" O="984" />
-        <P N="ShuntVlvTimeFactor" S="1" O="988" />
-        <P N="ShuntVlv_Off" O="30745" B="3" />
-        <P N="ShuntVlv_On" O="30745" B="4" />
-        <P N="SPV_Online" O="30760" />
-        <P N="SupplyTempCalc" O="32896" />
-        <P N="SupplyTempHeat2Max" S="1" O="1024" />
-        <P N="SupplyTempHeat2Min" S="1" O="1026" />
-        <P N="SupplyTempHeatMax" S="1" O="1028" />
-        <P N="SupplyTempHeatMin" S="1" O="1030" />
-        <P N="SystemCfg" S="1" O="1032" />
-        <P N="SystemCfg_AllowCool" O="33046" />
-        <P N="SystemCfg_AllowDHW" O="33046" B="1" />
-        <P N="SystemCfg_AllowHeat" O="33046" B="2" />
-        <P N="SystemCfg_AllowImm" O="33046" B="3" />
-        <P N="SystemCfg_NoCfgSel" O="33046" B="4" />
-        <P N="TempSG1" S="1" O="1036" />
-        <P N="TempSG2" S="1" O="1040" />
-        <P N="TempSG3" S="1" O="1044" />
-        <P N="W43" O="33128" B="2" />
-        <P N="WaterFlow_DHW" O="33148" />
-        <P N="X16" S="1" O="936" />
-        <P N="Y00" S="1" O="1022" />
-        <P N="Y03" S="1" O="1018" />
-        <P N="Y04" S="1" O="1020" />
-        <P N="Y05" O="30758" />
-        <P N="Y08" S="1" O="1048" />
-        <P N="Y09" O="23932" />
-        <P N="Y14" S="1" O="944" />
-        <P N="Y15" S="1" O="578" />
-        <P N="Y17" O="23544" B="2" />
-        <P N="Y44" O="21310" />
-        <P N="Y45" O="24246" />
-        <P N="Y46" O="33153" />
-        <P N="Y47" O="23629" />
-        <P N="Y48" O="24244" />
-        <P N="Y50" O="33090" />
-        <P N="Y99" O="30715" B="5" />
+        <P N="q13" S="1" O="644" />
+        <P N="RetainMemWrites" O="31096" />
+        <P N="RevVlv_On" O="31112" />
+        <P N="SecondIn" O="31113" />
+        <P N="Sel_HeatCurve_SetP" S="1" O="1018" />
+        <P N="SetClock" O="31114" />
+        <P N="SetP_ExtAdj" O="31116" />
+        <P N="SGActive" S="1" O="1020" />
+        <P N="SG_Offset" O="31120" />
+        <P N="SG_Status" O="31124" />
+        <P N="ShuntManClose" O="31125" />
+        <P N="ShuntManMode" O="31125" B="1" />
+        <P N="ShuntManOpen" O="31125" B="2" />
+        <P N="ShuntVlvBlock" S="1" O="1021" />
+        <P N="ShuntVlvBlock_PulseIntervall" S="1" O="1022" />
+        <P N="ShuntVlvBlock_PulseTime" S="1" O="1024" />
+        <P N="ShuntVlvBlock_Time" S="1" O="1026" />
+        <P N="ShuntVlvPFactor" S="1" O="1028" />
+        <P N="ShuntVlvTimeFactor" S="1" O="1032" />
+        <P N="ShuntVlv_Off" O="31125" B="3" />
+        <P N="ShuntVlv_On" O="31125" B="4" />
+        <P N="SPV_Online" O="31140" />
+        <P N="SupplyTempCalc" O="33276" />
+        <P N="SupplyTempHeat2Max" S="1" O="1072" />
+        <P N="SupplyTempHeat2Min" S="1" O="1074" />
+        <P N="SupplyTempHeatMax" S="1" O="1076" />
+        <P N="SupplyTempHeatMin" S="1" O="1078" />
+        <P N="SystemCfg" S="1" O="1080" />
+        <P N="SystemCfg_AllowCool" O="33430" />
+        <P N="SystemCfg_AllowDHW" O="33430" B="1" />
+        <P N="SystemCfg_AllowHeat" O="33430" B="2" />
+        <P N="SystemCfg_AllowImm" O="33430" B="3" />
+        <P N="SystemCfg_NoCfgSel" O="33430" B="4" />
+        <P N="TempSG1" S="1" O="1084" />
+        <P N="TempSG2" S="1" O="1088" />
+        <P N="TempSG3" S="1" O="1092" />
+        <P N="W43" O="33580" B="2" />
+        <P N="WaterFlow_DHW" O="33600" />
+        <P N="X16" S="1" O="976" />
+        <P N="Y00" S="1" O="1066" />
+        <P N="Y03" S="1" O="1062" />
+        <P N="Y04" S="1" O="1064" />
+        <P N="Y05" O="31138" />
+        <P N="Y06" S="1" O="1063" />
+        <P N="Y07" S="1" O="648" />
+        <P N="Y08" S="1" O="1096" />
+        <P N="Y09" O="24288" />
+        <P N="Y14" S="1" O="984" />
+        <P N="Y15" S="1" O="610" />
+        <P N="Y17" O="23900" B="4" />
+        <P N="Y44" O="21537" />
+        <P N="Y45" O="24602" />
+        <P N="Y46" O="33609" />
+        <P N="Y47" O="23985" />
+        <P N="Y48" O="24600" />
+        <P N="Y50" O="33474" />
+        <P N="Y99" O="31092" B="5" />
       </PS>
     </Layout>
-    <Layout N="Supervisor" T="Modbus" C="1853094423" I="1" L="436" P="3" NS="8332">
+    <Layout N="Supervisor" T="Modbus" C="4136815833" I="1" L="443" P="3" NS="8412">
       <PS>
         <P N="ActImmStep" K="3" O="69" />
         <P N="Active_Alrm[10]" K="3" O="909" />
@@ -2045,12 +2094,17 @@
         <P N="Dout_Cfg.Fct.GlbAl.tOn" K="2" O="72" />
         <P N="Dout_GlbAl" K="1" O="1" />
         <P N="Dout_Info.Fct.GlbAl.Trigger" K="1" O="12" />
+        <P N="EBCH" K="3" O="75" />
+        <P N="EBCHCompStop" K="2" O="90" />
+        <P N="EBCHCompStrt" K="2" O="89" />
+        <P N="EBCHMax" K="2" O="88" />
+        <P N="EBCHMin" K="2" O="87" />
         <P N="EBHP" K="3" O="52" />
+        <P N="EBHPCompStop" K="2" O="54" />
         <P N="EBHPCompStrt" K="2" O="57" />
         <P N="EBHPMax" K="2" O="56" />
         <P N="EBHPMin" K="2" O="55" />
         <P N="EBHPStepOut" K="2" O="53" />
-        <P N="EBHPStopComp" K="2" O="54" />
         <P N="EBShunt" K="2" O="52" />
         <P N="EBStepImm" K="2" O="51" />
         <P N="ECT" K="3" O="64" />
@@ -2325,6 +2379,7 @@
         <P N="OU_Unit.uSafe_IR_50_DinMaskStatus" K="3" O="1096" />
         <P N="OU_Unit.WaterFlow" K="3" O="1015" />
         <P N="OU_Unit.YearIn" K="2" O="1300" />
+        <P N="OU_WaterFlowLimit" K="2" O="86" />
         <P N="PumpSpdCoolAuto" K="2" O="80" />
         <P N="PumpSpdDefrost" K="2" O="79" />
         <P N="PumpSpdDhwFix" K="2" O="78" />
@@ -2370,6 +2425,7 @@
         <P N="TempSG3" K="2" O="39" />
         <P N="W43" K="1" O="3" />
         <P N="WaterFlow_DHW" K="3" O="1" />
+        <P N="WaterFlow_DHW2" K="3" O="74" />
         <P N="Y08" K="3" O="60" />
         <P N="Y09" O="1" />
         <P N="Y44" K="2" O="302" />

@@ -2320,5 +2320,9 @@
       Name="EBCHCompStop"
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="DHWPumpState"
+      Attributes="None" />
   </Parameters>
 </ParametersConfiguration>

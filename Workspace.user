@@ -2,10 +2,12 @@
 <Workspace>
   <Charts>
     <Parameters>
-      <Parameter Name="DHWMiddleTemp" />
+      <Parameter Name="Circ2Act_Req" />
       <Parameter Name="DHWBottomTemp" />
+      <Parameter Name="DHWMiddleTemp" />
       <Parameter Name="DHWSupplyTemp" />
       <Parameter Name="DHWTopTemp" />
+      <Parameter Name="WaterFlow_DHW" />
     </Parameters>
   </Charts>
 </Workspace>

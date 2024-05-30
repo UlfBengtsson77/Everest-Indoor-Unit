@@ -362,6 +362,9 @@ VAR_GLOBAL
 	(**RPS request to heatpump unit*)
 	{ATTRIBUTE UOM RPS}
 	OU_Req : REAL;
+	{LOCATION OU_RevValve}
+	(**RevValve Status 1 = heating, 0 = cooling*)
+	OU_RevValve : BOOL;
 	{LOCATION OU_SHSetP}
 	(**Outdoor unit - Current SH setpoint*)
 	{ATTRIBUTE UOM KELVIN}
@@ -385,8 +388,8 @@ VAR_GLOBAL
 	{LOCATION OutDoorTemp}
 	(**OutDoorTemp from selected source*)
 	{ATTRIBUTE UOM CELSIUS}
-	{METADATA MIN_VAL -99,9}
-	{METADATA MAX_VAL 99,9}
+	{METADATA MIN_VAL -99.9}
+	{METADATA MAX_VAL 99.9}
 	OutDoorTemp : REAL;
 	{LOCATION OutDoorTempFilter}
 	(**Filtered outside temperature*)
@@ -505,6 +508,8 @@ VAR_GLOBAL
 	{METADATA MIN_VAL SupplyTempCoolMin}
 	{METADATA MAX_VAL 30}
 	SupplyTempCalcCH : REAL;
+	{LOCATION SwToHPReq}
+	SwToHPReq : BOOL;
 	{LOCATION SWValveManA}
 	(**Switching valve shall be possible to regulate manually. 
 	 *When SWValveManA is active the valve shall be set to it’s active target. In this case the valve shall be towards position B(House) when not active and towards A(DHW) when active. 
@@ -514,14 +519,19 @@ VAR_GLOBAL
 	(**Software version*)
 	SwVersion : UINT;
 	{LOCATION SystemCfg_AllowCool}
+	(**SystemCfg_AllowCool*)
 	SystemCfg_AllowCool : BOOL;
 	{LOCATION SystemCfg_AllowDHW}
+	(**SystemCfg_AllowDHW*)
 	SystemCfg_AllowDHW : BOOL;
 	{LOCATION SystemCfg_AllowHeat}
+	(**SystemCfg_AllowHeat*)
 	SystemCfg_AllowHeat : BOOL;
 	{LOCATION SystemCfg_AllowImm}
+	(**SystemCfg_AllowImm*)
 	SystemCfg_AllowImm : BOOL;
 	{LOCATION SystemCfg_NoCfgSel}
+	(**SystemCfg_NoCfgSel*)
 	SystemCfg_NoCfgSel : BOOL;
 	{LOCATION TimezoneIdx}
 	(**Timezone index*)
@@ -616,31 +626,37 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 100}
 	DhwBoostPercExtHotWatr : REAL := 50;
 	{LOCATION DhwBT3StopCom}
+	(**DhwBT3StopCom*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StopCom : REAL := 40;
 	{LOCATION DhwBT3StopEco}
+	(**DhwBT3StopEco*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StopEco : REAL := 40;
 	{LOCATION DhwBT3StopNor}
+	(**DhwBT3StopNor*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StopNor : REAL := 40;
 	{LOCATION DhwBT3StrtCom}
+	(**DhwBT3StrtCom*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StrtCom : REAL := 45;
 	{LOCATION DhwBT3StrtEco}
+	(**DhwBT3StrtEco*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwBT3StrtEco : REAL := 45;
 	{LOCATION DhwBT3StrtNor}
+	(**DhwBT3StrtNor*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
@@ -667,11 +683,13 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 100}
 	DhwCircPump1Spd : REAL := 50;
 	{LOCATION DhwComfStartTemp}
+	(**DhwComfStartTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
 	DhwComfStartTemp : REAL := 55;
 	{LOCATION DhwComfStopTemp}
+	(**DhwComfStopTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
@@ -683,11 +701,13 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 48}
 	DHWCompBlockTime : UINT;
 	{LOCATION DhwEcoStartTemp}
+	(**DhwEcoStartTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
 	DhwEcoStartTemp : REAL := 45;
 	{LOCATION DhwEcoStopTemp}
+	(**DhwEcoStopTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
@@ -704,11 +724,13 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 2}
 	DhwMode : USINT := 1;
 	{LOCATION DhwNormStartTemp}
+	(**DhwNormStartTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
 	DhwNormStartTemp : REAL := 50;
 	{LOCATION DhwNormStopTemp}
+	(**DhwNormStopTemp*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
@@ -844,10 +866,12 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 500}
 	EBCHCompStrt : REAL := 60;
 	{LOCATION EBCHMax}
+	(**EBCHMax*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 1000}
 	EBCHMax : REAL := 1000;
 	{LOCATION EBCHMin}
+	(**EBCHMin*)
 	{METADATA MIN_VAL -1000}
 	{METADATA MAX_VAL 0}
 	EBCHMin : REAL := -1000;
@@ -878,6 +902,7 @@ VAR_GLOBAL PERSISTENT
 	(**Shunt valve energy balance level*)
 	EBShunt : REAL := -700;
 	{LOCATION EBStepImm}
+	(**EBStepImm*)
 	EBStepImm : REAL := -700;
 	{LOCATION ECT_Cool_Offset}
 	(**ECT value for outdoor unit while cooling*)
@@ -1014,6 +1039,7 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 100}
 	OU_WaterFlowLimit : REAL := 10;
 	{LOCATION OutDoorTemp_FiltDelay}
+	(**OutDoorTemp_FiltDelay*)
 	{METADATA MIN_VAL 1}
 	{METADATA MAX_VAL 7200}
 	OutDoorTemp_FiltDelay : UINT := 3600;
@@ -1151,6 +1177,7 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	SupplyTempHeatMin : UINT;
 	{LOCATION SystemCfg}
+	(**SystemCfg*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 255}
 	SystemCfg : USINT := 1;

@@ -13,6 +13,8 @@ VAR_GLOBAL
         SR_Energybalance_HP        : SR;
         (**Allow/block OU from energybalance*)
         SR_Energybalance_CH        : SR;
+        (**Switch to cooling*)    
+        SwToCoolReq                : BOOL;
 END_VAR
 
 
@@ -249,27 +251,27 @@ PROGRAM RegulationMode
         IF(OU_CompOn)THEN
             IF (GoToState = OpStage_Status#DEFROST) THEN
                 OpState := GoToState;
+                OU_CompHeat := FALSE;
+                SwToCoolReq := FALSE;
             ELSIF(GoToState <> OpState AND OU_CompTemp < ECT) THEN
                 OU_CompHeat := TRUE;
+                SwToCoolReq := FALSE;
             ELSIF(GoToState <> OpState AND MinRunTime) THEN
                 OU_CompHeat := FALSE;
+                SwToCoolReq := FALSE;
+//            ELSIF GoToState <> OpState AND GoToState = 2 AND OU_RevValve THEN // Wants to go to cooling but needs to ramp down compressor before switch RevValve
+//                SwToCoolReq := TRUE;
+//            ELSIF GoToState <> OpState AND (GoToState = 1 OR GoToState = 3) AND NOT OU_RevValve THEN // Wants to go to heating or dhw but needs to ramp down compressor before switch RevValve
+//                SwToCoolReq := TRUE;
             ELSIF(GoToState <> OpState) THEN
                 OpState := GoToState;
                 OU_CompHeat := FALSE;
+                SwToCoolReq := FALSE;
+            ELSE
+                OU_CompHeat := FALSE;
+                SwToCoolReq := FALSE;
             END_IF;
-        ELSIF NOT(OU_CompOn)THEN
-            IF GoToState = OpStage_Status#HEATING THEN
-                OpState := GoToState;       // EB calculation start and stop compressor
-            ELSIF GoToState = OpStage_Status#COOLING THEN
-                OpState := GoToState;
-            ELSIF GoToState = OpStage_Status#DHW THEN
-                OpState := GoToState;
-            ELSIF (OpState = OpStage_Status#DECISION_PHASE AND OU_CompTemp < ECT) THEN
-                //OU_CompHeat := TRUE;
-                // Send new ECT to OU -> Starts compressor heater
-            ELSE 
-                OpState := GoToState;
-            END_IF;
+
         ELSE
             OpState := GoToState;
         END_IF;

@@ -137,15 +137,16 @@ PROGRAM Main
         //System configuration selection
         //None selected
         // 1: Heating system 1 + DHW
-        // 2: Heating system 1 + Heating system 2 + DHW
-        // 3: Heating system 1 + Cooling + DHW
-        // 4: Heating system 1 + Heating system 2 + DHW
+        // 2: Heating system 1 + DHW
+        // 3: Heating system 1 + Heating system 2 + DHW
+        // 4: Heating system 1 + Cooling + DHW
+        // 5: Heating system 1 + Heating system 2 + DHW + Cooling
     
         IF(SystemCfg > 0)THEN
             SystemCfg_AllowDHW := SystemCfg >= 1; 
-            SystemCfg_AllowHeat := SystemCfg >= 1;                   
+            SystemCfg_AllowHeat := SystemCfg >= 2;                   
             SystemCfg_AllowImm := SystemCfg >= 1;                    
-            SystemCfg_AllowCool := SystemCfg = 3;                    
+            SystemCfg_AllowCool := SystemCfg >=  4;                    
             SystemCfg_NoCfgSel := FALSE;
         ELSE
             SystemCfg_AllowDHW := FALSE;

@@ -35,7 +35,7 @@ PROGRAM CoolingRegulation
                 s1 := ((OutDoorTempFilter > CoolModeTemp) AND SystemCfg_AllowCool),
                 R := OutDoorTempFilter < CoolModeTemp - CoolModeTempHyst
                 );
-        OpModeAllowCool := SR_AutoMode.Q1;    
+        OpModeAllowCool := SR_AutoMode.Q1 AND SystemCfg_AllowCool;    
     
    //Determine total setpoint offset
         SetP_Offset := Offset_EBCH;
@@ -53,7 +53,7 @@ PROGRAM CoolingRegulation
     CoolReg_Temp := Ain_Data.Fct.ClimSupplyTemp;    
     IF OU_CompOn THEN
         IF OU_HP_Status = 2 OR OU_HP_Status = 8 OR DHW_InitRPS = 0 THEN
-            ManModeVal := ScalerLimited(OU_Unit.CurrSpd_RPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0); 
+            ManModeVal := ScalerLimited(Max(OU_Unit.CurrSpd_RPS,50), OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0); 
         ELSE
             ManModeVal := ScalerLimited(DHW_InitRPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0);    
         END_IF;
